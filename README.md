@@ -2,6 +2,8 @@ Hallöchen, hier sammle ich die Playbooks, die ich im Homelab immer wieder brauc
 
 Ich entwickle die Playbooks mit KI-Unterstützung. Wenn etwas bei dir anders läuft als beschrieben, freue ich mich über ein Issue.
 
+Der Projektcode steht unter der [MIT-Lizenz](LICENSE).
+
 Ich entwickle und teste auf `staging`. Freigegebene Änderungen kommen nach `main`.
 
 - [Auf Debian installieren oder einen bestehenden Controller übernehmen](descriptions/configurations/installation-homelab.md)

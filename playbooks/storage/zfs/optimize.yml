@@ -1,7 +1,7 @@
 - name: Konfigurierte ZFS-Properties abgleichen
   hosts: all_linux_systems
   gather_facts: false
-  become: false
+  become: true
   pre_tasks:
   - name: Ausdrueckliches Ziel pruefen
     ansible.builtin.assert:

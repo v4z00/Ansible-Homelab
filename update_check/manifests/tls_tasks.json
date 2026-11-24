@@ -8,7 +8,7 @@
     "playbooks/checkmk/migrate_hosts.yml": "af5bb115f7151904689af456c5fa0137c433e6a92f80f79b5ee8f9955580fdb5",
     "playbooks/checkmk/tasks/reconcile_host.yml": "3ed963988183c619c9269430d41f19025d4e8ee4467bc138af16b9da54edf7d7",
     "playbooks/checkmk/tasks/rename_host.yml": "34002de5d1417b08677d5a2038dd4f334bab9e789e58945f03299255dcd5ddbb",
-    "playbooks/maintenance/notify.yml": "73d8909fa4d67e4b925ee1d68489bb38db6b239301ef6a13bc00661e6bb76ad2",
+    "playbooks/maintenance/notify.yml": "af8c4189415c7c8371dfcfbbda26c59fbea75be3101f6012315e08b1784c3dc0",
     "playbooks/maintenance/wan_check.yaml": "6f0447b10a53a1e0034309699904952cc044fe2023a2979018a8467a58588223",
     "playbooks/monitoring/deploy_telegraf.yml": "1083b693d95153cab46e7dc29f616023f4ab30b86bd092402b879eb32c776bb0",
     "roles/checkmk_agent/tasks/main.yml": "6c78d0c143ac37cfd2a9e01840dbfb5eb20f669dc471ff0b3ceada35da065392",

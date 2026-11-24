@@ -11,6 +11,9 @@ Voraussetzungen laut Registry:
 - `playbooks/network/openwrt/openwrt_reboot.yml`
 - `roles/openwrt_reboot/tasks/main.yml`
 - `roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py`
+- `playbooks/network/openwrt/reboot_wave.yml`
+- `scripts/openwrt_reboot_worker.sh`
+- `lib/controller_environment.sh`
 
 ## Monatlichen Neustart einrichten
 

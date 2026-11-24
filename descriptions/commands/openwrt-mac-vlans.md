@@ -11,11 +11,9 @@ Voraussetzungen laut Registry:
 - `playbooks/network/openwrt/configure_mac_vlans.yml`
 - `roles/openwrt_mac_vlans/tasks/main.yml`
 
-Bei bestehenden verwalteten WLAN-Abschnitten `openwrt_managed_prefix` lokal auf das bisher verwendete Präfix setzen. Neue Installationen verwenden `ansible_vlan`.
-
 ## Bestehende WLAN-Regeln übernehmen
 
-Für bereits verwaltete WLAN-Abschnitte setzt du `openwrt_managed_prefix` auf ihren bisherigen lokalen Präfix.
+Für bereits verwaltete WLAN-Abschnitte setzt du `openwrt_managed_prefix` auf das bisher verwendete Präfix. Neue Installationen verwenden `ansible_vlan`.
 
 ## Parameter für die TUI
 

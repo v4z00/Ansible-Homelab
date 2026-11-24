@@ -4,8 +4,10 @@ Vorhandener Einstieg: `playbooks/network/openwrt/openwrt_reboot.yml`.
 
 Im Quelltext benannte Plays/Aufgaben:
 
-- OpenWrt-APs in Wellen neu starten, Admin-APs zuletzt
-- Zielauswahl und Wellennummer prüfen
+- OpenWrt-APs in Wellen neu starten
+- Feature, Zielauswahl und Wellennummer prüfen
+- Welle für diesen AP bestimmen
+- Wellen der ausgewählten APs in derselben Reihenfolge abarbeiten
 
 Ausfuehrung bevorzugt ueber den passenden Control-Befehl. Die Datei allein beschreibt nicht alle effektiven Variablen: Rollen, Inventar und lokale Standortkonfiguration wirken weiterhin. Keine allgemeinen --check-/Limit-Garantien daraus ableiten.
 

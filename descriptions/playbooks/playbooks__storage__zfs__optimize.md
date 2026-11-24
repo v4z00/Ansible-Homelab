@@ -34,7 +34,7 @@ Vertrauliche Werte werden nicht dokumentiert.
     "playbooks/storage/zfs/optimize.yml"
   ],
   "source_hashes": {
-    "playbooks/storage/zfs/optimize.yml": "828e0e86950b65ce0d1755c779f56db5d84ece81f00c4b9a7a2a8b54503bb756"
+    "playbooks/storage/zfs/optimize.yml": "5ef294ac634ce70fecc1b0595158826b7c6188388a4b8df8803c203b36995883"
   }
 }
 ```

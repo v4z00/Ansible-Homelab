@@ -10,20 +10,25 @@ import subprocess
 import sys
 
 MANIFEST = "SHA256SUMS.json"
-PROFILES = {"Allgm", "Homelab", "NXTS3"}
 CODE_DIRS = {"bin", "config", "descriptions", "lib", "playbooks", "roles",
              "scripts", "templates", "tools", "update_check"}
 CODE_FILES = {"configure_server_BASE.sh", "controller-base.json", "requirements-controller.txt",
               "requirements.yml", "requirements-extra.yml", "VERSION.txt",
               "controller-overlay.json", "install-controller", "install.sh"}
-REPO_FILES = CODE_FILES | {".gitignore", "README.md", MANIFEST}
+REPO_FILES = CODE_FILES | {".gitignore", "LICENSE", "README.md", MANIFEST}
 BLOCKED = {"inventory", "inventories", "host_vars", "group_vars", "ansible.cfg",
            "inventory_config.yml", "inventory.yml", "settings.yml", "secrets.yml",
            "host_credentials.yml", "credentials.yml", ".env", "_local", "docs", "reports",
            "regeln.txt", "agents.md", "claude.md", "gemini.md", "logs", "state", "99_readme",
-           "artifacts", "script-config", "script-configs", "collections", "nxts3-hostvars.yml", "versions.txt"}
+           "artifacts", "script-config", "script-configs", "collections", "versions.txt"}
 PART = re.compile(r"[A-Za-z0-9_.+-]+\Z")
 MAX_FILE = 32 * 1024 * 1024
+
+
+def profile_name(value):
+    if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]*", value):
+        raise argparse.ArgumentTypeError("Ungültiger Modulname")
+    return value
 
 
 def json_pairs(pairs):
@@ -67,7 +72,7 @@ def allowed(name):
         return False
     for i, part in enumerate(ps):
         pf = part.lower()
-        if (pf in BLOCKED or pf.startswith(".env") or pf.endswith(
+        if (pf in BLOCKED or pf.endswith(("-hostvars.yml", "-hostvars.yaml")) or pf.startswith(".env") or pf.endswith(
                 (".pem", ".key", ".token", ".p12", ".pfx", ".keytab", ".kdbx", ".bak", ".pyc", ".log"))):
             return False
         if part.startswith(".") and not (i == 2 and part == ".versions"
@@ -107,7 +112,7 @@ def digest_objects(root, tree):
     if not ids:
         raise ValueError("Keine verwalteten Dateien")
     hashes = {}
-    # Stream one object at a time. The NXTS3 wheelhouse is larger than a pipe buffer.
+    # Stream one object at a time, including blobs larger than the pipe buffer.
     with subprocess.Popen(["git", "-C", str(root), "cat-file", "--batch"],
                           stdin=subprocess.PIPE, stdout=subprocess.PIPE) as proc:
         try:
@@ -140,7 +145,10 @@ def verify(root, profile, ref="HEAD"):
     if len(raw) > 2 * 1024 * 1024:
         raise ValueError("Manifest zu groß")
     declared = json.loads(raw, object_pairs_hook=json_pairs)
-    actual = create(root, profile, ref)
+    declared_profile = declared.get("profile")
+    if not isinstance(declared_profile, str) or declared_profile.casefold() != profile.casefold():
+        raise ValueError("Manifest gehört zu einem anderen Modul")
+    actual = create(root, declared_profile, ref)
     if declared != actual:
         raise ValueError(f"SHA-256-Manifest für {profile} stimmt nicht mit {ref} überein")
     return actual["files"]
@@ -149,7 +157,7 @@ def verify(root, profile, ref="HEAD"):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("action", choices=("index", "verify"))
-    ap.add_argument("profile", choices=sorted(PROFILES))
+    ap.add_argument("profile", type=profile_name)
     ap.add_argument("ref", nargs="?", default="HEAD")
     args = ap.parse_args()
     root = Path(git(Path.cwd(), "rev-parse", "--show-toplevel").decode().strip())

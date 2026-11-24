@@ -8,7 +8,8 @@
     "manifests/tls_tasks.json",
     "manifests/host_updates.json",
     "manifests/bootstrap.json",
-    "manifests/version_pruefer.json"
+    "manifests/version_pruefer.json",
+    "manifests/script_jobs.json"
   ],
   "checker_release": "1.2.1",
   "delivery_scope": "workspace",

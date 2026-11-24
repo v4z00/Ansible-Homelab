@@ -59,7 +59,7 @@ collections/
 /playbooks/backup/README.md
 /playbooks/security/sss/VALIDIERUNG.md
 
-# Local component state and legacy NXTS3 deployment settings
+# Local component state and module-specific host variables
 /versions.txt
-# The actual filename is case-sensitive in Git.
-**/NXTS3-hostvars.yml
+*-[Hh][Oo][Ss][Tt][Vv][Aa][Rr][Ss].[Yy][Mm][Ll]
+*-[Hh][Oo][Ss][Tt][Vv][Aa][Rr][Ss].[Yy][Aa][Mm][Ll]
