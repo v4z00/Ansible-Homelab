@@ -282,7 +282,7 @@
     "controller-base.json": "d2e2576af96f85bd6f90b54fa0313f30c53567dff718c48286877b2e84949071",
     "requirements-controller.txt": "1b2833493fbc444c46467095ffe46b5d7c537fc7c5ed9b3143b6451085151abb",
     "requirements-extra.yml": "e49aba39141e82b6b5a83935ca6233f93dc8030d82b8e1c15e95302cbfb75516",
-    "update_check/rollout.py": "dea940bbbe2fefee6e7446e9c5a167da1f59ec929b21415e409672d8dda8f9a3",
+    "update_check/rollout.py": "0fb0bd49202e711e2f0ed3372e8af6c3ed7ed1ed2cfb33e8f6d5f501b56cb3da",
     "playbooks/controller_smoke.yml": "dd8f0294944bea99e3c2381c7d714dd2e0db13610fa9a7e3c019004bc16f2e37",
     "update_check/staging_manifest.py": "20e546bb86533adf593a35420af6a0b35cb2484a8b732cd5c3e745758a3cf34d",
     "tools/github_https.py": "1cd2cf56539bd49c05403088732d2fe2a61b1b2a4a33427f9c55dd9d94742d2f",
@@ -307,7 +307,9 @@
     "artifacts/script-library/lib/common/send_email.sh": "80214cc9ae3542b5f0612ec83091492b760503b639c68bd24026f36c3c6310ad",
     "artifacts/script-library/lib/common/send_telegram_message.sh": "361b7d0a9aa88021893f53b53b6b581588b85b3becf68abef1e45fc43c06dca5",
     "artifacts/script-library/lib/data/mail-translations.json": "ce7668aa25394d1467de3998816266a14e58080c730893cf150719fa1f366ba5",
-    "artifacts/script-library/lib/load.sh": "7125a71ff01fbf7d26dd274ec2149a722bec457dfab5562860a3dbe67703c4e1"
+    "artifacts/script-library/lib/load.sh": "7125a71ff01fbf7d26dd274ec2149a722bec457dfab5562860a3dbe67703c4e1",
+    "tools/local_extension.py": "9a85046719430d57b9ce4d458205c6ef4d8e3b01b2dcdb506446190f9c9dc1d4",
+    "tools/local_callbacks/extension_receipt.py": "dba3e0b117c848b03ab6f2b487d27da3fd91f09ea7c804c827f64879225e7990"
   },
   "scope": "Basis und lokale Controller-Installation",
   "version_files": [

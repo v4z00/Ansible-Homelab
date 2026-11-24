@@ -1,6 +1,6 @@
 Hallöchen, das ist mein Repo für die Aufgaben, die sich im Homelab ständig wiederholen. Die Playbooks vergleichen OpenWrt-Konfigurationen, prüfen Systeme und sichern Dateien. Sie bauen auf Ansible-Allgm auf.
 
-Ich entwickle dieses Projekt mit KI-Unterstützung. Ich programmiere selbst. Für die vielen Details zwischen einer Idee und einem getesteten Update fehlt mir im Alltag oft die Zeit. Die KI hilft mir beim Schreiben und Testen. Welche Änderungen ich übernehme, entscheide ich selbst.
+Ich programmiere selbst nur selten. Die Ideen und Anforderungen kommen von mir. Beim Schreiben und Testen des Codes hilft mir KI. Welche Änderungen ich übernehme, entscheide ich selbst.
 
 Bitte probier die Playbooks zuerst mit Testdaten aus und prüfe vor dem Ausführen die Zielhosts. Wenn ein Playbook bei dir anders läuft als beschrieben, freue ich mich über ein Issue oder einen Pull Request. Ein kleines Beispiel mit erfundenen Werten hilft mir beim Nachstellen.
 
@@ -51,3 +51,17 @@ Bei einem bestehenden `/root/ansible/bin/control` den Checkout getrennt ablegen.
 ```
 
 Inventory, lokale Gruppen- und Hostvariablen sowie eigene Dateien außerhalb der angezeigten Codepfade bleiben erhalten. Der Installer gibt eine Sicherungskennung aus. Der Rückweg vor dem nächsten Codewechsel lautet `./install-controller --target /root/ansible --rollback SICHERUNGSKENNUNG`.
+
+## Aufbau und eigene Erweiterungen
+
+`install.sh` richtet dieses Profil und die gemeinsame Basis ein. Unter `playbooks/` liegen die Einstiege für OpenWrt, Storage und Sicherungen, unter `roles/` die zugehörigen Aufgaben. `descriptions/` erläutert Befehle und Voraussetzungen.
+
+Für einen eigenen Ablauf ein separates lokales Paket mit `code/playbooks/`, `code/roles/` oder `code/scripts/` pflegen. Nach der Profilinstallation als root das Paket installieren und die lokalen SHA-256 prüfen:
+
+```bash
+cd /root/ansible
+python3 tools/local_extension.py install /root/mein-paket
+bin/control update-check --only local
+```
+
+Ein vollständiges Paketbeispiel mit Freigabe, Ausführung, Cron-Verhalten und Archivprüfung steht im [Basis-README](https://github.com/v4z00/Ansible-Allgm#aufbau-und-lokale-erweiterungen).
