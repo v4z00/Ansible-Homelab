@@ -4,6 +4,8 @@ Ich entwickle die Playbooks mit KI-Unterstützung. Wenn etwas bei dir anders lä
 
 Der Projektcode steht unter der [MIT-Lizenz](LICENSE).
 
+[Changelog](descriptions/releases/homelab.md) · [GitHub-Releases](https://github.com/v4z00/Ansible-Homelab/releases)
+
 Ich entwickle und teste auf `staging`. Freigegebene Änderungen kommen nach `main`.
 
 - [Auf Debian installieren oder einen bestehenden Controller übernehmen](descriptions/configurations/installation-homelab.md)
