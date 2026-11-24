@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 – Versionsanzeige für Controller-Module
+
+Die Prüfsummen für den Versionsbefehl aus Allgm 0.3.1 sind nachgezogen. Die Modulstände lassen sich mit `bin/control module-versions` anzeigen.
+
 ## 0.2.2 – Mein Start mit GitHub
 
 24. November 2026
