@@ -2,7 +2,7 @@
   "schema": 1,
   "algorithm": "sha256",
   "files": {
-    "check.py": "491f9095e5dcdd05d33d259eb381c8e2d83f6c0ff8fe2624a6eeb2b92cccb6d4",
+    "check.py": "639c47fa2eec26fa81a6e81e0b9f531c4794d894fc3480237b75bed553c941e1",
     "check.sh": "7a70c071c39ed3ec710c0b37af0bc438f8a0296f1e0eb7fb966a42e63e4c9d85",
     "configure.py": "c6c675198f99121dbd1d6f550481b2a9190bdb25a4c19d5ec45e7da4fb1340d3",
     "probes.py": "22dbb65098b7adfce12c0dc0a39df14440748bbf3926416c432f2a7fbf69c75a",
@@ -11,11 +11,11 @@
     "release.json": "8a1457125db56d8f2f01016ef3f8f296aa31bc9a62c25ad15a8c7be43fb8ca52",
     "settings_contract.json": "707b83a9455c827da6d852d5a9f6dcbd78dac9d3770a62a938d5b2313247b70f",
     "settings_catalog.json": "fe7eb8cdf56b2fb027c4c439165c5d9f6431332700d200a520d145610f239ae1",
-    "manifests/controller_basis.json": "f587711eaa36c98bc1e48a42a562786d767da2b0429a463e36364d7b823f996f",
+    "manifests/controller_basis.json": "bfc11ba7bba60e8ff6e4e352c5d4f90a147a18489ab099db304bd8919ad755a8",
     "manifests/host_updates.json": "25f2f9b39056661af9c3b774ccd97b9aa8c269a2062db7a60d87d57f705cc918",
     "manifests/tls_tasks.json": "a8842dcbf7abd40b28e82dc98d345f568122d96dad59adca41acb2efedcb088c",
     "manifests/bootstrap.json": "9508caa12d375180587dd4022fc92c1d968dc3e86129bc02975ca0ab0d30dfdd",
-    "manifests/version_pruefer.json": "6f11fa519c141326589cb455e0868aa71f7d5867a3f3a4e0f008ddebe5cb3f23",
+    "manifests/version_pruefer.json": "9d211bc9f4ff64224ad4ac21ecf79f1272b4c6090faf04cff4b254d757ce485e",
     "cleanup.py": "b075547b1bfbfc3483563c2d3e79ff5ec2a5b9901a879b352ed45635228b2a36",
     "cleanup_plan.json": "02a5794fefa4d10566162154e9568810821a156262a251f5b7c1e109176fcdc3",
     "profile.json": "1dcdf369d060bab98a1e51aa649de68e1aa51efd3db7f7d590953e2e0dfed33e",
@@ -24,7 +24,8 @@
     "tests/test_pipe_install.py": "ec7a05e7f1dd3ed448a522f5740cfe0110e020aa5b35cc96a5ec13fc0f0b8c22",
     "local_extensions.py": "72d966ea3ee878d778dc397b28d2f3ff2273fb28b34e47ca8e6230824b6751d3",
     "tests/test_local_extensions.py": "75489d27ee679bfe0084000862d225b99d22868c3b977e987a8d53b3dfb83a10",
-    "tests/test_docker_update.py": "6649a40d977c2d96ceff54125c7a06ee8921847a9a5ebac5901fdc12b561ae20"
+    "tests/test_docker_update.py": "6649a40d977c2d96ceff54125c7a06ee8921847a9a5ebac5901fdc12b561ae20",
+    "tests/test_branches.py": "4ff1dd204408f075751c2f82f3b9c652388fbe62682a882b5b09c9f5f10eada6"
   },
   "trust": "Lokale Sollwerte, keine Signatur. Nicht aus veraenderten Live-Dateien automatisch neu erzeugen."
 }

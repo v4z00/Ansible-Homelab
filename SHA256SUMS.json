@@ -551,11 +551,11 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "497a95254063e63590011c5fcdccf44e7d5e8f7c2b7cb82a8746816f2f8b2dfe",
+      "sha256": "2b3b6328ed8b78296e83bd9fc119cb6b08334177b2b84e585b267f07b32fc77d",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "f587711eaa36c98bc1e48a42a562786d767da2b0429a463e36364d7b823f996f",
+      "sha256": "bfc11ba7bba60e8ff6e4e352c5d4f90a147a18489ab099db304bd8919ad755a8",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
