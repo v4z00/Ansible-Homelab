@@ -1,0 +1,29 @@
+- name: Konfigurierte Controller-Cronjobs pflegen
+  hosts: localhost
+  gather_facts: false
+  become: false
+  pre_tasks:
+  - name: Feature pruefen
+    ansible.builtin.assert:
+      that:
+      - features.schedules | default(true) | bool
+  tasks:
+  - name: Jobdefinitionen pruefen
+    ansible.builtin.assert:
+      that:
+      - item.name is match('^[A-Za-z0-9][A-Za-z0-9 _.-]+$')
+      - item.state | default('present') in ['present','absent']
+      - item.state | default('present') == 'absent' or item.job | default('') | length > 0
+    loop: '{{ controller_schedules | default([]) }}'
+  - name: Nur benannte Ansible-Cronjobs pflegen
+    ansible.builtin.cron:
+      name: Ansible {{ item.name }}
+      job: '{{ item.job | default(omit) }}'
+      minute: '{{ item.minute | default(''0'') }}'
+      hour: '{{ item.hour | default(''*'') }}'
+      weekday: '{{ item.weekday | default(''*'') }}'
+      day: '{{ item.day | default(''*'') }}'
+      month: '{{ item.month | default(''*'') }}'
+      user: '{{ item.user | default(''root'') }}'
+      state: '{{ item.state | default(''present'') }}'
+    loop: '{{ controller_schedules | default([]) }}'

@@ -1,0 +1,8 @@
+- name: OpenWrt channel
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: channel
+  roles:
+  - openwrt_operations

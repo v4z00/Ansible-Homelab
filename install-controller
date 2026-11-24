@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+source_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+allgm="$source_dir/../Ansible-Allgm"
+if [ ! -d "$allgm" ] && [ -d "$source_dir/../Allgm" ]; then allgm="$source_dir/../Allgm"; fi
+if [ "${1:-}" = --allgm ]; then
+    [ "$#" -ge 2 ] || { echo 'Auf --allgm muss der Pfad zum Allgm-Checkout folgen.' >&2; exit 2; }
+    allgm="$2"
+    shift 2
+fi
+if [ ! -x "$allgm/bin/install-controller" ]; then
+    echo 'Allgm-Checkout fehlt. Neben diesem Repo klonen oder --allgm PFAD angeben.' >&2
+    exit 2
+fi
+ANSIBLE_STAGING_SOURCE="$source_dir" ANSIBLE_STAGING_OVERLAY=Homelab \
+    exec "$allgm/bin/install-controller" "$@"

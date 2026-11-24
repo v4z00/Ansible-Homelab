@@ -1,0 +1,81 @@
+- name: OpenWrt sichern
+  hosts: openwrt_router
+  gather_facts: false
+  remote_user: '{{ openwrt_backup_user }}'
+  vars:
+    backup_kind: openwrt
+  tasks:
+  - name: Backup-Ziel prüfen
+    ansible.builtin.include_tasks: tasks/preflight.yml
+  - name: Lokalen Arbeitsordner anlegen
+    ansible.builtin.tempfile:
+      state: directory
+      prefix: controller-stage-
+    delegate_to: localhost
+    become: false
+    vars:
+      ansible_python_interpreter: '{{ ansible_playbook_python }}'
+    register: backup_local_temp
+  - name: Router sichern und Sicherung übernehmen
+    block:
+    - name: Paketliste lesen
+      ansible.builtin.raw: "if command -v apk >/dev/null 2>&1; then\n  apk info\nelif command -v opkg >/dev/null\
+        \ 2>&1; then\n  opkg list-installed\nelse\n  echo 'Kein unterstuetzter Paketmanager vorhanden' >&2\n  exit\
+        \ 1\nfi\n"
+      register: backup_packages
+      changed_when: false
+      failed_when: backup_packages.rc != 0 or backup_packages.stdout | trim | length == 0
+    - name: Konfiguration direkt per SSH übertragen
+      ansible.builtin.command:
+        argv:
+        - '{{ backup_controller_python }}'
+        - '-'
+        - '{{ {''host'': hostvars[inventory_hostname].ansible_host | default(inventory_hostname), ''user'': hostvars[inventory_hostname].ansible_user
+          | default(openwrt_backup_user), ''port'': hostvars[inventory_hostname].ansible_port | default(22), ''key'':
+          hostvars[inventory_hostname].ansible_ssh_private_key_file | default(''''), ''common_args'': hostvars[inventory_hostname].ansible_ssh_common_args
+          | default(''''), ''extra_args'': hostvars[inventory_hostname].ansible_ssh_extra_args | default(''''),
+          ''output'': backup_local_temp.path ~ ''/backup.tar.gz''} | to_json }}'
+        stdin: "import json, pathlib, shlex, subprocess, sys\nconfig = json.loads(sys.argv[1])\ncommand = ['ssh',\
+          \ '-T', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=30',\n           '-o', 'ServerAliveInterval=15',\
+          \ '-o', 'ServerAliveCountMax=3']\ncommand += shlex.split(config['common_args'])\ncommand += shlex.split(config['extra_args'])\n\
+          if config['key']:\n    command += ['-i', str(pathlib.Path(config['key']).expanduser())]\ncommand += ['-p',\
+          \ str(config['port']), '-l', config['user'], '--', config['host']]\ncommand.append('set -eu\\nwork=$(mktemp\
+          \ -d /tmp/controller-openwrt.XXXXXX)\\ntrap \\'rm -f \"$work/backup.tar.gz\" \"$work/log\"; rmdir \"$work\"\
+          \\' EXIT\\nif ! sysupgrade -b \"$work/backup.tar.gz\" >\"$work/log\" 2>&1; then\\n    cat \"$work/log\"\
+          \ >&2\\n    exit 1\\nfi\\ntest -s \"$work/backup.tar.gz\"\\ncat \"$work/backup.tar.gz\"\\n')\nwith open(config['output'],\
+          \ 'wb') as output:\n    result = subprocess.run(command, stdout=output, stderr=subprocess.PIPE, timeout=180)\n\
+          if result.returncode:\n    sys.stderr.write(result.stderr.decode('utf-8', errors='replace'))\n    raise\
+          \ SystemExit(result.returncode)\nsize = pathlib.Path(config['output']).stat().st_size\nif size == 0:\n\
+          \    raise SystemExit('SSH lieferte ein leeres Archiv')\nprint('Archiv uebertragen: ' + str(size) + '\
+          \ Bytes')\n"
+      delegate_to: localhost
+      become: false
+      vars:
+        ansible_python_interpreter: '{{ ansible_playbook_python }}'
+      changed_when: true
+    - name: Paketliste lokal ablegen
+      ansible.builtin.copy:
+        content: '{{ backup_packages.stdout }}'
+        dest: '{{ backup_local_temp.path }}/packages.txt'
+      delegate_to: localhost
+      become: false
+      vars:
+        ansible_python_interpreter: '{{ ansible_playbook_python }}'
+    - name: Sicherung prüfen und auf SMB übernehmen
+      ansible.builtin.include_tasks: tasks/commit.yml
+    always:
+    - name: Lokalen Arbeitsordner entfernen
+      ansible.builtin.file:
+        path: '{{ backup_local_temp.path }}'
+        state: absent
+      delegate_to: localhost
+      become: false
+      vars:
+        ansible_python_interpreter: '{{ ansible_playbook_python }}'
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool

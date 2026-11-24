@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "zsh",
+      "description": "Zsh Command Center ausrollen",
+      "handler": "bin/control.d/zsh.sh",
+      "feature": "zsh",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/zsh.yml"
+      ],
+      "aliases": [
+        {
+          "name": "zsh-deploy",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

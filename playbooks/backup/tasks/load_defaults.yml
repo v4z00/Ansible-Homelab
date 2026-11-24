@@ -1,0 +1,16 @@
+- name: Vorhandene lokale Backup-Variablen lesen
+  ansible.builtin.include_vars:
+    file: '{{ playbook_dir }}/vars/settings.yml'
+  when: lookup('ansible.builtin.fileglob', playbook_dir ~ '/vars/settings.yml', wantlist=True) | length > 0
+  no_log: true
+- name: Fehlende Implementierungsdefaults verwenden
+  ansible.builtin.set_fact:
+    backup_root: '{{ backup_root | default('''') }}'
+    backup_controller_python: '{{ backup_controller_python | default(''/usr/bin/python3'') }}'
+    backup_remote_python: '{{ backup_remote_python | default(''/usr/bin/python3'') }}'
+    openwrt_backup_user: '{{ openwrt_backup_user | default(''root'') }}'
+    backup_retention: '{{ backup_retention | default({''cron'': {''days'': 14, ''weeks'': 0, ''months'': 0}, ''fstab'':
+      {''days'': 14, ''weeks'': 0, ''months'': 0}, ''scripts'': {''days'': 30, ''weeks'': 12, ''months'': 12}, ''root'':
+      {''days'': 30, ''weeks'': 12, ''months'': 12}, ''bond-monitor'': {''days'': 30, ''weeks'': 12, ''months'':
+      12}, ''openwrt'': {''days'': 30, ''weeks'': 0, ''months'': 12}, ''certificates'': {''days'': 30, ''weeks'':
+      12, ''months'': 12}}) }}'

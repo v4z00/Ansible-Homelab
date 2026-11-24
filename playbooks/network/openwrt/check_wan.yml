@@ -1,0 +1,8 @@
+- name: OpenWrt wan
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: wan
+  roles:
+  - openwrt_operations

@@ -1,0 +1,14 @@
+---
+- name: Geplanten Neustart im Check-Modus anzeigen
+  ansible.builtin.debug:
+    msg: 'Wuerde {{ inventory_hostname }} neu starten und einen Wechsel der Boot-ID sowie ubus-Erreichbarkeit pruefen.'
+  when: ansible_check_mode
+- name: OpenWrt neu starten und neue Boot-ID bestaetigen
+  openwrt_verified_reboot:
+    reboot_command: /sbin/reboot
+    boot_time_command: cat /proc/sys/kernel/random/boot_id
+    test_command: ubus call system board >/dev/null
+    reboot_timeout: 300
+    connect_timeout: 5
+    post_reboot_delay: 5
+  when: not ansible_check_mode

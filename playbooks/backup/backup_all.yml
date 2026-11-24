@@ -1,0 +1,28 @@
+- name: Inventory prüfen
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Erforderliche Hostgruppen prüfen
+    ansible.builtin.assert:
+      that:
+      - groups.get('all_linux_systems', []) | length > 0
+      - groups.get('all_script_hosts', []) | length > 0
+      - groups.get('checkmk_proxmox_hosts', []) | length > 0
+      - groups.get('openwrt_router', []) | length > 0
+      - groups.get('bond_monitor_backup_hosts', []) | length > 0
+      - groups.get('certificate_backup_hosts', []) | length > 0
+      fail_msg: Im Inventory fehlen erforderliche Backup-Hosts.
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool
+- ansible.builtin.import_playbook: backup_cron.yml
+- ansible.builtin.import_playbook: backup_fstab.yml
+- ansible.builtin.import_playbook: backup_scripte.yaml
+- ansible.builtin.import_playbook: backup_proxmox_root.yml
+- ansible.builtin.import_playbook: backup_bond_monitor.yml
+- ansible.builtin.import_playbook: backup_openwrt.yml
+- ansible.builtin.import_playbook: backup_certificates.yml

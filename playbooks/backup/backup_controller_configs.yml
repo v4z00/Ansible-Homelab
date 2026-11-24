@@ -1,0 +1,16 @@
+- name: Controller-Konfiguration sichern
+  hosts: localhost
+  gather_facts: false
+  vars:
+    backup_kind: scripts
+    backup_paths: '{{ controller_backup_paths | default([playbook_dir ~ ''/../..'']) }}'
+  tasks:
+  - name: Gemeinsamen geprueften Datei-Backup-Pfad verwenden
+    ansible.builtin.include_tasks: tasks/linux.yml
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool

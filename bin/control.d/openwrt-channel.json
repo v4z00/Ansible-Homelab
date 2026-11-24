@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-channel",
+      "description": "WLAN-Kanaele und Auslastung anzeigen",
+      "handler": "bin/control.d/openwrt-channel.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/openwrt_get_wlan-channel.yml"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-wlan-channel",
+          "args": []
+        },
+        {
+          "name": "openwrt-channel",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

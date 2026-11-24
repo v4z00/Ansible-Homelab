@@ -1,0 +1,16 @@
+- name: Cron sichern
+  hosts: all_linux_systems
+  gather_facts: false
+  become: true
+  vars:
+    backup_kind: cron
+  tasks:
+  - name: Sicherung ausführen
+    ansible.builtin.include_tasks: tasks/linux.yml
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool

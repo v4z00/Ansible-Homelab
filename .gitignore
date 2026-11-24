@@ -1,0 +1,65 @@
+# Inventory, site configuration, and runtime state
+inventory/
+!/examples/inventory/
+/examples/inventory/*
+!/examples/inventory/*.example.yml
+!/examples/inventory/*.yml.example
+inventories/
+host_vars/
+group_vars/
+_local/
+script-config/
+script-configs/
+ansible.cfg
+inventory_config.yml
+inventory.yml
+settings.yml
+secrets.yml
+host_credentials.yml
+.env
+.env.*
+!.env.example
+config/*.json
+*.pem
+*.key
+*.token
+*.p12
+*.pfx
+*.keytab
+*.kdbx
+logs/
+reports/
+artifacts/
+x/
+update_check/state/
+collections/ansible_collections/
+# Local development instructions and files
+99_README/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.cursor/rules/
+docs/projekt/
+docs/CONTROL_MODULES_RULES.txt
+REGELN.txt
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.local/
+.controller-install.json
+collections/
+*.log
+
+# Internal documentation is kept in the shared 99_README.
+/docs/
+/examples/**/HELP.txt
+/examples/README.txt
+/update_check/README.txt
+/playbooks/backup/README.md
+/playbooks/security/sss/VALIDIERUNG.md
+
+# Local component state and legacy NXTS3 deployment settings
+/versions.txt
+# The actual filename is case-sensitive in Git.
+**/NXTS3-hostvars.yml

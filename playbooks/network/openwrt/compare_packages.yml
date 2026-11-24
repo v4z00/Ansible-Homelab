@@ -1,0 +1,8 @@
+- name: OpenWrt package-diff
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: package-diff
+  roles:
+  - openwrt_operations

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-health",
+      "description": "OpenWrt-Healthcheck anzeigen",
+      "handler": "bin/control.d/openwrt-health.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/openwrt_health_check.yml"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-health",
+          "args": []
+        },
+        {
+          "name": "openwrt-health",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

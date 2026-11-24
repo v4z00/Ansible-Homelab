@@ -1,0 +1,22 @@
+---
+- name: OpenWrt MAC-VLAN-Konfiguration abgleichen und aktivieren
+  hosts: openwrt_router
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: false
+  become: false
+  vars_files:
+    - "{{ playbook_dir }}/../../../group_vars/openwrt_router/mac_vlans.yml"
+  pre_tasks:
+    - name: Bewusste Aktivierung und Zielbegrenzung pruefen
+      ansible.builtin.assert:
+        that:
+          - openwrt_mac_vlans_enabled | default(false) | bool
+          - ansible_limit | default('') | length > 0
+        fail_msg: >-
+          In group_vars/openwrt_router/mac_vlans.yml openwrt_mac_vlans_enabled
+          aktivieren und mit --limit HOST starten.
+      tags: [always]
+  roles:
+    - role: openwrt_mac_vlans
+      tags: [openwrt, mac_vlans]

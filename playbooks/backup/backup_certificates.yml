@@ -1,0 +1,24 @@
+- name: Zertifikatsdateien sichern
+  hosts: certificate_backup_hosts
+  gather_facts: false
+  become: true
+  vars:
+    backup_kind: certificates
+    backup_paths: "{{ certificate_backup_paths }}"
+  tasks:
+  - name: Lokale Sicherungspfade pruefen
+    ansible.builtin.assert:
+      that:
+      - certificate_backup_paths is defined
+      - certificate_backup_paths is sequence and certificate_backup_paths is not string and certificate_backup_paths is not mapping
+      - certificate_backup_paths | length > 0
+      - certificate_backup_paths | reject('match', '^/') | list | length == 0
+  - name: Sicherung ausführen
+    ansible.builtin.include_tasks: tasks/linux.yml
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool

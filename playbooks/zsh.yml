@@ -1,0 +1,9 @@
+---
+- name: Zsh Command Center ausrollen
+  hosts: all_linux_systems
+  become: true
+  gather_facts: true
+  roles:
+    - role: zsh
+      when: features.zsh | bool
+      tags: [optional, zsh]

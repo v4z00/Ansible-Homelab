@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "backup",
+      "description": "Vollstaendigen Backup-Wrapper inklusive Meldung starten",
+      "handler": "bin/control.d/backup.sh",
+      "feature": "backup",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/backup/run_ansible_backup.sh"
+      ],
+      "aliases": [
+        {
+          "name": "backup-full",
+          "args": []
+        },
+        {
+          "name": "backup",
+          "args": []
+        }
+      ],
+      "feature_default": false
+    }
+  ]
+}

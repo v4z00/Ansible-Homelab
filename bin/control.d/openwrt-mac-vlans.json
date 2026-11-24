@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-mac-vlans",
+      "description": "WLAN-MAC-Sollzustand abgleichen und bei Aenderung automatisch neu laden",
+      "handler": "bin/control.d/openwrt-mac-vlans.sh",
+      "feature": "openwrt_mac_vlans",
+      "settings": "group_vars/openwrt_router/mac_vlans.yml",
+      "setting_path": [
+        "openwrt_mac_vlans_enabled"
+      ],
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/configure_mac_vlans.yml",
+        "roles/openwrt_mac_vlans/tasks/main.yml"
+      ],
+      "aliases": [
+        {
+          "name": "openwrt-mac-vlans",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

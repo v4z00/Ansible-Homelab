@@ -1,0 +1,1043 @@
+{
+  "schema": 1,
+  "fields": [
+    {
+      "key": "features.baseline",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.chrony",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.fail2ban",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.motd",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.ssh_hardening",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.security_base",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.accounting",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.security_tools",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.lynis",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.rsyslog",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "key": "features.postfix",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.checkmk",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.docker",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.proxmox",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.hyperv",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.kerberos",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.kerberos_keytabs",
+      "type": "boolean",
+      "required": false,
+      "feature": "kerberos"
+    },
+    {
+      "key": "features.telegraf",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.sss",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.openwrt",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.truenas",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "features.zsh",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "site_id",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "site_name",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "site_managed_by",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "motd_show_hap",
+      "type": "boolean",
+      "required": true,
+      "feature": "motd"
+    },
+    {
+      "key": "motd_hap",
+      "type": "string",
+      "required": true,
+      "feature": "motd"
+    },
+    {
+      "key": "ansible_auth_mode",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "auth_method_description",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_user",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_port",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_become",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_become_method",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_become_user",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "managed_host_access",
+      "type": "mapping",
+      "required": false
+    },
+    {
+      "key": "bootstrap_targets",
+      "type": "list",
+      "required": false
+    },
+    {
+      "key": "bootstrap_public_key_file",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "bootstrap_disable_password_auth_after_key",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "system_timezone",
+      "type": "string",
+      "required": true,
+      "feature": "chrony"
+    },
+    {
+      "key": "chrony_ntp_servers",
+      "type": "list",
+      "required": true,
+      "feature": "chrony"
+    },
+    {
+      "key": "base_packages",
+      "type": "list",
+      "required": true,
+      "feature": "baseline"
+    },
+    {
+      "key": "fail2ban_ignoreip",
+      "type": "list",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_bantime",
+      "type": "duration",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_findtime",
+      "type": "duration",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_maxretry",
+      "type": "integer",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_ssh_port",
+      "type": "scalar_id",
+      "required": false,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_admin_email",
+      "type": "string",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_ticket_email",
+      "type": "string",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_proxmox_ve_hosts",
+      "type": "list",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "fail2ban_proxmox_backup_hosts",
+      "type": "list",
+      "required": true,
+      "feature": "fail2ban"
+    },
+    {
+      "key": "ssh_max_auth_tries",
+      "type": "integer",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_max_sessions",
+      "type": "integer",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_allow_tcp_forwarding",
+      "type": "boolean",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_permit_root_login",
+      "type": "string",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_client_alive_interval",
+      "type": "integer",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_client_alive_count_max",
+      "type": "integer",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_breakglass_enabled",
+      "type": "boolean",
+      "required": true,
+      "feature": "ssh_hardening",
+      "default_source": "roles/security_ssh/defaults/main.yml"
+    },
+    {
+      "key": "ssh_breakglass_user",
+      "type": "string",
+      "required": true,
+      "feature": "ssh_hardening",
+      "default_source": "roles/security_ssh/defaults/main.yml"
+    },
+    {
+      "key": "ssh_breakglass_uid",
+      "type": "integer",
+      "required": true,
+      "feature": "ssh_hardening",
+      "default_source": "roles/security_ssh/defaults/main.yml"
+    },
+    {
+      "key": "ssh_breakglass_home",
+      "type": "string",
+      "required": true,
+      "feature": "ssh_hardening",
+      "default_source": "roles/security_ssh/defaults/main.yml"
+    },
+    {
+      "key": "ssh_breakglass_excluded_hosts",
+      "type": "list",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "ssh_tcp_forwarding_hosts",
+      "type": "list",
+      "required": true,
+      "feature": "ssh_hardening"
+    },
+    {
+      "key": "hardening_pass_max_days",
+      "type": "integer",
+      "required": true,
+      "feature": "security_base"
+    },
+    {
+      "key": "hardening_pass_min_days",
+      "type": "integer",
+      "required": true,
+      "feature": "security_base"
+    },
+    {
+      "key": "hardening_pass_warn_age",
+      "type": "integer",
+      "required": true,
+      "feature": "security_base"
+    },
+    {
+      "key": "hardening_umask",
+      "type": "string",
+      "required": true,
+      "feature": "security_base"
+    },
+    {
+      "key": "hardening_autoremove",
+      "type": "boolean",
+      "required": true,
+      "feature": "security_base"
+    },
+    {
+      "key": "rsyslog_target_host",
+      "type": "string",
+      "required": true,
+      "feature": "rsyslog"
+    },
+    {
+      "key": "rsyslog_target_port",
+      "type": "integer",
+      "required": true,
+      "feature": "rsyslog"
+    },
+    {
+      "key": "postfix_relay_host",
+      "type": "string",
+      "required": true,
+      "feature": "postfix"
+    },
+    {
+      "key": "postfix_relay_port",
+      "type": "integer",
+      "required": true,
+      "feature": "postfix"
+    },
+    {
+      "key": "postfix_mail_domain",
+      "type": "string",
+      "required": true,
+      "feature": "postfix"
+    },
+    {
+      "key": "postfix_sender_aliases",
+      "type": "mapping",
+      "required": true,
+      "feature": "postfix"
+    },
+    {
+      "key": "victoriametrics_url",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "victoriametrics_database",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "victoriametrics_insecure_skip_verify",
+      "type": "boolean",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "influx_repository_url",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "influx_repository_suite",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "influx_repository_component",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "influx_key_url",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "influx_key_fpr",
+      "type": "string",
+      "required": true,
+      "feature": "telegraf"
+    },
+    {
+      "key": "docker_local_base_dir",
+      "type": "string",
+      "required": true,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_remote_base_dir",
+      "type": "string",
+      "required": true,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_compose_file_patterns",
+      "type": "list",
+      "required": true,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_compose_timeout",
+      "type": "integer",
+      "required": false,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_wait_retry_delay",
+      "type": "integer",
+      "required": false,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_wait_retries",
+      "type": "integer",
+      "required": false,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_critical_stacks",
+      "type": "list",
+      "required": true,
+      "feature": "docker"
+    },
+    {
+      "key": "docker_macvlan_config_networks",
+      "type": "list",
+      "required": true,
+      "feature": "docker"
+    },
+    {
+      "key": "local_base_dir",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "remote_base_dir",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "compose_file_patterns",
+      "type": "list",
+      "required": false
+    },
+    {
+      "key": "compose_timeout",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "key": "wait_retry_delay",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "key": "wait_retries",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "key": "checkmk_server",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_server_url",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_site",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_registration_user",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_api_user",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_agent_download_url",
+      "type": "string",
+      "required": false,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_agent_package_src",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_plugins_src_dir",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_default_folder",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_enable_base_plugins",
+      "type": "boolean",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_migration_plan",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_backup_target_host",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_container_name",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_backup_dir",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_folders",
+      "type": "list",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "kerberos_realm",
+      "type": "string",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "kerberos_kdcs",
+      "type": "list",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "kerberos_admin_server",
+      "type": "string",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "kerberos_dns_lookup_realm",
+      "type": "boolean",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "kerberos_dns_lookup_kdc",
+      "type": "boolean",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "kerberos_force_tcp",
+      "type": "boolean",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "kerberos_fix_cifs_upcall",
+      "type": "boolean",
+      "required": true,
+      "feature": "kerberos",
+      "default_source": "roles/kerberos/defaults/main.yml"
+    },
+    {
+      "key": "controller_report_dir",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "ca_dir",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "crl_docker_target_dir",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "crl_container_name",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "checkmk_download_base_url",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk",
+      "nonempty": true
+    },
+    {
+      "key": "checkmk_agent_version",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk",
+      "nonempty": true
+    },
+    {
+      "key": "checkmk_linux_plugins",
+      "type": "list",
+      "required": true,
+      "feature": "checkmk"
+    },
+    {
+      "key": "checkmk_api_password",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk",
+      "nonempty": true
+    },
+    {
+      "key": "checkmk_registration_password",
+      "type": "string",
+      "required": true,
+      "feature": "checkmk",
+      "nonempty": true
+    },
+    {
+      "key": "rsyslog_protocol",
+      "type": "string",
+      "required": true,
+      "feature": "rsyslog",
+      "nonempty": true
+    },
+    {
+      "key": "tls_validate_certs_default",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs",
+      "type": "mapping",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.telegram_notification",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.backup_telegram_notification",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.telegram_update_check",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "host_updates_reboot",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "managed_host_credentials",
+      "type": "mapping",
+      "required": false
+    },
+    {
+      "key": "bootstrap_host_credentials",
+      "type": "mapping",
+      "required": false
+    },
+    {
+      "key": "proxmox_token_secrets",
+      "type": "mapping",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_password",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "managed_access_default_become_password",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "telegram_bot_token",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "telegram_chat_id",
+      "type": "scalar_id",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_folders",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_manual_host",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_managed_host",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_agent_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_migration_folders",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_migration_folders_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_migration_attributes",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_migration_final_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_rename_source_read",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_rename_target_read",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_rename_submit",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_rename_target_wait",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_rename_source_wait",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_rename_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_read",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_create",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_create_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_move",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_move_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_attributes",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_reconcile_attributes_activation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.wan_check",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.telegraf_repository_key",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_agent_download",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_plugin_download",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_migration_plan_read",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.telegraf_metrics_output",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.telegraf_proxmox_input",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.zsh_installer_download",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.zsh_theme_clone",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.openwrt_wan_check",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.checkmk_update_check",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "tls_validate_certs.proxmox_update_check",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "chrony_prefer_default_gateway",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "fail2ban_enable_notifications",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "fail2ban_enable_ticket_notifications",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "postfix_relay_user",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "postfix_relay_password",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "proxmox_api_token",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "proxmox_token_secret",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "tls_tasks": [
+    "checkmk_folders",
+    "checkmk_manual_host",
+    "checkmk_managed_host",
+    "checkmk_agent_activation",
+    "checkmk_migration_folders",
+    "checkmk_migration_folders_activation",
+    "checkmk_migration_attributes",
+    "checkmk_migration_final_activation",
+    "checkmk_rename_source_read",
+    "checkmk_rename_target_read",
+    "checkmk_rename_submit",
+    "checkmk_rename_target_wait",
+    "checkmk_rename_source_wait",
+    "checkmk_rename_activation",
+    "checkmk_reconcile_read",
+    "checkmk_reconcile_create",
+    "checkmk_reconcile_create_activation",
+    "checkmk_reconcile_move",
+    "checkmk_reconcile_move_activation",
+    "checkmk_reconcile_attributes",
+    "checkmk_reconcile_attributes_activation",
+    "wan_check",
+    "telegram_notification",
+    "telegraf_repository_key",
+    "backup_telegram_notification",
+    "checkmk_agent_download",
+    "checkmk_plugin_download",
+    "checkmk_migration_plan_read",
+    "telegraf_metrics_output",
+    "telegraf_proxmox_input",
+    "zsh_installer_download",
+    "zsh_theme_clone",
+    "openwrt_wan_check",
+    "checkmk_update_check",
+    "proxmox_update_check",
+    "telegram_update_check"
+  ],
+  "scope": "Lokale globale YAML-Definitionen/Typen, aktive Featurevertraege und erkennbare Rollen-Defaults. Keine Auswertung von Jinja, Lookups oder Inventory-Plugins.",
+  "policy": "Typen und Voraussetzungen pruefen; gueltige lokale Werte unabhaengig von Beispiel-/Standortempfehlungen akzeptieren. Keine erzwungenen Settingswerte."
+}

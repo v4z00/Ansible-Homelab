@@ -1,0 +1,1441 @@
+{
+  "schema": 1,
+  "fields": {
+    "features.baseline": {
+      "description": "Funktionsschalter fuer baseline. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.chrony": {
+      "description": "Funktionsschalter fuer chrony. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.fail2ban": {
+      "description": "Funktionsschalter fuer fail2ban. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.motd": {
+      "description": "Funktionsschalter fuer motd. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.ssh_hardening": {
+      "description": "Funktionsschalter fuer ssh_hardening. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.security_base": {
+      "description": "Funktionsschalter fuer security_base. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.accounting": {
+      "description": "Funktionsschalter fuer accounting. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.security_tools": {
+      "description": "Funktionsschalter fuer security_tools. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.lynis": {
+      "description": "Funktionsschalter fuer lynis. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "features.rsyslog": {
+      "description": "Funktionsschalter fuer rsyslog. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.postfix": {
+      "description": "Funktionsschalter fuer postfix. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.checkmk": {
+      "description": "Funktionsschalter fuer checkmk. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.docker": {
+      "description": "Funktionsschalter fuer docker. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.proxmox": {
+      "description": "Funktionsschalter fuer proxmox. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.hyperv": {
+      "description": "Funktionsschalter fuer hyperv. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.kerberos": {
+      "description": "Funktionsschalter fuer kerberos. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.kerberos_keytabs": {
+      "description": "Funktionsschalter fuer kerberos_keytabs. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.telegraf": {
+      "description": "Funktionsschalter fuer telegraf. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.sss": {
+      "description": "Funktionsschalter fuer sss. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.openwrt": {
+      "description": "Funktionsschalter fuer openwrt. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/homelab/settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.truenas": {
+      "description": "Funktionsschalter fuer truenas. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/homelab/settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "features.zsh": {
+      "description": "Funktionsschalter fuer zsh. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
+      "source": "examples/homelab/settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "site_id": {
+      "description": "Konfigurationswert site_id fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "template",
+      "example_only": true
+    },
+    "site_name": {
+      "description": "Konfigurationswert site_name fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "Musterumgebung",
+      "example_only": true
+    },
+    "site_managed_by": {
+      "description": "Konfigurationswert site_managed_by fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "IT-Administration",
+      "example_only": true
+    },
+    "motd_show_hap": {
+      "description": "Konfigurationswert motd_show_hap fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "motd_hap": {
+      "description": "Konfigurationswert motd_hap fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "ansible_auth_mode": {
+      "description": "SSH-Anmeldemodus der vorhandenen Zugangskonfiguration.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "password_all",
+      "example_only": false,
+      "default": "password_all",
+      "choices": [
+        "password_all",
+        "key_only",
+        "password_users_only"
+      ]
+    },
+    "auth_method_description": {
+      "description": "Konfigurationswert auth_method_description fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "SSH-Passwort aus secrets.yml",
+      "example_only": false,
+      "default": "SSH-Passwort aus secrets.yml"
+    },
+    "managed_access_default_user": {
+      "description": "Konfigurationswert managed_access_default_user fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "root",
+      "example_only": false,
+      "default": "root"
+    },
+    "managed_access_default_port": {
+      "description": "Konfigurationswert managed_access_default_port fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 22,
+      "example_only": false,
+      "default": 22
+    },
+    "managed_access_default_become": {
+      "description": "Konfigurationswert managed_access_default_become fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "managed_access_default_become_method": {
+      "description": "Konfigurationswert managed_access_default_become_method fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "sudo",
+      "example_only": false,
+      "default": "sudo",
+      "choices": [
+        "sudo",
+        "su"
+      ]
+    },
+    "managed_access_default_become_user": {
+      "description": "Konfigurationswert managed_access_default_become_user fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "root",
+      "example_only": false,
+      "default": "root"
+    },
+    "managed_host_access": {
+      "description": "Konfigurationswert managed_host_access fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/access/host_access.example.yml",
+      "example": {
+        "linux01": {
+          "user": "root",
+          "become": false
+        },
+        "linux02": {
+          "user": "admin",
+          "become": true,
+          "become_method": "su",
+          "become_user": "root"
+        }
+      },
+      "example_only": false,
+      "default": {
+        "linux01": {
+          "user": "root",
+          "become": false
+        },
+        "linux02": {
+          "user": "admin",
+          "become": true,
+          "become_method": "su",
+          "become_user": "root"
+        }
+      }
+    },
+    "bootstrap_targets": {
+      "description": "Konfigurationswert bootstrap_targets fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "bootstrap_public_key_file": {
+      "description": "Controller-Public-Key fuer den einmaligen Erstzugang; Jinja wird hier nicht ausgefuehrt.",
+      "source": "examples/bootstrap/settings.example.yml",
+      "example": "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/id_ed25519.pub",
+      "example_only": false,
+      "default": "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/id_ed25519.pub"
+    },
+    "bootstrap_disable_password_auth_after_key": {
+      "description": "Konfigurationswert bootstrap_disable_password_auth_after_key fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/bootstrap/settings.example.yml"
+    },
+    "system_timezone": {
+      "description": "Zeitzone fuer die verwalteten Systeme, zum Beispiel Europe/Berlin.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "Europe/Berlin",
+      "example_only": false,
+      "default": "Europe/Berlin"
+    },
+    "chrony_ntp_servers": {
+      "description": "Liste der Zeitserver. LXC-Ausnahmen der bestehenden Rolle bleiben erhalten.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [
+        "pool.ntp.org"
+      ],
+      "example_only": false,
+      "default": [
+        "pool.ntp.org"
+      ]
+    },
+    "base_packages": {
+      "description": "Konfigurationswert base_packages fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [
+        "htop",
+        "sudo",
+        "tree",
+        "vim",
+        "curl",
+        "wget",
+        "unzip",
+        "ncdu",
+        "iotop",
+        "cifs-utils",
+        "whois",
+        "net-tools",
+        "jq",
+        "yq",
+        "lsof",
+        "socat",
+        "bridge-utils",
+        "iproute2",
+        "mtr-tiny",
+        "dnsutils",
+        "tcpdump",
+        "nmap",
+        "nfs-common",
+        "btop",
+        "sysstat",
+        "git",
+        "tmux",
+        "rsync",
+        "bash-completion",
+        "rclone"
+      ],
+      "example_only": false,
+      "default": [
+        "htop",
+        "sudo",
+        "tree",
+        "vim",
+        "curl",
+        "wget",
+        "unzip",
+        "ncdu",
+        "iotop",
+        "cifs-utils",
+        "whois",
+        "net-tools",
+        "jq",
+        "yq",
+        "lsof",
+        "socat",
+        "bridge-utils",
+        "iproute2",
+        "mtr-tiny",
+        "dnsutils",
+        "tcpdump",
+        "nmap",
+        "nfs-common",
+        "btop",
+        "sysstat",
+        "git",
+        "tmux",
+        "rsync",
+        "bash-completion",
+        "rclone"
+      ]
+    },
+    "fail2ban_ignoreip": {
+      "description": "Konfigurationswert fail2ban_ignoreip fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [
+        "127.0.0.1/8",
+        "::1"
+      ],
+      "example_only": false,
+      "default": [
+        "127.0.0.1/8",
+        "::1"
+      ]
+    },
+    "fail2ban_bantime": {
+      "description": "Konfigurationswert fail2ban_bantime fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "1h",
+      "example_only": false,
+      "default": "1h"
+    },
+    "fail2ban_findtime": {
+      "description": "Konfigurationswert fail2ban_findtime fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "10m",
+      "example_only": false,
+      "default": "10m"
+    },
+    "fail2ban_maxretry": {
+      "description": "Konfigurationswert fail2ban_maxretry fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 5,
+      "example_only": false,
+      "default": 5
+    },
+    "fail2ban_ssh_port": {
+      "description": "Konfigurationswert fail2ban_ssh_port fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ ansible_port }}",
+      "example_only": false,
+      "default": "{{ ansible_port }}"
+    },
+    "fail2ban_admin_email": {
+      "description": "Konfigurationswert fail2ban_admin_email fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "root@localhost",
+      "example_only": false,
+      "default": "root@localhost"
+    },
+    "fail2ban_ticket_email": {
+      "description": "Konfigurationswert fail2ban_ticket_email fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "root@localhost",
+      "example_only": false,
+      "default": "root@localhost"
+    },
+    "fail2ban_proxmox_ve_hosts": {
+      "description": "Konfigurationswert fail2ban_proxmox_ve_hosts fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "fail2ban_proxmox_backup_hosts": {
+      "description": "Konfigurationswert fail2ban_proxmox_backup_hosts fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "ssh_max_auth_tries": {
+      "description": "Konfigurationswert ssh_max_auth_tries fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 3,
+      "example_only": false,
+      "default": 3
+    },
+    "ssh_max_sessions": {
+      "description": "Konfigurationswert ssh_max_sessions fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 10,
+      "example_only": false,
+      "default": 10
+    },
+    "ssh_allow_tcp_forwarding": {
+      "description": "Konfigurationswert ssh_allow_tcp_forwarding fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "ssh_permit_root_login": {
+      "description": "Konfigurationswert ssh_permit_root_login fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "yes",
+      "example_only": false,
+      "default": "yes"
+    },
+    "ssh_client_alive_interval": {
+      "description": "Konfigurationswert ssh_client_alive_interval fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 300,
+      "example_only": false,
+      "default": 300
+    },
+    "ssh_client_alive_count_max": {
+      "description": "Konfigurationswert ssh_client_alive_count_max fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 2,
+      "example_only": false,
+      "default": 2
+    },
+    "ssh_breakglass_enabled": {
+      "description": "Konfigurationswert ssh_breakglass_enabled fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "ssh_breakglass_user": {
+      "description": "Konfigurationswert ssh_breakglass_user fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "ansible-rescue",
+      "example_only": false,
+      "default": "ansible-rescue"
+    },
+    "ssh_breakglass_uid": {
+      "description": "Konfigurationswert ssh_breakglass_uid fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 3030,
+      "example_only": false,
+      "default": 3030
+    },
+    "ssh_breakglass_home": {
+      "description": "Konfigurationswert ssh_breakglass_home fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "/home/ansible-rescue",
+      "example_only": false,
+      "default": "/home/ansible-rescue"
+    },
+    "ssh_breakglass_excluded_hosts": {
+      "description": "Konfigurationswert ssh_breakglass_excluded_hosts fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "ssh_tcp_forwarding_hosts": {
+      "description": "Konfigurationswert ssh_tcp_forwarding_hosts fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "hardening_pass_max_days": {
+      "description": "Konfigurationswert hardening_pass_max_days fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 9999,
+      "example_only": false,
+      "default": 9999
+    },
+    "hardening_pass_min_days": {
+      "description": "Konfigurationswert hardening_pass_min_days fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 0,
+      "example_only": false,
+      "default": 0
+    },
+    "hardening_pass_warn_age": {
+      "description": "Konfigurationswert hardening_pass_warn_age fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 7,
+      "example_only": false,
+      "default": 7
+    },
+    "hardening_umask": {
+      "description": "Konfigurationswert hardening_umask fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "027",
+      "example_only": false,
+      "default": "027"
+    },
+    "hardening_autoremove": {
+      "description": "Konfigurationswert hardening_autoremove fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "rsyslog_target_host": {
+      "description": "Zielserver fuer die zentrale Syslog-Weiterleitung.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "rsyslog_target_port": {
+      "description": "Port des zentralen Syslog-Empfaengers.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 514,
+      "example_only": false,
+      "default": 514
+    },
+    "postfix_relay_host": {
+      "description": "Konfigurationswert postfix_relay_host fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "postfix_relay_port": {
+      "description": "Konfigurationswert postfix_relay_port fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 587,
+      "example_only": false,
+      "default": 587
+    },
+    "postfix_mail_domain": {
+      "description": "Konfigurationswert postfix_mail_domain fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "example.invalid",
+      "example_only": true
+    },
+    "postfix_sender_aliases": {
+      "description": "Konfigurationswert postfix_sender_aliases fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": {},
+      "example_only": false,
+      "default": {}
+    },
+    "victoriametrics_url": {
+      "description": "Konfigurationswert victoriametrics_url fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "victoriametrics_database": {
+      "description": "Konfigurationswert victoriametrics_database fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "victoriametrics_insecure_skip_verify": {
+      "description": "Konfigurationswert victoriametrics_insecure_skip_verify fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "influx_repository_url": {
+      "description": "Konfigurationswert influx_repository_url fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "https://repos.influxdata.com/debian",
+      "example_only": false,
+      "default": "https://repos.influxdata.com/debian"
+    },
+    "influx_repository_suite": {
+      "description": "Konfigurationswert influx_repository_suite fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "stable",
+      "example_only": false,
+      "default": "stable"
+    },
+    "influx_repository_component": {
+      "description": "Konfigurationswert influx_repository_component fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "main",
+      "example_only": false,
+      "default": "main"
+    },
+    "influx_key_url": {
+      "description": "Konfigurationswert influx_key_url fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "https://repos.influxdata.com/influxdata-archive.key",
+      "example_only": false,
+      "default": "https://repos.influxdata.com/influxdata-archive.key"
+    },
+    "influx_key_fpr": {
+      "description": "Konfigurationswert influx_key_fpr fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "24C975CBA61A024EE1B631787C3D57159FC2F927",
+      "example_only": false,
+      "default": "24C975CBA61A024EE1B631787C3D57159FC2F927"
+    },
+    "docker_local_base_dir": {
+      "description": "Konfigurationswert docker_local_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "/root/docker-configs",
+      "example_only": false,
+      "default": "/root/docker-configs"
+    },
+    "docker_remote_base_dir": {
+      "description": "Konfigurationswert docker_remote_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "/srv/docker-configs",
+      "example_only": false,
+      "default": "/srv/docker-configs"
+    },
+    "docker_compose_file_patterns": {
+      "description": "Konfigurationswert docker_compose_file_patterns fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [
+        "docker-compose.yml",
+        "compose.yml",
+        "docker-compose.yaml",
+        "compose.yaml"
+      ],
+      "example_only": false,
+      "default": [
+        "docker-compose.yml",
+        "compose.yml",
+        "docker-compose.yaml",
+        "compose.yaml"
+      ]
+    },
+    "docker_compose_timeout": {
+      "description": "Konfigurationswert docker_compose_timeout fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 120,
+      "example_only": false,
+      "default": 120
+    },
+    "docker_wait_retry_delay": {
+      "description": "Konfigurationswert docker_wait_retry_delay fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 10,
+      "example_only": false,
+      "default": 10
+    },
+    "docker_wait_retries": {
+      "description": "Konfigurationswert docker_wait_retries fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 6,
+      "example_only": false,
+      "default": 6
+    },
+    "docker_critical_stacks": {
+      "description": "Konfigurationswert docker_critical_stacks fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "docker_macvlan_config_networks": {
+      "description": "Konfigurationswert docker_macvlan_config_networks fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "local_base_dir": {
+      "description": "Konfigurationswert local_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ docker_local_base_dir }}",
+      "example_only": false,
+      "default": "{{ docker_local_base_dir }}"
+    },
+    "remote_base_dir": {
+      "description": "Konfigurationswert remote_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ docker_remote_base_dir }}",
+      "example_only": false,
+      "default": "{{ docker_remote_base_dir }}"
+    },
+    "compose_file_patterns": {
+      "description": "Konfigurationswert compose_file_patterns fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ docker_compose_file_patterns }}",
+      "example_only": false,
+      "default": "{{ docker_compose_file_patterns }}"
+    },
+    "compose_timeout": {
+      "description": "Konfigurationswert compose_timeout fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ docker_compose_timeout }}",
+      "example_only": false,
+      "default": "{{ docker_compose_timeout }}"
+    },
+    "wait_retry_delay": {
+      "description": "Konfigurationswert wait_retry_delay fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ docker_wait_retry_delay }}",
+      "example_only": false,
+      "default": "{{ docker_wait_retry_delay }}"
+    },
+    "wait_retries": {
+      "description": "Konfigurationswert wait_retries fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ docker_wait_retries }}",
+      "example_only": false,
+      "default": "{{ docker_wait_retries }}"
+    },
+    "checkmk_server": {
+      "description": "Adresse und Port des Checkmk-Agent-Receivers fuer die TLS-Registrierung.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "checkmk.example.invalid:8000",
+      "example_only": true
+    },
+    "checkmk_server_url": {
+      "description": "HTTPS-Basisadresse der Checkmk-Weboberflaeche/API, ohne Site-Unterpfad.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "https://checkmk.example.invalid",
+      "example_only": true
+    },
+    "checkmk_site": {
+      "description": "Name der Checkmk-Site; wird fuer API- und Agentregistrierung verwendet.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "example",
+      "example_only": false,
+      "default": "example"
+    },
+    "checkmk_registration_user": {
+      "description": "Konfigurationswert checkmk_registration_user fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "automation",
+      "example_only": false,
+      "default": "automation"
+    },
+    "checkmk_api_user": {
+      "description": "Konfigurationswert checkmk_api_user fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "automation",
+      "example_only": false,
+      "default": "automation"
+    },
+    "checkmk_agent_download_url": {
+      "description": "Konfigurationswert checkmk_agent_download_url fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "checkmk_agent_package_src": {
+      "description": "Konfigurationswert checkmk_agent_package_src fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "{{ playbook_dir }}/../artifacts/checkmk/check-mk-agent.deb",
+      "example_only": false,
+      "default": "{{ playbook_dir }}/../artifacts/checkmk/check-mk-agent.deb"
+    },
+    "checkmk_plugins_src_dir": {
+      "description": "Konfigurationswert checkmk_plugins_src_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "{{ playbook_dir }}/../artifacts/checkmk/plugins",
+      "example_only": false,
+      "default": "{{ playbook_dir }}/../artifacts/checkmk/plugins"
+    },
+    "checkmk_default_folder": {
+      "description": "Konfigurationswert checkmk_default_folder fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "/managed/unassigned",
+      "example_only": false,
+      "default": "/managed/unassigned"
+    },
+    "checkmk_enable_base_plugins": {
+      "description": "Konfigurationswert checkmk_enable_base_plugins fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "checkmk_migration_plan": {
+      "description": "Konfigurationswert checkmk_migration_plan fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ playbook_dir }}/../../x/reports/checkmk_migration_plan.yml",
+      "example_only": false,
+      "default": "{{ playbook_dir }}/../../x/reports/checkmk_migration_plan.yml"
+    },
+    "checkmk_backup_target_host": {
+      "description": "Konfigurationswert checkmk_backup_target_host fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "checkmk_container_name": {
+      "description": "Konfigurationswert checkmk_container_name fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "checkmk",
+      "example_only": false,
+      "default": "checkmk"
+    },
+    "checkmk_backup_dir": {
+      "description": "Konfigurationswert checkmk_backup_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "/backup",
+      "example_only": false,
+      "default": "/backup"
+    },
+    "checkmk_folders": {
+      "description": "Liste der anzulegenden Checkmk-Ordner mit path und name.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": [
+        {
+          "path": "/managed",
+          "name": "Managed"
+        },
+        {
+          "path": "/managed/unassigned",
+          "name": "Unassigned"
+        }
+      ],
+      "example_only": false,
+      "default": [
+        {
+          "path": "/managed",
+          "name": "Managed"
+        },
+        {
+          "path": "/managed/unassigned",
+          "name": "Unassigned"
+        }
+      ]
+    },
+    "kerberos_realm": {
+      "description": "Konfigurationswert kerberos_realm fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "kerberos_kdcs": {
+      "description": "Konfigurationswert kerberos_kdcs fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": [],
+      "example_only": false,
+      "default": []
+    },
+    "kerberos_admin_server": {
+      "description": "Konfigurationswert kerberos_admin_server fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "",
+      "example_only": true
+    },
+    "kerberos_dns_lookup_realm": {
+      "description": "Konfigurationswert kerberos_dns_lookup_realm fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "kerberos_dns_lookup_kdc": {
+      "description": "Konfigurationswert kerberos_dns_lookup_kdc fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "kerberos_force_tcp": {
+      "description": "Konfigurationswert kerberos_force_tcp fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "kerberos_fix_cifs_upcall": {
+      "description": "Konfigurationswert kerberos_fix_cifs_upcall fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "controller_report_dir": {
+      "description": "Konfigurationswert controller_report_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "{{ playbook_dir }}/../reports",
+      "example_only": false,
+      "default": "{{ playbook_dir }}/../reports"
+    },
+    "ca_dir": {
+      "description": "Konfigurationswert ca_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "/root/ca",
+      "example_only": false,
+      "default": "/root/ca"
+    },
+    "crl_docker_target_dir": {
+      "description": "Konfigurationswert crl_docker_target_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "/srv/crl/",
+      "example_only": false,
+      "default": "/srv/crl/"
+    },
+    "crl_container_name": {
+      "description": "Konfigurationswert crl_container_name fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "crl-web",
+      "example_only": false,
+      "default": "crl-web"
+    },
+    "checkmk_download_base_url": {
+      "description": "Downloadverzeichnis fuer Agentpaket und Plugins auf deiner Checkmk-Site.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "https://checkmk.example.invalid/example/check_mk/agents",
+      "example_only": true
+    },
+    "checkmk_agent_version": {
+      "description": "Exakte Agent-Paketversion fuer den Download. Das Paket muss auf der Site vorhanden sein.",
+      "source": "examples/checkmk/settings.example.yml",
+      "example": "2.5.0p20",
+      "example_only": false,
+      "default": "2.5.0p20"
+    },
+    "checkmk_linux_plugins": {
+      "description": "Dateinamen fuer den Plugin-Download. Die Hostgruppen steuern weiterhin die Verteilung.",
+      "source": "examples/checkmk/plugins.example.yml",
+      "example": [
+        "mk_apt",
+        "mk_logwatch.py",
+        "mk_inventory.linux",
+        "netstat.linux",
+        "mk_docker.py",
+        "nginx_status.py",
+        "apache_status.py",
+        "mk_mysql",
+        "mk_postgres.py",
+        "mk_redis"
+      ],
+      "example_only": false,
+      "default": [
+        "mk_apt",
+        "mk_logwatch.py",
+        "mk_inventory.linux",
+        "netstat.linux",
+        "mk_docker.py",
+        "nginx_status.py",
+        "apache_status.py",
+        "mk_mysql",
+        "mk_postgres.py",
+        "mk_redis"
+      ]
+    },
+    "checkmk_api_password": {
+      "description": "Automation-Secret fuer die Checkmk-REST-API. Neue Werte nur in lokale secrets.yml schreiben.",
+      "source": "examples/access/credentials.example.yml"
+    },
+    "checkmk_registration_password": {
+      "description": "Secret fuer die Agentregistrierung; lokale secrets.yml, nicht Beispielordner.",
+      "source": "examples/access/credentials.example.yml"
+    },
+    "rsyslog_protocol": {
+      "description": "Transportprotokoll der zentralen Syslog-Weiterleitung: tcp oder udp.",
+      "source": "settings_contract.json",
+      "choices": [
+        "tcp",
+        "udp"
+      ],
+      "default": "tcp"
+    },
+    "tls_validate_certs_default": {
+      "description": "Standortstandard fuer die getrennten TLS-Aufgaben. Telegram wird getrennt konfiguriert.",
+      "source": "examples/tls/settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "tls_validate_certs": {
+      "description": "Gezielte boolesche Ausnahmen pro TLS-Aufgabe; vorhandene Schluessel erhalten.",
+      "source": "examples/tls/settings.example.yml",
+      "example": {
+        "telegram_notification": true,
+        "backup_telegram_notification": true
+      },
+      "example_only": false,
+      "default": {
+        "telegram_notification": true,
+        "backup_telegram_notification": true
+      }
+    },
+    "tls_validate_certs.telegram_notification": {
+      "description": "Zertifikatspruefung fuer: telegram_notification. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "tls_validate_certs.backup_telegram_notification": {
+      "description": "Zertifikatspruefung fuer: backup_telegram_notification. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "tls_validate_certs.telegram_update_check": {
+      "description": "Zertifikatspruefung fuer: telegram_update_check. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": true,
+      "example_only": false
+    },
+    "host_updates_reboot": {
+      "description": "Kein globaler Reboot-Opt-in: automatischer Neustart bleibt auf den expliziten Host-Update-Starter begrenzt.",
+      "source": "settings_contract.json",
+      "default": false,
+      "example_only": false
+    },
+    "managed_host_credentials": {
+      "description": "Konfigurationswert managed_host_credentials fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/access/credentials.example.yml"
+    },
+    "bootstrap_host_credentials": {
+      "description": "Konfigurationswert bootstrap_host_credentials fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/access/credentials.example.yml"
+    },
+    "proxmox_token_secrets": {
+      "description": "Konfigurationswert proxmox_token_secrets fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "examples/access/credentials.example.yml"
+    },
+    "managed_access_default_password": {
+      "description": "Konfigurationswert managed_access_default_password fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "settings_contract.json"
+    },
+    "managed_access_default_become_password": {
+      "description": "Konfigurationswert managed_access_default_become_password fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "settings_contract.json"
+    },
+    "telegram_bot_token": {
+      "description": "Konfigurationswert telegram_bot_token fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "settings_contract.json"
+    },
+    "telegram_chat_id": {
+      "description": "Konfigurationswert telegram_chat_id fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
+      "source": "settings_contract.json"
+    },
+    "tls_validate_certs.checkmk_folders": {
+      "description": "Zertifikatspruefung fuer: CheckMK-Ordner und Elternordner anlegen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_manual_host": {
+      "description": "Zertifikatspruefung fuer: Nicht-Linux-Host ohne Attribute anlegen oder im Zielordner sicherstellen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_managed_host": {
+      "description": "Zertifikatspruefung fuer: CheckMK-Host zentral anlegen oder verschieben. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_agent_activation": {
+      "description": "Zertifikatspruefung fuer: CheckMK-Aenderungen vor Registrierung aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_migration_folders": {
+      "description": "Zertifikatspruefung fuer: Checkmk-Zielordner sicherstellen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_migration_folders_activation": {
+      "description": "Zertifikatspruefung fuer: Ordneraenderungen vor der Hostmigration aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_migration_attributes": {
+      "description": "Zertifikatspruefung fuer: Alle Checkmk-Ziele auf Ordner, IP und Alias abgleichen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_migration_final_activation": {
+      "description": "Zertifikatspruefung fuer: Checkmk-Aenderungen aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_rename_source_read": {
+      "description": "Zertifikatspruefung fuer: Quelle {{ migration.source }} mit ETag laden. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_rename_target_read": {
+      "description": "Zertifikatspruefung fuer: Zielnamen {{ migration.target_checkmk_hostname }} pruefen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_rename_submit": {
+      "description": "Zertifikatspruefung fuer: Checkmk-Host per REST-API umbenennen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_rename_target_wait": {
+      "description": "Zertifikatspruefung fuer: Auf neuen Hostnamen {{ migration.target_checkmk_hostname }} warten. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_rename_source_wait": {
+      "description": "Zertifikatspruefung fuer: Auf Entfernung des alten Hostnamens {{ migration.source }} warten. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_rename_activation": {
+      "description": "Zertifikatspruefung fuer: Umbenennung von {{ migration.target_checkmk_hostname }} aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_read": {
+      "description": "Zertifikatspruefung fuer: Ist-Zustand von {{ checkmk_reconcile_hostname }} pruefen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_create": {
+      "description": "Zertifikatspruefung fuer: Fehlenden Host {{ checkmk_reconcile_hostname }} vollstaendig anlegen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_create_activation": {
+      "description": "Zertifikatspruefung fuer: Neuanlage von {{ checkmk_reconcile_hostname }} aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_move": {
+      "description": "Zertifikatspruefung fuer: Host {{ checkmk_reconcile_hostname }} allein in den Zielordner verschieben. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_move_activation": {
+      "description": "Zertifikatspruefung fuer: Ordnerwechsel von {{ checkmk_reconcile_hostname }} aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_attributes": {
+      "description": "Zertifikatspruefung fuer: Attribute von {{ checkmk_reconcile_hostname }} allein abgleichen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_reconcile_attributes_activation": {
+      "description": "Zertifikatspruefung fuer: Attributaenderungen von {{ checkmk_reconcile_hostname }} aktivieren. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.wan_check": {
+      "description": "Zertifikatspruefung fuer: HTTPS-Ziel abrufen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.telegraf_repository_key": {
+      "description": "Zertifikatspruefung fuer: InfluxData Repository-Schluessel herunterladen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_agent_download": {
+      "description": "Zertifikatspruefung fuer: Agentpaket herunterladen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_plugin_download": {
+      "description": "Zertifikatspruefung fuer: Agentplugins herunterladen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_migration_plan_read": {
+      "description": "Zertifikatspruefung fuer: Checkmk-Bestand fuer interaktiven Plan lesen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.telegraf_metrics_output": {
+      "description": "Zertifikatspruefung fuer: VictoriaMetrics-Ausgabe (alter expliziter Schalter bleibt Fallback). true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.telegraf_proxmox_input": {
+      "description": "Zertifikatspruefung fuer: Proxmox-Eingang (bisher fest ohne Pruefung). true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.zsh_installer_download": {
+      "description": "Zertifikatspruefung fuer: Oh My Zsh laden. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.zsh_theme_clone": {
+      "description": "Zertifikatspruefung fuer: Powerlevel10k klonen. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.openwrt_wan_check": {
+      "description": "Zertifikatspruefung fuer: OpenWrt-WAN-Pruefung. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.checkmk_update_check": {
+      "description": "Zertifikatspruefung fuer: Lesender Checkmk-API-Test. true prueft, false ueberspringt nur diese Aufgabe.",
+      "source": "examples/tls/settings.example.yml",
+      "default": false,
+      "example_only": false
+    },
+    "tls_validate_certs.proxmox_update_check": {
+      "description": "Nur TLS des lesenden API-Tests. Ohne Eintrag gilt validate_certs je Inventoryquelle. Produktive Quellenkonfiguration bleibt getrennt.",
+      "source": "examples/tls/settings.example.yml",
+      "example_only": true
+    },
+    "chrony_prefer_default_gateway": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    },
+    "fail2ban_enable_notifications": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    },
+    "fail2ban_enable_ticket_notifications": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    },
+    "postfix_relay_user": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    },
+    "postfix_relay_password": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    },
+    "proxmox_api_token": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    },
+    "proxmox_token_secret": {
+      "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
+      "source": "settings_contract.json"
+    }
+  },
+  "example_sources": {
+    "examples/settings/all_settings.example.yml": "60fb5ad7f27e12d935fdab485d5c14f84acdf3bb9bb9cc51a408d2e843b911e6",
+    "examples/checkmk/settings.example.yml": "9a7e32e0c13537df34ae3297ba1ecf11563385f85eb5ae6edcf3526c6fa6671b",
+    "examples/checkmk/plugins.example.yml": "76ca07a6b7cbc1e0af93cc4a3392f59265f8ca63a964c24b4378c4038cb9ca81",
+    "examples/access/host_access.example.yml": "f205017617d3b7dd346ddb972a6618a36fa35d89ccb0359f8658432e0e889243",
+    "examples/access/credentials.example.yml": "8d8306f1b8aaad5f1805478edd993ffd18bd7f8ff6d294bbe6b9c00ad1889ad6",
+    "examples/bootstrap/settings.example.yml": "068720677b7512eabcd223e1cf0b51856a86ce48a27e2791e1eeb933f7845e70",
+    "examples/tls/settings.example.yml": "6a808204365ce6c8048d1daba494d96e9611e07b3ad62c0d27df70ce59ed57cb",
+    "examples/homelab/settings.example.yml": "1bf965cbf7fa7f15d14de5fb242e2ca6fb0e3b845ec0486bc0f383e23be9118f"
+  },
+  "top_level_order": [
+    "site_id",
+    "site_name",
+    "site_managed_by",
+    "features",
+    "ansible_auth_mode",
+    "auth_method_description",
+    "managed_access_default_user",
+    "managed_access_default_port",
+    "managed_access_default_become",
+    "managed_access_default_become_method",
+    "managed_access_default_become_user",
+    "managed_host_access",
+    "bootstrap_targets",
+    "bootstrap_public_key_file",
+    "bootstrap_disable_password_auth_after_key",
+    "tls_validate_certs_default",
+    "tls_validate_certs",
+    "motd_show_hap",
+    "motd_hap",
+    "system_timezone",
+    "chrony_ntp_servers",
+    "base_packages",
+    "fail2ban_ignoreip",
+    "fail2ban_bantime",
+    "fail2ban_findtime",
+    "fail2ban_maxretry",
+    "fail2ban_ssh_port",
+    "fail2ban_admin_email",
+    "fail2ban_ticket_email",
+    "fail2ban_proxmox_ve_hosts",
+    "fail2ban_proxmox_backup_hosts",
+    "ssh_max_auth_tries",
+    "ssh_max_sessions",
+    "ssh_allow_tcp_forwarding",
+    "ssh_permit_root_login",
+    "ssh_client_alive_interval",
+    "ssh_client_alive_count_max",
+    "ssh_breakglass_enabled",
+    "ssh_breakglass_user",
+    "ssh_breakglass_uid",
+    "ssh_breakglass_home",
+    "ssh_breakglass_excluded_hosts",
+    "ssh_tcp_forwarding_hosts",
+    "hardening_pass_max_days",
+    "hardening_pass_min_days",
+    "hardening_pass_warn_age",
+    "hardening_umask",
+    "hardening_autoremove",
+    "rsyslog_target_host",
+    "rsyslog_target_port",
+    "postfix_relay_host",
+    "postfix_relay_port",
+    "postfix_mail_domain",
+    "postfix_sender_aliases",
+    "victoriametrics_url",
+    "victoriametrics_database",
+    "victoriametrics_insecure_skip_verify",
+    "influx_repository_url",
+    "influx_repository_suite",
+    "influx_repository_component",
+    "influx_key_url",
+    "influx_key_fpr",
+    "docker_local_base_dir",
+    "docker_remote_base_dir",
+    "docker_compose_file_patterns",
+    "docker_compose_timeout",
+    "docker_wait_retry_delay",
+    "docker_wait_retries",
+    "docker_critical_stacks",
+    "docker_macvlan_config_networks",
+    "local_base_dir",
+    "remote_base_dir",
+    "compose_file_patterns",
+    "compose_timeout",
+    "wait_retry_delay",
+    "wait_retries",
+    "checkmk_server",
+    "checkmk_server_url",
+    "checkmk_site",
+    "checkmk_registration_user",
+    "checkmk_api_user",
+    "checkmk_agent_download_url",
+    "checkmk_agent_package_src",
+    "checkmk_plugins_src_dir",
+    "checkmk_default_folder",
+    "checkmk_enable_base_plugins",
+    "checkmk_migration_plan",
+    "checkmk_backup_target_host",
+    "checkmk_container_name",
+    "checkmk_backup_dir",
+    "checkmk_folders",
+    "kerberos_realm",
+    "kerberos_kdcs",
+    "kerberos_admin_server",
+    "kerberos_dns_lookup_realm",
+    "kerberos_dns_lookup_kdc",
+    "kerberos_force_tcp",
+    "kerberos_fix_cifs_upcall",
+    "controller_report_dir",
+    "ca_dir",
+    "crl_docker_target_dir",
+    "crl_container_name",
+    "checkmk_agent_version",
+    "checkmk_download_base_url",
+    "checkmk_linux_plugins"
+  ],
+  "policy": "Beispielwerte sind Vorschlaege. Bestehende gueltige lokale Werte haben Vorrang und werden weder als Fehler gewertet noch automatisch ersetzt."
+}

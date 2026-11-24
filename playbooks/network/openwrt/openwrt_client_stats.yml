@@ -1,0 +1,8 @@
+- name: OpenWrt clients
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: clients
+  roles:
+  - openwrt_operations

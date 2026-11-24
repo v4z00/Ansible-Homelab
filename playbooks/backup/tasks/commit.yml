@@ -1,0 +1,229 @@
+---
+- name: Archiv prüfen, veröffentlichen und eigene alte Stände bereinigen
+  ansible.builtin.command:
+    argv:
+      - "{{ backup_controller_python }}"
+      - '-'
+      - "{{ {'root': backup_root, 'host': inventory_hostname, 'kind': backup_kind, 'stage': backup_local_temp.path, 'retention': backup_retention[backup_kind]} | to_json }}"
+    stdin: |
+      import errno, fcntl, gzip, hashlib, json, os, pathlib, re, shutil, sys, tarfile, tempfile, time, uuid
+      from datetime import datetime, timezone, timedelta
+      Path = pathlib.Path
+      OWNER = 'controller-autobackup-v1'
+      NAME = re.compile(r'^controller-auto-\d{8}T\d{6}Z-[0-9a-f]{12}$')
+      KINDS = {'cron', 'fstab', 'scripts', 'root', 'bond-monitor', 'openwrt', 'certificates'}
+
+      def safe(path):
+          path = Path(path)
+          if path.resolve() != path.absolute():
+              raise RuntimeError('Symlink oder unerwarteter Pfad: ' + str(path))
+          return path
+
+      def mount_check(root):
+          marker = root / '.mount_ok'
+          if marker.is_symlink() or not marker.is_file():
+              raise RuntimeError('Mount-Markierung fehlt oder ist ungueltig: ' + str(marker))
+
+      def publish(root, partial, final):
+          delays = (1, 2, 4, 8, 16)
+          retryable = {errno.EACCES, errno.EPERM, errno.EBUSY, errno.ETXTBSY}
+          for attempt in range(len(delays) + 1):
+              mount_check(root)
+              safe(partial)
+              safe(final)
+              if os.path.lexists(final):
+                  raise RuntimeError('Ziel existiert bereits; nichts ueberschrieben: ' + str(final))
+              try:
+                  partial.rename(final)
+                  return attempt + 1
+              except OSError as error:
+                  if error.errno not in retryable:
+                      raise
+                  if attempt == len(delays):
+                      raise RuntimeError(
+                          'SMB verweigert die Freigabe der Sicherung nach 6 Versuchen. '
+                          'Archiv bleibt in ' + str(partial) + '. '
+                          'Keine Retention ausgefuehrt. Offene SMB-Handles und '
+                          'Umbenennen-/Loeschrechte auf TrueNAS pruefen. '
+                          'Letzter Fehler: ' + str(error)) from error
+                  delay = delays[attempt]
+                  print('SMB-Umbenennen blockiert; neuer Versuch in ' + str(delay) + 's.', file=sys.stderr)
+                  time.sleep(delay)
+
+      def remove_empty(folder):
+          delays = (1, 2, 4, 8, 16)
+          retryable = {errno.EACCES, errno.EPERM, errno.EBUSY, errno.ENOTEMPTY, errno.EEXIST}
+          for attempt in range(len(delays) + 1):
+              try:
+                  folder.rmdir()
+                  return attempt + 1
+              except OSError as error:
+                  if error.errno not in retryable:
+                      raise
+                  if attempt == len(delays):
+                      remaining = []
+                      try:
+                          remaining = sorted(entry.name for entry in folder.iterdir())
+                      except OSError:
+                          pass
+                      raise RuntimeError(
+                          'Altes Sicherungsverzeichnis konnte nach 6 Versuchen nicht entfernt werden: '
+                          + str(folder) + '. Verbleibende Eintraege: ' + repr(remaining)
+                          + '. TrueNAS-ACL des Mount-Benutzers auf Delete (d) am Ordner und '
+                          'Delete Children (D) am Elternordner sowie offene Storage-Handles pruefen. '
+                          'Letzter Fehler: ' + str(error)) from error
+                  delay = delays[attempt]
+                  print('Storage verweigert rmdir; neuer Versuch in ' + str(delay) + 's.', file=sys.stderr)
+                  time.sleep(delay)
+
+      def digest(path):
+          result = hashlib.sha256()
+          with path.open('rb') as stream:
+              for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+                  result.update(chunk)
+          return result.hexdigest()
+
+      def validate_archive(path):
+          with gzip.open(path, 'rb') as stream:
+              while stream.read(1024 * 1024):
+                  pass
+          with tarfile.open(path, 'r:gz') as archive:
+              count = 0
+              for member in archive:
+                  if member.name.startswith('/') or '..' in pathlib.PurePosixPath(member.name).parts:
+                      raise RuntimeError('Ungueltiger Archivpfad')
+                  count += 1
+              if not count:
+                  raise RuntimeError('Leeres Archiv')
+
+      def owned(folder, host, kind):
+          if folder.is_symlink() or not folder.is_dir() or not NAME.fullmatch(folder.name):
+              return None
+          marker = folder / 'manifest.json'
+          if marker.is_symlink() or not marker.is_file():
+              return None
+          try:
+              record = json.loads(marker.read_text())
+              if (record['owner'], record['host'], record['kind'], record['id']) != (OWNER, host, kind, folder.name):
+                  return None
+              expected = {'backup.tar.gz', 'packages.txt'} if kind == 'openwrt' else {'backup.tar.gz'}
+              if set(record['files']) != expected:
+                  return None
+              if {p.name for p in folder.iterdir()} != expected | {'manifest.json'}:
+                  return None
+              for name, checksum in record['files'].items():
+                  path = folder / name
+                  if path.is_symlink() or not path.is_file() or not re.fullmatch('[0-9a-f]{64}', checksum):
+                      return None
+              created = datetime.fromisoformat(record['created_at'])
+              if created.tzinfo is None:
+                  return None
+              if created.strftime('%Y%m%dT%H%M%SZ') != folder.name[7:23]:
+                  return None
+              return record, created
+          except (KeyError, ValueError, TypeError, OSError):
+              return None
+
+      def keep_ids(records, policy, now):
+          keep = set()
+          if records:
+              keep.add(max(records, key=lambda x: x[2])[0].name)
+          weeks, months = {}, {}
+          this_week = now.date() - timedelta(days=now.weekday())
+          for folder, record, created in sorted(records, key=lambda x: x[2], reverse=True):
+              if created >= now - timedelta(days=policy['days']):
+                  keep.add(folder.name)
+              week_start = created.date() - timedelta(days=created.weekday())
+              week_age = (this_week - week_start).days // 7
+              month_age = (now.year - created.year) * 12 + now.month - created.month
+              if 0 <= week_age < policy['weeks']:
+                  weeks.setdefault(week_start, folder.name)
+              if 0 <= month_age < policy['months']:
+                  months.setdefault((created.year, created.month), folder.name)
+          return keep | set(weeks.values()) | set(months.values())
+
+      def run(config):
+          root = safe(config['root'])
+          stage = Path(config['stage']).resolve(strict=True)
+          host, kind = config['host'], config['kind']
+          if not re.fullmatch('[A-Za-z0-9][A-Za-z0-9_.-]*', host) or kind not in KINDS:
+              raise RuntimeError('Ungueltiger Host oder Backup-Typ')
+          policy = config['retention']
+          if set(policy) != {'days', 'weeks', 'months'} or any(type(n) is not int or n < 0 for n in policy.values()):
+              raise RuntimeError('Ungueltige Retention')
+          if policy['days'] < 1:
+              raise RuntimeError('Mindestens ein Tag Aufbewahrung erforderlich')
+          if kind == 'openwrt':
+              destination = root / 'Confbackups' / 'openwrt' / 'autobackup' / host
+          elif kind == 'certificates':
+              destination = root / 'Cert' / 'autobackup' / host
+          else:
+              destination = root / 'Confbackups' / 'autobackup' / host / kind
+          safe(destination)
+          files = ['backup.tar.gz', 'packages.txt'] if kind == 'openwrt' else ['backup.tar.gz']
+          for name in files:
+              path = safe(stage / name)
+              if not path.is_file() or path.stat().st_size == 0:
+                  raise RuntimeError('Fehlende oder leere Sicherung: ' + name)
+          validate_archive(stage / 'backup.tar.gz')
+          checksums = {name: digest(stage / name) for name in files}
+          locks = safe(Path(tempfile.gettempdir()).resolve() / ('controller-backup-locks-' + str(os.getuid())))
+          locks.mkdir(mode=0o700, exist_ok=True)
+          lockfile = safe(locks / (hashlib.sha256(str(destination).encode()).hexdigest() + '.lock'))
+          with lockfile.open('a') as lock:
+              fcntl.flock(lock, fcntl.LOCK_EX)
+              mount_check(root)
+              safe(destination).mkdir(parents=True, exist_ok=True)
+              safe(destination)
+              now = datetime.now(timezone.utc)
+              identifier = 'controller-auto-' + now.strftime('%Y%m%dT%H%M%SZ') + '-' + uuid.uuid4().hex[:12]
+              partial = destination / ('.partial-' + identifier)
+              final = destination / identifier
+              partial.mkdir()
+              for name in files:
+                  shutil.copyfile(stage / name, partial / name)
+                  if digest(partial / name) != checksums[name]:
+                      raise RuntimeError('Pruefsumme stimmt nicht: ' + name)
+              record = {'owner': OWNER, 'host': host, 'kind': kind, 'id': identifier,
+                        'created_at': now.isoformat(), 'files': checksums}
+              with (partial / 'manifest.json').open('x') as stream:
+                  json.dump(record, stream, indent=2)
+                  stream.flush()
+                  os.fsync(stream.fileno())
+              mount_check(root)
+              publish_attempts = publish(root, partial, final)
+              records = []
+              for folder in destination.iterdir():
+                  found = owned(folder, host, kind)
+                  if found:
+                      records.append((folder, found[0], found[1]))
+              keep = keep_ids(records, policy, now)
+              removed, protected = [], []
+              for folder, old, created in records:
+                  if folder.name in keep:
+                      continue
+                  mount_check(root)
+                  safe(folder)
+                  current = owned(folder, host, kind)
+                  if not current or current[0] != old or any(digest(folder / name) != checksum for name, checksum in old['files'].items()):
+                      protected.append(folder.name)
+                      continue
+                  for name in old['files']:
+                      (folder / name).unlink()
+                  (folder / 'manifest.json').unlink()
+                  remove_empty(folder)
+                  removed.append(folder.name)
+              print(json.dumps({'backup': str(final), 'publish_attempts': publish_attempts, 'removed': removed, 'protected': protected}))
+
+      if __name__ == '__main__':
+          run(json.loads(sys.argv[1]))
+  delegate_to: localhost
+  become: false
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  register: backup_commit
+  changed_when: true
+
+- name: Sicherungsergebnis anzeigen
+  ansible.builtin.debug:
+    msg: "{{ backup_commit.stdout | from_json }}"

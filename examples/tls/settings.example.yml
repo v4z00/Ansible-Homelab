@@ -1,0 +1,74 @@
+# Nachschlagebeispiel: nur gewuenschte Eintraege in bestehende Settings uebernehmen.
+# Ein einziger tls_validate_certs-Block. Explizite Taskwerte schlagen den Standard.
+tls_validate_certs_default: false
+tls_validate_certs:
+  telegram_notification: true
+  backup_telegram_notification: true
+
+  # Weitere Aufgabenschalter, auskommentiert: erben den Standortstandard.
+  # CheckMK-Ordner und Elternordner anlegen
+  # checkmk_folders: true
+  # Nicht-Linux-Host ohne Attribute anlegen oder im Zielordner sicherstellen
+  # checkmk_manual_host: true
+  # CheckMK-Host zentral anlegen oder verschieben
+  # checkmk_managed_host: true
+  # CheckMK-Aenderungen vor Registrierung aktivieren
+  # checkmk_agent_activation: true
+  # Checkmk-Zielordner sicherstellen
+  # checkmk_migration_folders: true
+  # Ordneraenderungen vor der Hostmigration aktivieren
+  # checkmk_migration_folders_activation: true
+  # Alle Checkmk-Ziele auf Ordner, IP und Alias abgleichen
+  # checkmk_migration_attributes: true
+  # Checkmk-Aenderungen aktivieren
+  # checkmk_migration_final_activation: true
+  # Quelle {{ migration.source }} mit ETag laden
+  # checkmk_rename_source_read: true
+  # Zielnamen {{ migration.target_checkmk_hostname }} pruefen
+  # checkmk_rename_target_read: true
+  # Checkmk-Host per REST-API umbenennen
+  # checkmk_rename_submit: true
+  # Auf neuen Hostnamen {{ migration.target_checkmk_hostname }} warten
+  # checkmk_rename_target_wait: true
+  # Auf Entfernung des alten Hostnamens {{ migration.source }} warten
+  # checkmk_rename_source_wait: true
+  # Umbenennung von {{ migration.target_checkmk_hostname }} aktivieren
+  # checkmk_rename_activation: true
+  # Ist-Zustand von {{ checkmk_reconcile_hostname }} pruefen
+  # checkmk_reconcile_read: true
+  # Fehlenden Host {{ checkmk_reconcile_hostname }} vollstaendig anlegen
+  # checkmk_reconcile_create: true
+  # Neuanlage von {{ checkmk_reconcile_hostname }} aktivieren
+  # checkmk_reconcile_create_activation: true
+  # Host {{ checkmk_reconcile_hostname }} allein in den Zielordner verschieben
+  # checkmk_reconcile_move: true
+  # Ordnerwechsel von {{ checkmk_reconcile_hostname }} aktivieren
+  # checkmk_reconcile_move_activation: true
+  # Attribute von {{ checkmk_reconcile_hostname }} allein abgleichen
+  # checkmk_reconcile_attributes: true
+  # Attributaenderungen von {{ checkmk_reconcile_hostname }} aktivieren
+  # checkmk_reconcile_attributes_activation: true
+  # HTTPS-Ziel abrufen
+  # wan_check: true
+  # InfluxData Repository-Schluessel herunterladen
+  # telegraf_repository_key: true
+  # Agentpaket herunterladen
+  # checkmk_agent_download: true
+  # Agentplugins herunterladen
+  # checkmk_plugin_download: true
+  # Checkmk-Bestand fuer interaktiven Plan lesen
+  # checkmk_migration_plan_read: true
+  # VictoriaMetrics-Ausgabe (alter expliziter Schalter bleibt Fallback)
+  # telegraf_metrics_output: true
+  # Proxmox-Eingang (bisher fest ohne Pruefung)
+  # telegraf_proxmox_input: true
+  # Oh My Zsh laden
+  # zsh_installer_download: true
+  # Powerlevel10k klonen
+  # zsh_theme_clone: true
+  # OpenWrt-WAN-Pruefung
+  # openwrt_wan_check: true
+  # Lesender Checkmk-API-Test
+  # checkmk_update_check: true
+  # Lesender Proxmox-API-Test (Default je Inventoryquelle)
+  # proxmox_update_check: true

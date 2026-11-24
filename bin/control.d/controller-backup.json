@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "controller-backup",
+      "description": "Ansible- und Docker-Konfiguration des Controllers sichern",
+      "handler": "bin/control.d/controller-backup.sh",
+      "feature": "backup",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/backup/backup_controller_configs.yml"
+      ],
+      "aliases": [
+        {
+          "name": "controller-backup",
+          "args": []
+        }
+      ],
+      "feature_default": false
+    }
+  ]
+}

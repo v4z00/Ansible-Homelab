@@ -1,0 +1,32 @@
+---
+- name: Backup-Ergebnis melden
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Backup-Zusammenfassung lesen
+      ansible.builtin.slurp:
+        src: "{{ backup_summary_file }}"
+      register: backup_summary
+
+    - name: Telegram-Nachricht senden
+      ansible.builtin.uri:
+        validate_certs: "{{ (tls_validate_certs | default({})).get('backup_telegram_notification', true) | bool }}"
+        url: "https://api.telegram.org/bot{{ telegram_bot_token }}/sendMessage"
+        method: POST
+        body_format: form-urlencoded
+        body:
+          chat_id: "{{ telegram_chat_id }}"
+          text: "{{ backup_summary.content | b64decode }}"
+        status_code: 200
+      when:
+        - telegram_bot_token | default('') | length > 0
+        - telegram_chat_id | default('') | length > 0
+      no_log: true
+
+    - name: Fehlende optionale Telegram-Konfiguration anzeigen
+      ansible.builtin.debug:
+        msg: "Telegram ist nicht konfiguriert; Backup wurde ohne Nachricht abgeschlossen."
+      when: >-
+        telegram_bot_token | default('') | length == 0 or
+        telegram_chat_id | default('') | length == 0

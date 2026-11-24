@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-clients",
+      "description": "WLAN-Clients anzeigen",
+      "handler": "bin/control.d/openwrt-clients.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/openwrt_client_stats.yml"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-clients",
+          "args": []
+        },
+        {
+          "name": "openwrt-clients",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

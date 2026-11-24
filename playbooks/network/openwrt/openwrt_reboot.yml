@@ -1,0 +1,16 @@
+---
+- name: OpenWrt-APs nacheinander neu starten
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  serial: 1
+  any_errors_fatal: true
+  pre_tasks:
+    - name: Feature und ausdrueckliche Zielauswahl pruefen
+      ansible.builtin.assert:
+        that:
+          - features.openwrt | default(false) | bool
+          - ansible_limit | default('') | length > 0
+        fail_msg: 'features.openwrt aktivieren und --limit HOST oder GRUPPE angeben.'
+  roles:
+    - role: openwrt_reboot

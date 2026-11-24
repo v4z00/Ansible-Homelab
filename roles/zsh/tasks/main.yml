@@ -1,0 +1,43 @@
+---
+- name: Zsh-Pakete installieren
+  ansible.builtin.apt:
+    name: [zsh, git, curl, gawk]
+    state: present
+    update_cache: true
+
+- name: Oh My Zsh unbeaufsichtigt installieren
+  ansible.builtin.shell:
+    cmd: >-
+      sh -c "$(curl -fsSL {{ ((tls_validate_certs | default({})).get('zsh_installer_download', tls_validate_certs_default | default(true)) | bool) | ternary('', '--insecure') }} {{ zsh_oh_my_zsh_install_url | quote }})"
+      "" --unattended
+    creates: "{{ zsh_target_home }}/.oh-my-zsh"
+
+- name: Powerlevel10k installieren
+  ansible.builtin.git:
+    repo: "{{ zsh_powerlevel10k_repo }}"
+    dest: "{{ zsh_target_home }}/.oh-my-zsh/custom/themes/powerlevel10k"
+    depth: 1
+    update: true
+  environment:
+    GIT_SSL_NO_VERIFY: "{{ ((tls_validate_certs | default({})).get('zsh_theme_clone', tls_validate_certs_default | default(true)) | bool) | ternary('false', 'true') }}"
+
+- name: Zsh-Konfiguration ausrollen
+  ansible.builtin.template:
+    src: zshrc.j2
+    dest: "{{ zsh_target_home }}/.zshrc"
+    owner: "{{ zsh_target_user }}"
+    group: "{{ zsh_target_user }}"
+    mode: '0644'
+
+- name: Powerlevel10k-Konfiguration ausrollen
+  ansible.builtin.copy:
+    src: p10k.zsh
+    dest: "{{ zsh_target_home }}/.p10k.zsh"
+    owner: "{{ zsh_target_user }}"
+    group: "{{ zsh_target_user }}"
+    mode: '0644'
+
+- name: Zsh als Standard-Shell setzen
+  ansible.builtin.user:
+    name: "{{ zsh_target_user }}"
+    shell: /bin/zsh

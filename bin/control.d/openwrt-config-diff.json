@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-config-diff",
+      "description": "OpenWrt-Konfigurationen vergleichen",
+      "handler": "bin/control.d/openwrt-config-diff.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/openwrt_compare.yaml"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-diff-conf",
+          "args": []
+        },
+        {
+          "name": "openwrt-config-diff",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

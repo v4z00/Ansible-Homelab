@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "truenas-routing",
+      "description": "TrueNAS-Routing setzen",
+      "handler": "bin/control.d/truenas-routing.sh",
+      "feature": "truenas",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/storage/truenas/configure_routing.yml"
+      ],
+      "aliases": [
+        {
+          "name": "route-truenas",
+          "args": []
+        },
+        {
+          "name": "truenas-routing",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

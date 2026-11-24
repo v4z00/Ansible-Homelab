@@ -1,0 +1,24 @@
+- name: Bond-Monitor sichern
+  hosts: bond_monitor_backup_hosts
+  gather_facts: false
+  become: true
+  vars:
+    backup_kind: bond-monitor
+    backup_paths: "{{ bond_monitor_backup_paths }}"
+  tasks:
+  - name: Lokale Sicherungspfade pruefen
+    ansible.builtin.assert:
+      that:
+      - bond_monitor_backup_paths is defined
+      - bond_monitor_backup_paths is sequence and bond_monitor_backup_paths is not string and bond_monitor_backup_paths is not mapping
+      - bond_monitor_backup_paths | length > 0
+      - bond_monitor_backup_paths | reject('match', '^/') | list | length == 0
+  - name: Sicherung ausführen
+    ansible.builtin.include_tasks: tasks/linux.yml
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool

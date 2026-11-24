@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "backup-archive-apply",
+      "description": "Alte automatische Backups archivieren",
+      "handler": "bin/control.d/backup-archive-apply.sh",
+      "feature": "backup",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/backup/archive_legacy.yml"
+      ],
+      "aliases": [
+        {
+          "name": "backup-archive-apply",
+          "args": []
+        }
+      ],
+      "feature_default": false
+    }
+  ]
+}

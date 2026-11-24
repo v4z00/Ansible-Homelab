@@ -1,0 +1,92 @@
+---
+- name: Backup-Ziel prüfen
+  ansible.builtin.include_tasks: preflight.yml
+
+- name: Lokalen Arbeitsordner anlegen
+  ansible.builtin.tempfile:
+    state: directory
+    prefix: controller-stage-
+  delegate_to: localhost
+  become: false
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  register: backup_local_temp
+
+- name: Sicherung erstellen und übernehmen
+  block:
+    - name: Temporären Ordner auf dem Quellhost anlegen
+      ansible.builtin.tempfile:
+        state: directory
+        prefix: controller-source-
+      register: backup_remote_temp
+
+    - name: Quelldaten vollständig archivieren
+      ansible.builtin.command:
+        argv:
+          - "{{ backup_remote_python }}"
+          - '-'
+          - "{{ backup_remote_temp.path }}/backup.tar.gz"
+          - "{{ backup_kind }}"
+          - "{{ backup_paths | default([]) | to_json }}"
+        stdin: |
+          import io, json, os, pathlib, stat, sys, tarfile
+          from datetime import datetime, timezone
+          output, kind, encoded = sys.argv[1:]
+          sources = json.loads(encoded)
+          if kind == 'cron':
+              sources = ['/etc/crontab', '/etc/anacrontab', '/etc/cron.d',
+                         '/etc/cron.hourly', '/etc/cron.daily', '/etc/cron.weekly',
+                         '/etc/cron.monthly', '/var/spool/cron']
+          missing = [p for p in sources if not os.path.lexists(p)]
+          if missing and kind != 'cron':
+              raise SystemExit('Fehlende Quellen: ' + ', '.join(missing))
+          if not sources or any(not p.startswith('/') or p == '/' or '..' in pathlib.PurePosixPath(p).parts for p in sources):
+              raise SystemExit('Ungueltige Quellen')
+          skipped = []
+          def keep(member):
+              if not (member.isfile() or member.isdir() or member.issym() or member.islnk()):
+                  skipped.append(member.name)
+                  return None
+              return member
+          with tarfile.open(output, 'w:gz', dereference=False) as archive:
+              for source in sources:
+                  if source in missing:
+                      continue
+                  archive.add(source, arcname=source.lstrip('/'), filter=keep)
+              metadata = json.dumps({'kind': kind, 'sources': sources,
+                  'missing': missing, 'skipped_special_files': skipped,
+                  'created_at': datetime.now(timezone.utc).isoformat()}, indent=2).encode()
+              member = tarfile.TarInfo('CONTROLLER-BACKUP.json')
+              member.size = len(metadata)
+              archive.addfile(member, io.BytesIO(metadata))
+          print(json.dumps({'sources': sources, 'missing': missing, 'skipped_special_files': skipped}))
+      register: backup_collection
+      changed_when: true
+
+    - name: Archiv auf den Controller übertragen
+      ansible.builtin.fetch:
+        src: "{{ backup_remote_temp.path }}/backup.tar.gz"
+        dest: "{{ backup_local_temp.path }}/backup.tar.gz"
+        flat: true
+        fail_on_missing: true
+        validate_checksum: true
+      become: false
+
+    - name: Sicherung prüfen und auf SMB übernehmen
+      ansible.builtin.include_tasks: commit.yml
+
+  always:
+    - name: Temporäre Quelldaten entfernen
+      ansible.builtin.file:
+        path: "{{ backup_remote_temp.path }}"
+        state: absent
+      when: backup_remote_temp.path is defined
+
+    - name: Lokalen Arbeitsordner entfernen
+      ansible.builtin.file:
+        path: "{{ backup_local_temp.path }}"
+        state: absent
+      delegate_to: localhost
+      become: false
+      vars:
+        ansible_python_interpreter: "{{ ansible_playbook_python }}"

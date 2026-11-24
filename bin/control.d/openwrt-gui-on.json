@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-gui-on",
+      "description": "OpenWrt-GUI einschalten",
+      "handler": "bin/control.d/openwrt-gui-on.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/manage_openwrt_gui.yml"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-gui-on",
+          "args": []
+        },
+        {
+          "name": "openwrt-gui-on",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

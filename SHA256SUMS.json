@@ -1,0 +1,570 @@
+{
+  "schema": 1,
+  "profile": "Homelab",
+  "files": {
+    "VERSION.txt": {
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "mode": "0644"
+    },
+    "bin/control.d/.versions/homelab.json": {
+      "sha256": "9b6d1f4c5dcc236ed4dda21aa5d2853b8a01756b3c486e7ba497afeb9a88bedd",
+      "mode": "0644"
+    },
+    "bin/control.d/backup-archive-apply.json": {
+      "sha256": "6c8e9d3ae6be552cd4fc6bad30054c65b367194641f3007ab06f7306bda01aa3",
+      "mode": "0644"
+    },
+    "bin/control.d/backup-archive-apply.sh": {
+      "sha256": "12353c3576d0881cf70e4ac0ef466e1342e57377805bc795205eddd3391b0e44",
+      "mode": "0755"
+    },
+    "bin/control.d/backup-archive-preview.json": {
+      "sha256": "1d3034c0c30b14c185d22676c89b2aacdb4aefa4ad63f92b52a45605eab2fff7",
+      "mode": "0644"
+    },
+    "bin/control.d/backup-archive-preview.sh": {
+      "sha256": "81a5745856135bf8023825681066b5a6b9c8366658dc680796c8530555fa64a4",
+      "mode": "0755"
+    },
+    "bin/control.d/backup-playbook.json": {
+      "sha256": "3ba285b2b48d8ffc03ba6bd04d6271d2570623ee1ff2bc78eaee411f13cda78f",
+      "mode": "0644"
+    },
+    "bin/control.d/backup-playbook.sh": {
+      "sha256": "3501259b8f7411c316dd2520425a61e3ffdf32f0736f4793a9b8e43ccb5dbe09",
+      "mode": "0755"
+    },
+    "bin/control.d/backup.json": {
+      "sha256": "da3baa21b4a41986dfda5380d273cb177b7158df5a1e829796644f9c3fd6a4f8",
+      "mode": "0644"
+    },
+    "bin/control.d/backup.sh": {
+      "sha256": "64a2959ac44fce911cf8726d05de0e080841789ce38fddba80a80a2577c7549b",
+      "mode": "0755"
+    },
+    "bin/control.d/controller-backup.json": {
+      "sha256": "d7a858a2874d8162599e80ae62530131d1001c2de45ae2112e4aef6624149551",
+      "mode": "0644"
+    },
+    "bin/control.d/controller-backup.sh": {
+      "sha256": "97e4dae82f843db0c3739f384b9261a1be765c162f907a6b8b1cab201cef548f",
+      "mode": "0755"
+    },
+    "bin/control.d/dns-check.sh": {
+      "sha256": "c7bd81c741577316f803243529b6b4d1e6b9b5092005ffc88f3703491af41ad9",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-channel.json": {
+      "sha256": "017640728e10559d235d401e623be20e73376b3be238e1ed14be145b6b3d96dc",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-channel.sh": {
+      "sha256": "63663d2e81499b25870ffcaa8b938518455f1525520c81b0a1358e4f7265c459",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-clients.json": {
+      "sha256": "deb1e4b9ddbdd284f30c702b259fee4295db8307110c988706489eac5e938748",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-clients.sh": {
+      "sha256": "3c4d41e95f8aeda919bb2f1837ebdfceac5779fc835e2f1bbd1ae26107f9fcbc",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-config-diff.json": {
+      "sha256": "8aeac1b810197f5ef9f380c801a589ed3ad2c87f6bec1d42c10ed18a90f773ec",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-config-diff.sh": {
+      "sha256": "2793edbb1ba03ad7a1876c093d49853bfee7251305ab764bb16879c1a635c4b3",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-gui-off.json": {
+      "sha256": "075ca9a677aa24b57972175600308cedd1b576175fa202a13daa01b08a64d5a8",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-gui-off.sh": {
+      "sha256": "47a13a89a5a5027fcb735a82aa001070e80408f16d28cc382e7887971df85b64",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-gui-on.json": {
+      "sha256": "f7c94728d5057ad57ebe803a768ac591f0dc727186e500f530f02b0ef8f8e1c8",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-gui-on.sh": {
+      "sha256": "a9d2581229e53885a9f1823880c64e6a5df109386f109029aac81d6040e6a0a9",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-health.json": {
+      "sha256": "01a65020071b841209762bfa9b0e4f5c8adf3b72c6acd247d300bbaad45e7ca1",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-health.sh": {
+      "sha256": "f646fb2c5877974b30a0c0710c298fae89b7188bb0300d0f2ca11bdda84c3f28",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-mac-vlans.json": {
+      "sha256": "6df61f117e09123e59cbc7675aa2d1612cb33b57988dbe42f58444d73e8a945c",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-mac-vlans.sh": {
+      "sha256": "0681f44b469c4a0da9ae39029ec2a707115e85fc0210c59ec49d6098dc39fd4d",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-package-diff.json": {
+      "sha256": "dd55300de032568468f7f0112606ae6854fdabcb69e8bc4fa963bbbe3a685dc9",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-package-diff.sh": {
+      "sha256": "e2f9482eac224eaa7759050b0729d7ed8b3e14ad18845996f48ec1e7452254bc",
+      "mode": "0755"
+    },
+    "bin/control.d/openwrt-reboot.json": {
+      "sha256": "8527984cd4355bca99e7999300a7f30bb4722c357dafdd6102e65708ad3f5413",
+      "mode": "0644"
+    },
+    "bin/control.d/openwrt-reboot.sh": {
+      "sha256": "85372a64387c4e662d8301c42882ae1421cb49b8b9d5dfe2ccead3f39b7440ba",
+      "mode": "0755"
+    },
+    "bin/control.d/schedules.json": {
+      "sha256": "9be2494da84886d4b219f8f144dcc088ba270d29f16f13d87314286f706841f0",
+      "mode": "0644"
+    },
+    "bin/control.d/schedules.sh": {
+      "sha256": "fd2f75482a85192639ed152ef402af36bc2258b439f449c8d603b0ba011f666b",
+      "mode": "0755"
+    },
+    "bin/control.d/truenas-routing.json": {
+      "sha256": "ade730ad4d7f758ebf8f6fd0f757352c0f059085b2abca4ebe746dd85523852a",
+      "mode": "0644"
+    },
+    "bin/control.d/truenas-routing.sh": {
+      "sha256": "452bd0a4b3053c63ce86a98c0d76a01e7299a8370fad77257866c9c209eedd97",
+      "mode": "0755"
+    },
+    "bin/control.d/wan-check.sh": {
+      "sha256": "9472479a83968191564215494fdde4fce3530f0a41e918c61e46b37bf0ba411e",
+      "mode": "0755"
+    },
+    "bin/control.d/zfs-optimize.json": {
+      "sha256": "398c2e116bc0aee403db563b2632cdf64279b2b21199a88ce755884afb89f5ba",
+      "mode": "0644"
+    },
+    "bin/control.d/zfs-optimize.sh": {
+      "sha256": "bc7f8bf1fec1bd79fb598dc25e529b7c27b29815b95a207459acb0a7a908b7b0",
+      "mode": "0755"
+    },
+    "bin/control.d/zsh.json": {
+      "sha256": "62f4e8db8a03050550f1669805c8f2af3c43b7cc19f9511de95bf36b9ce2e21b",
+      "mode": "0644"
+    },
+    "bin/control.d/zsh.sh": {
+      "sha256": "9b3981271ee1b03e6c5ce55c4e6c93635311541772282c2934f239c984edcada",
+      "mode": "0755"
+    },
+    "configure_server_BASE.sh": {
+      "sha256": "502c873b5fa63f60f3914bf3e50cf59ed7d1482c9d133d7b1ce6172dae13e8f9",
+      "mode": "0755"
+    },
+    "controller-overlay.json": {
+      "sha256": "d948f379b623fea0f2e37d41bda7c7f5380c9e5c44dedbf2c71f436a56dfa70c",
+      "mode": "0644"
+    },
+    "descriptions/commands/backup-archive-apply.md": {
+      "sha256": "0d6316afd01370565ffcaa7639f15612a87263084fc3016b0dc17d1628fe0d2c",
+      "mode": "0644"
+    },
+    "descriptions/commands/backup-archive-preview.md": {
+      "sha256": "1036e7ee3ffee49fcfd223225ef0ff17ef541547aa581dffcf245ea7e3f671b0",
+      "mode": "0644"
+    },
+    "descriptions/commands/backup-playbook.md": {
+      "sha256": "d956c1a2f8c6affb5a4990f1bb6523a881ad8fe1d96cdc948d19868f00725b6f",
+      "mode": "0644"
+    },
+    "descriptions/commands/backup.md": {
+      "sha256": "1d4f39a2e7d29c03b3948e292705a3178fe1dbe1f560a12fd9829503a93d1bc1",
+      "mode": "0644"
+    },
+    "descriptions/commands/controller-backup.md": {
+      "sha256": "859b48ce035d70bce32ff035fc9bdf1c0d0d4c027a1ec42397bcbc2c20c4bc15",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-channel.md": {
+      "sha256": "556dcfaac5d072566fa7d7600cd156d10c2bf547eb6a0bb44f1c5832de5d3fa9",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-clients.md": {
+      "sha256": "e9a11978e7d56d75436919092b8f8822cd85708c431f7116280d3cf59f7d9343",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-config-diff.md": {
+      "sha256": "bda0f0aaae78ce477ea9ecd9cfc1ddd2f852f0e2e174a44a0ba0c8ed0504e08d",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-gui-off.md": {
+      "sha256": "9025bde0d9a5472ecba823b3441861601362b12e46289d760bd9b0d1874aaadd",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-gui-on.md": {
+      "sha256": "9bca87134e614994a87ac0d3605c07bc6b159a5c1b2b8dde198013fc33c14f44",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-health.md": {
+      "sha256": "51785aff27305e9a58987d86b06f2543a24d6557d3a154a4b97d31c71be53cdd",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-mac-vlans.md": {
+      "sha256": "6b5c4c98e38d72a9af0338a7cc981c6cfefe2d60d968bb0eb8fdb294ef46d2c4",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-package-diff.md": {
+      "sha256": "8156cecc47d01b71cb2f167d08043ab7155601311c815bf8b2f13fd98033257a",
+      "mode": "0644"
+    },
+    "descriptions/commands/openwrt-reboot.md": {
+      "sha256": "aa97058af9a33b9ef05fad5819a0b728f8bdd8c027cb195c3de143716abb956a",
+      "mode": "0644"
+    },
+    "descriptions/commands/schedules.md": {
+      "sha256": "16bf8bd9fe8b6994685befa607cdc8e85824963446d9919d371b26a0f8b37130",
+      "mode": "0644"
+    },
+    "descriptions/commands/truenas-routing.md": {
+      "sha256": "4a0941931e3b489be7e1922ae6a8dcf4a42cbf08004c30e26e9ed983b75a783e",
+      "mode": "0644"
+    },
+    "descriptions/commands/zfs-optimize.md": {
+      "sha256": "2bbcffebfd376fb21ea636a2c612949dc573e894335e4d0ed3500c1119c9789d",
+      "mode": "0644"
+    },
+    "descriptions/commands/zsh.md": {
+      "sha256": "bdd01bf8de3e6b2c5db4526b43474d8039393bf1cba49c4619225f47b227d047",
+      "mode": "0644"
+    },
+    "descriptions/configurations/examples__homelab_settings.example.md": {
+      "sha256": "cec5e417d23ba3c4daeb3eae2acffca8c0e2efcd1058397f8ca0f39add2c80e1",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__archive_legacy.md": {
+      "sha256": "3cc2877ea22a1c33f82e4b4e3c3f5bc3273561e52962af4c2b19c6f4f99f9bd8",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_all.md": {
+      "sha256": "fdb4d7d4274bafba96faf03fa8d9fa2c2d750008a3ab169a0a8ff6cb8d9bedae",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_bond_monitor.md": {
+      "sha256": "e2a702d333ac4b3d1adb74a97df934fdc4b0e78102f9bd4620e205b8fe2d7f78",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_certificates.md": {
+      "sha256": "172e5f54f9eac828194044fc9552a00b3ca5dbafeef7c7618b735b6880ff317e",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_controller_configs.md": {
+      "sha256": "54193b3a9af736c6222c51e6b314571b2e891ff33c0d340bfb32bf606b5b1b07",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_cron.md": {
+      "sha256": "f91acdea0574ea02e3021518999bc4e06b2ff14d98810e37d4b1eb7d5cd89bb4",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_fstab.md": {
+      "sha256": "407549acd518e58d4a0e801de2f3c2bc30e883219f19916dfd9ba5549fa5fc62",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_openwrt.md": {
+      "sha256": "de5f4b071d607e5cee10172650f820ef050b3ba3708b34bef3da154e53cb30d4",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_proxmox_root.md": {
+      "sha256": "15667dab14133ecb0b6e1810dee6a4e4313ef912dbd5a613547a8516cfe27170",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__backup_scripte.md": {
+      "sha256": "ab9c4fac788f34ff392ac1175d3e9dfc096831c817dc345789fd4bafe651eb75",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__backup__notify.md": {
+      "sha256": "2bfedf759cd0c2d126110311c56bbe545435d8a456faa38b5fd9b01dd8f68057",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__maintenance__cleanup_backups_and_logs.md": {
+      "sha256": "daba8ce0672d343d0a77a591ceb724e5aa023a04acba6102718bf88273b41cec",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__maintenance__manage_controller_schedules.md": {
+      "sha256": "8451a8c5cf68a6407cc290d80d05a435d1cbf8df1a7d65a4750742140a4dac34",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__check_dns.md": {
+      "sha256": "4fcaea553eb0c32f47da0e0f59844f9f449f9221c45969c8f443a255b0cb37b3",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__check_wan.md": {
+      "sha256": "f51f2b83a458245907c9db161a2b32e2ba708eb485d16d7d2afb856b93ffa22b",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__compare_packages.md": {
+      "sha256": "c3448c0b21e11667fde97ffe978e4eb5823139310db04befcf0358cdff6404f2",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__configure_mac_vlans.md": {
+      "sha256": "449deed8956b081984be65575b930ba29678921afb6dd85c0fc054b2e956e0d9",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__manage_openwrt_gui.md": {
+      "sha256": "17c87d9b1fa8a6439392950d19f6d42d91295e953afbf8182b54744afbcc4135",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__openwrt_client_stats.md": {
+      "sha256": "48f367aa0421e9f3cc172b565b6b364c3db4ae9831a0507d5c1e4ae7c77e9d19",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__openwrt_compare.md": {
+      "sha256": "97b71420d62da963e9e26e3da6a8b6f6a7d679e0edc6575db78db70538703e6e",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__openwrt_get_wlan-channel.md": {
+      "sha256": "d5627361509664e2d66018b05d01633711141afeb37450a0a1c5a1d1991a4420",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__openwrt_health_check.md": {
+      "sha256": "ff9cb7d2aa74b5df74bcfba8a31e4fbf68391e3cfaa1bba2de7703a810905892",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__network__openwrt__openwrt_reboot.md": {
+      "sha256": "c6c2391f292284e2b558ae463496a6f4f2f34cf2e99eb1a9a8b88977cc050896",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__storage__truenas__configure_routing.md": {
+      "sha256": "db2d958d40943943e288f72dedc6c81c8fa5d6ccdbadc4d55b772d9c6a27e770",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__storage__zfs__optimize.md": {
+      "sha256": "b0790bc31229bb79f8fddbe37a82d5d68a1907421f063222e3cbf74c3f73125f",
+      "mode": "0644"
+    },
+    "descriptions/playbooks/playbooks__zsh.md": {
+      "sha256": "66ca33c41e4707ac109ae4af8416d5f7d2d0bd8ea3869158d745fd9fe2346497",
+      "mode": "0644"
+    },
+    "descriptions/releases/homelab-1.0.0.txt": {
+      "sha256": "0f0e41d73ef7e2983f05b98054131d1361721a86238281824e598bd62417e62c",
+      "mode": "0644"
+    },
+    "descriptions/roles/roles__openwrt_mac_vlans.md": {
+      "sha256": "32a9a3cdc75c125a41e209d82cf3695a4157db017e54ec5b33715ccb0db77d20",
+      "mode": "0644"
+    },
+    "descriptions/roles/roles__openwrt_operations.md": {
+      "sha256": "49c6686661d33211659208776b0ada660a9b45b7194ca4781a1cd4dcb9d16844",
+      "mode": "0644"
+    },
+    "descriptions/roles/roles__openwrt_reboot.md": {
+      "sha256": "14c92c5023a5ee1254b91920356dc07d26dd692912c544dac0e352f3f186d9df",
+      "mode": "0644"
+    },
+    "descriptions/roles/roles__zsh.md": {
+      "sha256": "aaf913927a4a59d5b50c006a1b4871953abdf8c5e7ecc7ed924119e7a81ac88a",
+      "mode": "0644"
+    },
+    "install-controller": {
+      "sha256": "466962b6f6632eaaca4dfd879f068b85dd9f790417fe2ee4e50afeeb34d9fb1c",
+      "mode": "0755"
+    },
+    "install.sh": {
+      "sha256": "22c2ec462ae96564dad848822fcbb1cf4faa192f19d044a926dfba0470fcb566",
+      "mode": "0755"
+    },
+    "playbooks/backup/archive_legacy.yml": {
+      "sha256": "d070cf674082e91a9945b51b5d947153691f4a985179839250c130c83a40a863",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_all.yml": {
+      "sha256": "9b0a46c4ca5671c9c96fe1cd708930172052189120d378aeb2a0464854396e0c",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_bond_monitor.yml": {
+      "sha256": "b84ebde4215c6c17ae7bb608509007904c7dce703bb1d8df3bb57cc29f286e5a",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_certificates.yml": {
+      "sha256": "471c2d00424eb9d0103f925cde57b6ee1a04ffd995ca2a706d25f4f839e46cf6",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_controller_configs.yml": {
+      "sha256": "9beb3c349305d3ad96e7f0b978e58c0118221753870217e0af1141e0f7725415",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_cron.yml": {
+      "sha256": "42b6519a0e97187e6e3f7f99d11c643a1552e720552d7c85b793c22933f35c55",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_fstab.yml": {
+      "sha256": "6cab9b4b17d8e1aff4c8b7b074d08db0832a95dc349209cd86e2477cf7ef9b8f",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_openwrt.yml": {
+      "sha256": "337d239b34a66e0197badd6cc099b46f78d269fd8acc081889f1d6817a9e0147",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_proxmox_root.yml": {
+      "sha256": "4ca6309ca02383851b97e5940342dfc1706b44e0f2e0961f38db8a4ff11ffae1",
+      "mode": "0644"
+    },
+    "playbooks/backup/backup_scripte.yaml": {
+      "sha256": "3439adae9a5576cc8f5ae639a999c332e6de6ef29ccce1a44b0c47c0cdd41862",
+      "mode": "0644"
+    },
+    "playbooks/backup/notify.yml": {
+      "sha256": "6c98bb087ad90ddc21828e24a37e5e6d3eb56c75231edf68ebaaf36e3ab62463",
+      "mode": "0644"
+    },
+    "playbooks/backup/run_ansible_backup.sh": {
+      "sha256": "72d0baa7b15e7ad8a0d9fa8be8fd38d9c714d0226972e6ae206fc847bf467f52",
+      "mode": "0755"
+    },
+    "playbooks/backup/tasks/commit.yml": {
+      "sha256": "f2448fb107beb47b35cb2f40d5e7b7910ab8b356e463c709be911a94fc1e7596",
+      "mode": "0644"
+    },
+    "playbooks/backup/tasks/linux.yml": {
+      "sha256": "333cbbc4f8bd318d0640cb2fea4c0b4acd4aebce17c0be6133e516fa3c2fc027",
+      "mode": "0644"
+    },
+    "playbooks/backup/tasks/load_defaults.yml": {
+      "sha256": "66280ba03aa58d88d107fbb803ce5936a851663bf090a3333591f430b0e1c83b",
+      "mode": "0644"
+    },
+    "playbooks/backup/tasks/preflight.yml": {
+      "sha256": "8da8a6bdb6381f1b6a2d46e1f10287801b6abbf760db152f6bc2bffcf92c6f82",
+      "mode": "0644"
+    },
+    "playbooks/maintenance/cleanup_backups_and_logs.yml": {
+      "sha256": "f3bf78780cd789c226151e3048dcdc3c15fa9490f118a873750c558a3ba302b8",
+      "mode": "0644"
+    },
+    "playbooks/maintenance/manage_controller_schedules.yml": {
+      "sha256": "939b44f02c4c8531a8e4f378285b78e749b07498a50fb4a30f6936cc5b6d365a",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/check_dns.yml": {
+      "sha256": "2c95dadfc2e66bd1f0fa1d1aa033e36ec01cdab52bbec9b40e845e2e0916e911",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/check_wan.yml": {
+      "sha256": "c4728451ae3a4da483c8b06ea937bf9187ad1210395da58a4869e750e00946d9",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/compare_packages.yml": {
+      "sha256": "9474b4d3acd9d335a436793b43284e4f5e42cb4dbbb8d34348f4250cca5c1828",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/configure_mac_vlans.yml": {
+      "sha256": "a343f2fe42875588d7f3e48357b386484b64080704b07f2ee6100b75fc93686c",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/manage_openwrt_gui.yml": {
+      "sha256": "49e398e5076374a157b4b444f03d144d8e4cb46524b7c8695b1946531e24e150",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/openwrt_client_stats.yml": {
+      "sha256": "f2f6d64aa990004a568e75dec55976053855256b506b80aa3b320ea5b34c5048",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/openwrt_compare.yaml": {
+      "sha256": "df28baaacfc7ac0afd9dcb8089dcd76f5dbcb04b287a5244d298f62835686e23",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/openwrt_get_wlan-channel.yml": {
+      "sha256": "9a57dc25364259515484ebe876117577a9f0208233341ca83865f43d2f4c3970",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/openwrt_health_check.yml": {
+      "sha256": "aa9200f303c385bb8953010a2af1615c8b8c53dbdcaf37c10f4f9aefff95a38f",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/openwrt_reboot.yml": {
+      "sha256": "43f8a033698e6bb916ea2a179c55a951aedf67b3051f587bcd1e0d85fb143a8c",
+      "mode": "0644"
+    },
+    "playbooks/storage/truenas/configure_routing.yml": {
+      "sha256": "375dd803655711c41aa4ece708868dfae63a209b51b03df20625a1ca8abb7274",
+      "mode": "0644"
+    },
+    "playbooks/storage/zfs/optimize.yml": {
+      "sha256": "828e0e86950b65ce0d1755c779f56db5d84ece81f00c4b9a7a2a8b54503bb756",
+      "mode": "0644"
+    },
+    "playbooks/zsh.yml": {
+      "sha256": "9c8de8a0086afb61e8df93d67b59329632ee983cf94359f059ddf3c9c1091297",
+      "mode": "0644"
+    },
+    "roles/openwrt_mac_vlans/tasks/main.yml": {
+      "sha256": "5628066232c3a4e2f408a940c008314338d89dea21c738b67546066b8a684298",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/main.yml": {
+      "sha256": "7efd1845e3170ed8c3a754e5ce75e49f5320ed80d3b0cbe98bcb8362d4757858",
+      "mode": "0644"
+    },
+    "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py": {
+      "sha256": "c6681dad60dc3fe64ab38d5ad9bcbed65de3b088e2b6aff950ea209341d97b5b",
+      "mode": "0644"
+    },
+    "roles/openwrt_reboot/tasks/main.yml": {
+      "sha256": "837b0d8bd5dc9dcc93b744577644aea7a31b0bae88c60d9aaf57b9dc2dca8933",
+      "mode": "0644"
+    },
+    "roles/zsh/defaults/main.yml": {
+      "sha256": "0cc206d027ab493b0fe9d91f7b1be68b8ab9d40aa91bb848f2d17ca8990174c8",
+      "mode": "0644"
+    },
+    "roles/zsh/files/p10k.zsh": {
+      "sha256": "338dec990091cfbc17b6ee0543c45e0a34cfdd585893cd2f8c5ccaf5307113ab",
+      "mode": "0644"
+    },
+    "roles/zsh/tasks/main.yml": {
+      "sha256": "ff58fc7d379351b666e9b3572553cbe2f40a5b99f1799aad922d86a322393924",
+      "mode": "0644"
+    },
+    "roles/zsh/templates/zshrc.j2": {
+      "sha256": "bfe2d001bce6a157eb2aa3c2f264b3b09fc2d6bf96a5bd93278d277c50e2ed6c",
+      "mode": "0644"
+    },
+    "update_check/cleanup_plan.json": {
+      "sha256": "02a5794fefa4d10566162154e9568810821a156262a251f5b7c1e109176fcdc3",
+      "mode": "0644"
+    },
+    "update_check/integrity.json": {
+      "sha256": "2d91f1ee97ceb12fa7b0b9523a7b52925eacb33a9c38163b9465466815061684",
+      "mode": "0644"
+    },
+    "update_check/manifests/controller_basis.json": {
+      "sha256": "8bea9b7337422f9b7769f58134c5c8f498e45a2da6a3e953e9500d584bab6567",
+      "mode": "0644"
+    },
+    "update_check/manifests/tls_tasks.json": {
+      "sha256": "a8842dcbf7abd40b28e82dc98d345f568122d96dad59adca41acb2efedcb088c",
+      "mode": "0644"
+    },
+    "update_check/profile.json": {
+      "sha256": "1dcdf369d060bab98a1e51aa649de68e1aa51efd3db7f7d590953e2e0dfed33e",
+      "mode": "0644"
+    },
+    "update_check/release.json": {
+      "sha256": "944b95c0093fbf518e2489d793ec18f639264983ae4724f7fcdce543408b579a",
+      "mode": "0644"
+    },
+    "update_check/settings_catalog.json": {
+      "sha256": "be7438a13710f8fd11323e55388b147da2029787c2686eb718c7491fd9b50485",
+      "mode": "0644"
+    },
+    "update_check/settings_contract.json": {
+      "sha256": "cb88e9a1003e7e304ed9ade554298c8b8d9da244b76b7023e78df17e76082f8b",
+      "mode": "0644"
+    }
+  }
+}

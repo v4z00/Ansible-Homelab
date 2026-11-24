@@ -1,0 +1,44 @@
+# ==============================================================================
+# 1. POWERLEVEL10K INSTANT PROMPT
+# ==============================================================================
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# ==============================================================================
+# 2. OH-MY-ZSH GRUNDKONFIGURATION
+# ==============================================================================
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+DISABLE_UPDATE_PROMPT="true"
+
+# ==============================================================================
+# 3. PLUGINS
+# ==============================================================================
+plugins=(git docker docker-compose ansible sudo)
+source $ZSH/oh-my-zsh.sh
+
+# ==============================================================================
+# 4. ZSH VERHALTEN & HISTORY
+# ==============================================================================
+setopt auto_cd
+setopt interactivecomments
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt append_history
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+
+# ==============================================================================
+# 5. DIE BASHRC-BRÜCKE (Aliase & Funktionen)
+# ==============================================================================
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
+# ==============================================================================
+# 6. POWERLEVEL10K CONFIG LADEN
+# ==============================================================================
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

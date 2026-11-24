@@ -1,0 +1,805 @@
+{
+  "schema": 1,
+  "id": "controller_basis",
+  "version": "vorlage-2026-11-23",
+  "files": {
+    "bin/control": "78cd37987205975e1a3a60df61a6e59db117a564590fc07d1aa8b6af90ee9912",
+    "bin/control.d/.versions/homelab.json": "9b6d1f4c5dcc236ed4dda21aa5d2853b8a01756b3c486e7ba497afeb9a88bedd",
+    "bin/control.d/.versions/standard.json": "50a90c3ae04dfc6d150c2008894738fd15009a5fbe9312ace68bf386aa137f96",
+    "bin/control.d/apache-certificate.json": "e22750d73244a2894a08c6749c068421ff49cfa35c92e785c36f22659b3a278d",
+    "bin/control.d/apache-certificate.sh": "ff5df678a25307b590e22a037358cb6294e1a57a6cff219580d67664f94aa397",
+    "bin/control.d/backup-archive-apply.json": "6c8e9d3ae6be552cd4fc6bad30054c65b367194641f3007ab06f7306bda01aa3",
+    "bin/control.d/backup-archive-apply.sh": "12353c3576d0881cf70e4ac0ef466e1342e57377805bc795205eddd3391b0e44",
+    "bin/control.d/backup-archive-preview.json": "1d3034c0c30b14c185d22676c89b2aacdb4aefa4ad63f92b52a45605eab2fff7",
+    "bin/control.d/backup-archive-preview.sh": "81a5745856135bf8023825681066b5a6b9c8366658dc680796c8530555fa64a4",
+    "bin/control.d/backup-playbook.json": "3ba285b2b48d8ffc03ba6bd04d6271d2570623ee1ff2bc78eaee411f13cda78f",
+    "bin/control.d/backup-playbook.sh": "3501259b8f7411c316dd2520425a61e3ffdf32f0736f4793a9b8e43ccb5dbe09",
+    "bin/control.d/backup.json": "da3baa21b4a41986dfda5380d273cb177b7158df5a1e829796644f9c3fd6a4f8",
+    "bin/control.d/backup.sh": "64a2959ac44fce911cf8726d05de0e080841789ce38fddba80a80a2577c7549b",
+    "bin/control.d/base.json": "ac8d110c7c0fc83fd2442e61e4398a02c2e213779c744e66cbab9cf782edafe7",
+    "bin/control.d/base.sh": "82162c17f96daf8b7609194cff00c76eb5f34f7795257e74b49fcddb01b7738a",
+    "bin/control.d/ca-distribute.json": "ef37ae48dd35c45573a4d9b6aeca54d3de055e5a48e3acd369f06c42df36bec6",
+    "bin/control.d/ca-distribute.sh": "772d5bd640d6b2c3e928955034154ec0102fb0861a3e4d890f272621ac5ad4d6",
+    "bin/control.d/check.json": "adccc163560ff3aa8885d8d6d1bdbed87d09e5cf3ddfa523b5d41ebebb0d7886",
+    "bin/control.d/check.sh": "0a33904970761e51d83054aa1bc467c7fed908622338c513cd8ff07b0648b248",
+    "bin/control.d/checkmk-download.json": "18b4d9532adf8ab35ea80178f4ab27a766f8bc30a653e79d5d11868312e29177",
+    "bin/control.d/checkmk-download.sh": "9d6fa7c79982948e84952cb37d9b3afcd187bbaa98f89d2649fc9610b429cab9",
+    "bin/control.d/checkmk-migration-apply.json": "f18c353893a8f5eb19f63ad1514dcf4873226f6bb8bae600ee02e9b0de6f8e13",
+    "bin/control.d/checkmk-migration-apply.sh": "041fcfd5f565220a914754e67dc9527eaa6b0ad3eee190d7517564af9e5e434f",
+    "bin/control.d/checkmk-migration-plan.json": "d09a93daf07ecb741cefc23288f69fdd5f7422607a9079a0ec91e63370bd4515",
+    "bin/control.d/checkmk-migration-plan.sh": "69b8b1e8d9cbd6638cea58d60229d5470024d2234371c0182dfdfbd5f0e5531f",
+    "bin/control.d/checkmk-uninstall.json": "93c02a059c2baa8b4590dae2853bef3e73b7e18175aabf77ca18ef5ec5610e0f",
+    "bin/control.d/checkmk-uninstall.sh": "ab21cfddbae1de6bd5fc8d62d559347927fc97373797953ba0a834e77fd5e180",
+    "bin/control.d/checkmk.json": "03fd89d3ba089ab5a3711c19cac5c1496b15b1dc4ee7411008a7ef4a2b951a9e",
+    "bin/control.d/checkmk.sh": "908d715d83021388e726fac0eee9aada5fa2f9c280f2da01cd3eb0a948136538",
+    "bin/control.d/chrony-uninstall.json": "987d06254be844b074d2491d23d43454563b471505ed9b5e952abfb3788505da",
+    "bin/control.d/chrony-uninstall.sh": "bf6a3bff922417cf705016317d46b3eaa8380877394082f60edb42e00eddc3ea",
+    "bin/control.d/controller-backup.json": "d7a858a2874d8162599e80ae62530131d1001c2de45ae2112e4aef6624149551",
+    "bin/control.d/controller-backup.sh": "97e4dae82f843db0c3739f384b9261a1be765c162f907a6b8b1cab201cef548f",
+    "bin/control.d/crl-renew.json": "d483fac387438dfc42088d876438488349689f8a2c990f906cb818d68a5b9bcf",
+    "bin/control.d/crl-renew.sh": "effc1d32585179d37cddf47be375511985be0cfbf41930c9d4e2a5da95fa391a",
+    "bin/control.d/dns-check.json": "6ed6411af62eb4cfa6700a8cf9e0f5faa1077e14c1033dd4532b5a9bbf3116fc",
+    "bin/control.d/dns-check.sh": "c7bd81c741577316f803243529b6b4d1e6b9b5092005ffc88f3703491af41ad9",
+    "bin/control.d/docker-auto-update-stop.json": "fad3a2fc2f5daa0b5af0c382ca7852e0748d3d7f3ea85b98a61721c982b981b6",
+    "bin/control.d/docker-auto-update-stop.sh": "da74067ef1d4dfc547517885a0b8dc65626f326d5a091e9e7aaf5e5558136193",
+    "bin/control.d/docker-check.json": "ea15192dbdf801a8bfd9dc1e3c31ae7e2af9edc8031b9a818036e5ef35c01b97",
+    "bin/control.d/docker-check.sh": "a52d40c0657c5e791af695788bbe2cbfece6b5286b8ac707a44d80272722b433",
+    "bin/control.d/docker-deploy-all.json": "179787ef9b0a276f74d61362e81ba5a905d3934ddd414c76c0e9240c6b72b999",
+    "bin/control.d/docker-deploy-all.sh": "6b68ffcd6b2aad57fcc3dcad565edd6a59da0b9faa86347bf42acb61ae5634c1",
+    "bin/control.d/docker-deploy.json": "7a71493fdf5f867af79ce6c97bcc8b2d5ace45bfb2cba7bb95766ffaac9dcbec",
+    "bin/control.d/docker-deploy.sh": "fe6f9551e3f43115d7797caef6f764c82c2b0f4293b32e238a78a420c80fb92d",
+    "bin/control.d/docker-ips.json": "99904af0da7f767356b6edc4157aae43b2238bead74b17a806e07a914c0a9f86",
+    "bin/control.d/docker-ips.sh": "350dede679ee4f4fa3ce0d61a7c4d3647b88ed51ecda2bfbdc5dd9f97bdab387",
+    "bin/control.d/docker-macvlan-prepare.json": "80e8bf3a8efa8dded36440a863c821c6551a79694875c0770f3f421e6bce264c",
+    "bin/control.d/docker-macvlan-prepare.sh": "c53f7870a201d3ef0d9da4bf5dbfe44d1bb40b6d188b732b0d96b4f0fdb98453",
+    "bin/control.d/docker-stop.json": "794c4121f59a0732ecd08efcb027a398777d28472e71c4130bc30628ee51d1a2",
+    "bin/control.d/docker-stop.sh": "6356c6a4980d4a2251d7a14184869b4a4616ffca01349ff81b2755f571741737",
+    "bin/control.d/docker-update.json": "64972b09739a1b6cc4c8b0e8a29108ee38d746f5e1d0f0de21608e7ab07276e3",
+    "bin/control.d/docker-update.sh": "473e7c7fcf7bc2bb8402d6ac602d0e4c47fba2acd42387a4716cd283553b2cdf",
+    "bin/control.d/docker-users-export.json": "9efe561a10d07c3a8a0a26b1536eba3ae0cda5bc4dc3731a3dbd85e095822c14",
+    "bin/control.d/docker-users-export.sh": "f90580ede7d8c608dd1b8420c6e0ec1062ac995afd2c3990b0757212ac7c0a4c",
+    "bin/control.d/doctor.json": "244539a84f6d619b574081c6f77fe2f0070a9db2122df5c245ac5b23fb55c030",
+    "bin/control.d/doctor.sh": "117e979b757f626f1977877587ac3d44fb63dc5bba1cbc5d6ab8e7208908e761",
+    "bin/control.d/features-check.json": "808e3ae28705465fe9b39727fadae9fc870ba8d366ebf1857d3a65a15aceafd1",
+    "bin/control.d/features-check.sh": "65f1158880bcb59e81df96beb0ffbdd77be92332244be63efcdeba6abf1b5fe9",
+    "bin/control.d/fstab-audit.json": "25b5cadf8d93116199975bac9f20f88f456da966013f3cf5c2380b0f5c4a0e92",
+    "bin/control.d/fstab-audit.sh": "40acea74522a3fe7802a4e953b5efbcc55e9d0925c9b6f7e098dd97948517a40",
+    "bin/control.d/graph.json": "1c160e39f83f8ff851f600300df11ff09a210df28178895c943ae628f3399fff",
+    "bin/control.d/graph.sh": "e96aaf7fd15f6f01d3b4262975f31a55d0210edb5a4119f46eb7d5c04633a5fb",
+    "bin/control.d/inventory-check.json": "25afaa0da09a7e798fc50cf94c5de74aa29d5e06ef7b11ec5b3d8a7905bb7913",
+    "bin/control.d/inventory-check.sh": "44d1d81bad4b4fede338786a46b81c0ff7ebbe1addc0dcb0dbfcf79b94b8e95e",
+    "bin/control.d/inventory.json": "44b3088380337f845465df29fa9543843ebfdc0443c4a448ebf8a09cea464173",
+    "bin/control.d/inventory.sh": "6024609527250f4a1c286241dc7704f9148b7f364756d25254732fa3844eef22",
+    "bin/control.d/keytabs.json": "1790131f74a92da0d55d81ca7662fb1f1b8f81f591ea743c8dfffd766bd22fd8",
+    "bin/control.d/keytabs.sh": "d2669a58df867fb66f8e55e2724ec4b9240e92af7a90f765568d0d66456f447d",
+    "bin/control.d/last-log.json": "9a7baff5d34773b962aaad238d1c7065f21455d1a01481b6041d83cee92184ff",
+    "bin/control.d/last-log.sh": "84f8dcd8d04a849586485882f30923e0e95054fb7d842e95a08e6af83a0bd5a4",
+    "bin/control.d/lynis.json": "967d9bdc120daa504e51a06d960a4d1a07e7e1dc56fcee03263c4e4955cad81d",
+    "bin/control.d/lynis.sh": "af0c5f6f9255704c24741041209ead62452bd65197e2ee53f32dc303b331cfd8",
+    "bin/control.d/mail-test.json": "e44e79ee73d25fe58f485e89844a0457913d20c87922c2b77dd06595a95fe20d",
+    "bin/control.d/mail-test.sh": "f6f45c47e729af1b2e62f3669d9f8556a631b6de9bd3ffa6549e5a29b89441dc",
+    "bin/control.d/mount-all.json": "6d7a1dc11fd15835a904c12b1cf153f5240efe14797f28aae2a5ec57657ab470",
+    "bin/control.d/mount-all.sh": "3319014e002b9e5733b05b77486c4dec2ee081dadfad1746e31ab3711fd93d51",
+    "bin/control.d/openwrt-channel.json": "017640728e10559d235d401e623be20e73376b3be238e1ed14be145b6b3d96dc",
+    "bin/control.d/openwrt-channel.sh": "63663d2e81499b25870ffcaa8b938518455f1525520c81b0a1358e4f7265c459",
+    "bin/control.d/openwrt-clients.json": "deb1e4b9ddbdd284f30c702b259fee4295db8307110c988706489eac5e938748",
+    "bin/control.d/openwrt-clients.sh": "3c4d41e95f8aeda919bb2f1837ebdfceac5779fc835e2f1bbd1ae26107f9fcbc",
+    "bin/control.d/openwrt-config-diff.json": "8aeac1b810197f5ef9f380c801a589ed3ad2c87f6bec1d42c10ed18a90f773ec",
+    "bin/control.d/openwrt-config-diff.sh": "2793edbb1ba03ad7a1876c093d49853bfee7251305ab764bb16879c1a635c4b3",
+    "bin/control.d/openwrt-gui-off.json": "075ca9a677aa24b57972175600308cedd1b576175fa202a13daa01b08a64d5a8",
+    "bin/control.d/openwrt-gui-off.sh": "47a13a89a5a5027fcb735a82aa001070e80408f16d28cc382e7887971df85b64",
+    "bin/control.d/openwrt-gui-on.json": "f7c94728d5057ad57ebe803a768ac591f0dc727186e500f530f02b0ef8f8e1c8",
+    "bin/control.d/openwrt-gui-on.sh": "a9d2581229e53885a9f1823880c64e6a5df109386f109029aac81d6040e6a0a9",
+    "bin/control.d/openwrt-health.json": "01a65020071b841209762bfa9b0e4f5c8adf3b72c6acd247d300bbaad45e7ca1",
+    "bin/control.d/openwrt-health.sh": "f646fb2c5877974b30a0c0710c298fae89b7188bb0300d0f2ca11bdda84c3f28",
+    "bin/control.d/openwrt-mac-vlans.json": "6df61f117e09123e59cbc7675aa2d1612cb33b57988dbe42f58444d73e8a945c",
+    "bin/control.d/openwrt-mac-vlans.sh": "0681f44b469c4a0da9ae39029ec2a707115e85fc0210c59ec49d6098dc39fd4d",
+    "bin/control.d/openwrt-package-diff.json": "dd55300de032568468f7f0112606ae6854fdabcb69e8bc4fa963bbbe3a685dc9",
+    "bin/control.d/openwrt-package-diff.sh": "e2f9482eac224eaa7759050b0729d7ed8b3e14ad18845996f48ec1e7452254bc",
+    "bin/control.d/openwrt-reboot.json": "8527984cd4355bca99e7999300a7f30bb4722c357dafdd6102e65708ad3f5413",
+    "bin/control.d/openwrt-reboot.sh": "85372a64387c4e662d8301c42882ae1421cb49b8b9d5dfe2ccead3f39b7440ba",
+    "bin/control.d/optional.json": "7884d5df6f4342421f9527f9dfb7529fbd7182e5a120cbd524aabd0ca51439e3",
+    "bin/control.d/optional.sh": "b91acb98f73f4771250a0e3ac593469a8dcd138e47a035a179af29bc39d9409e",
+    "bin/control.d/ping.json": "eda87fbbd42632833792074bf2ebc3b832ef2a9b31b6f57ea31f4c568a02211b",
+    "bin/control.d/ping.sh": "107426d1a1d0b6afc412350f3a519b1f31667bc370d746e0c8e418bc4ad977d9",
+    "bin/control.d/postfix-queue-clear.json": "dd1ebe567e835e10ef368d4d361d23ce10ff942cc99ff10bd8cd7ca3c00db57c",
+    "bin/control.d/postfix-queue-clear.sh": "06d8ce52c119bc08af7d7166b95b2f8278006fdc4f677e4d2d12192a29c0ae4b",
+    "bin/control.d/prepare-paths.json": "bcca5ae97bba1bf37502a01a9f36218c5ce7f70d9325b836d5e172beb2563a3a",
+    "bin/control.d/prepare-paths.sh": "eba203ca33f8266f0377064f0461c76debef5833018eb461923c63c6dc847261",
+    "bin/control.d/proxmox-hardening.json": "f292bf1a0bb7dbdfbe2b0650ddda45e60db219efd2c2f253aed8620d8e909392",
+    "bin/control.d/proxmox-hardening.sh": "40e479417ae3705f581fecccbc5a6bd70472bda274c46ec70b14d2711f281501",
+    "bin/control.d/resolv-show.json": "570a54f0bf24aedbcc2ea65855faae78d4a2c83324d65cb5312c3c1206681f69",
+    "bin/control.d/resolv-show.sh": "44924f2d8b95635184add5a3434f585525e91b21fdde610e14ccd79c3e1ca4cf",
+    "bin/control.d/rotate-service-passwords.json": "4f003b4a05d6d51e1204f8db9b6c9d64992b5d6d3b5e17da185a63e0bc8cd398",
+    "bin/control.d/rotate-service-passwords.sh": "939e4f7a1db86e445de5358e740d992ed0f0d7f36c276379de4ef37ad8a68f0e",
+    "bin/control.d/rsyslog-disable.json": "472e8608e051263b01c2b4705284a237b0efd5fcab7f36adc0608d772e6d3ce5",
+    "bin/control.d/rsyslog-disable.sh": "26fa6c31a2f21311d751f5e3d6b69e36e113d9be156804531b2a3454c3ed058d",
+    "bin/control.d/schedules.json": "9be2494da84886d4b219f8f144dcc088ba270d29f16f13d87314286f706841f0",
+    "bin/control.d/schedules.sh": "fd2f75482a85192639ed152ef402af36bc2258b439f449c8d603b0ba011f666b",
+    "bin/control.d/set-fstab.json": "ab0a259566df8956373e5572c29d6b1297db0cedf1fbdc7c9a0dca1f731f71d0",
+    "bin/control.d/set-fstab.sh": "9bbb1799eeb2464ce8c0684afea26a9e3d58b6af5351ea6a3dba1c0426248350",
+    "bin/control.d/site.json": "8b44dec2d9900483b38af04b639a86a3eb7fafc51558debe6c4636143b8d63a4",
+    "bin/control.d/site.sh": "40d2657b47106e1ddd1936756d5368282d318519b60222ba5281c5877714655e",
+    "bin/control.d/snmp-check.json": "684268949ddc94febb49407cecc8f1bd6fc04bb5311e81abd6d6ac85e7c7d4ed",
+    "bin/control.d/snmp-check.sh": "0b708cb015df8985707469e58b89725ea904457e2cc41fb9318a927a24a74940",
+    "bin/control.d/syntax.json": "fad14089e53a52fc1a8a9f608d997617bf1fcf6bdc24ad5c81f4625f0eae2c9f",
+    "bin/control.d/syntax.sh": "fe03c63c28c404a8e00dc85442b958b0971adbe07c4d7ee864c328e43afdccd4",
+    "bin/control.d/telegraf.json": "b0aebab888b98d6a7e39064b391c54aef27249a03a04c67a67a04def84e1570d",
+    "bin/control.d/telegraf.sh": "e561b9767b3dba2a71f9f667f1a6c42789d9518a76f1b240477c283693c7f74b",
+    "bin/control.d/truenas-routing.json": "ade730ad4d7f758ebf8f6fd0f757352c0f059085b2abca4ebe746dd85523852a",
+    "bin/control.d/truenas-routing.sh": "452bd0a4b3053c63ce86a98c0d76a01e7299a8370fad77257866c9c209eedd97",
+    "bin/control.d/uid-audit.json": "5ff00f1fd19e01f784deee8f2006364451673587da50d6c54d2eb299ad82cda5",
+    "bin/control.d/uid-audit.sh": "8966861e8691ccfcdb9f9ca244aba6cd673a6249fbb8858195ade169fe5891cd",
+    "bin/control.d/updates.json": "c71efc27b7b9b1bdd26adeadd9191954716a4cf765a5b6069e544e09bc05c80d",
+    "bin/control.d/updates.sh": "a9bf75cb5c605fcb59e4c72d19f44c3a654b158eca3c142accffd1b7662acd4e",
+    "bin/control.d/wan-check.json": "1b4010d9d0b305495f87a31fc0125f94738927b850db646825acc7e07f94b443",
+    "bin/control.d/wan-check.sh": "9472479a83968191564215494fdde4fce3530f0a41e918c61e46b37bf0ba411e",
+    "bin/control.d/zfs-optimize.json": "398c2e116bc0aee403db563b2632cdf64279b2b21199a88ce755884afb89f5ba",
+    "bin/control.d/zfs-optimize.sh": "bc7f8bf1fec1bd79fb598dc25e529b7c27b29815b95a207459acb0a7a908b7b0",
+    "bin/control.d/zsh.json": "62f4e8db8a03050550f1669805c8f2af3c43b7cc19f9511de95bf36b9ce2e21b",
+    "bin/control.d/zsh.sh": "9b3981271ee1b03e6c5ce55c4e6c93635311541772282c2934f239c984edcada",
+    "config/bashrc": "4a8bd40f784269b116239214f6cb92264b9c1a093f304c92573d379f9e874419",
+    "config/shell_aliases.sh": "ca0fd58014abfc003c6385b737adae250945a62e6090ed1f3ea6b7a019956c04",
+    "lib/control/helpers.sh": "2b74a20d4cca10749451010fe2b9239be3018926fcc5f3e56135b17b7e68d97f",
+    "playbooks/backup/archive_legacy.yml": "d070cf674082e91a9945b51b5d947153691f4a985179839250c130c83a40a863",
+    "playbooks/backup/backup_all.yml": "9b0a46c4ca5671c9c96fe1cd708930172052189120d378aeb2a0464854396e0c",
+    "playbooks/backup/backup_bond_monitor.yml": "b84ebde4215c6c17ae7bb608509007904c7dce703bb1d8df3bb57cc29f286e5a",
+    "playbooks/backup/backup_controller_configs.yml": "9beb3c349305d3ad96e7f0b978e58c0118221753870217e0af1141e0f7725415",
+    "playbooks/backup/backup_cron.yml": "42b6519a0e97187e6e3f7f99d11c643a1552e720552d7c85b793c22933f35c55",
+    "playbooks/backup/backup_fstab.yml": "6cab9b4b17d8e1aff4c8b7b074d08db0832a95dc349209cd86e2477cf7ef9b8f",
+    "playbooks/backup/backup_openwrt.yml": "337d239b34a66e0197badd6cc099b46f78d269fd8acc081889f1d6817a9e0147",
+    "playbooks/backup/backup_proxmox_root.yml": "4ca6309ca02383851b97e5940342dfc1706b44e0f2e0961f38db8a4ff11ffae1",
+    "playbooks/backup/backup_scripte.yaml": "3439adae9a5576cc8f5ae639a999c332e6de6ef29ccce1a44b0c47c0cdd41862",
+    "playbooks/backup/backup_certificates.yml": "471c2d00424eb9d0103f925cde57b6ee1a04ffd995ca2a706d25f4f839e46cf6",
+    "playbooks/backup/run_ansible_backup.sh": "72d0baa7b15e7ad8a0d9fa8be8fd38d9c714d0226972e6ae206fc847bf467f52",
+    "playbooks/backup/tasks/commit.yml": "f2448fb107beb47b35cb2f40d5e7b7910ab8b356e463c709be911a94fc1e7596",
+    "playbooks/backup/tasks/linux.yml": "333cbbc4f8bd318d0640cb2fea4c0b4acd4aebce17c0be6133e516fa3c2fc027",
+    "playbooks/backup/tasks/load_defaults.yml": "66280ba03aa58d88d107fbb803ce5936a851663bf090a3333591f430b0e1c83b",
+    "playbooks/backup/tasks/preflight.yml": "8da8a6bdb6381f1b6a2d46e1f10287801b6abbf760db152f6bc2bffcf92c6f82",
+    "playbooks/base.yml": "cc3a40a6d53006ed02c6b668ee00dfc8fcb5851fdb4224079213836a8a8f7114",
+    "playbooks/checkmk/uninstall_agent.yml": "197d5c7b1bacb2feb264f483cb6cffa3acc81d996ad9895646c332d720b382fe",
+    "playbooks/docker/check_docker.yml": "c7984855179dc0e6ab62908b3261b02f1dfd63f506eb1582905d2fc2bd9fa915",
+    "playbooks/docker/deploy.yml": "2078ad5c8b19ca522c0ec2d2be03287efd2a2cac7d967fa183e6ad21f550a4da",
+    "playbooks/docker/deploy_docker_networks.yaml": "8f6244906342b88ce6f6c548d93df2908590a038cd6dc10a1f4c662b535e4020",
+    "playbooks/docker/deploy_docker_stacks.yml": "ca74ef6d5d83e9d2c87a8014a3e275d7f0db3e9fe61c90075d67f2a9d1ec29f4",
+    "playbooks/docker/deploy_docker_users.yml": "868e212e6db7f4deb3c8f20835e1ab9c8b9f2d2c632e9db0116f394d2cafac79",
+    "playbooks/docker/filter_plugins/docker_network_ipam.py": "7f780ef9c2d52e4371be4bd6f9fa869469bf98b108b026d76f2acae50c95304a",
+    "playbooks/docker/get_docker_ips.yaml": "817c3dce8d875fb24ab47364e7d050629933f8c28932a9edbd06e61c73d2e695",
+    "playbooks/docker/prepare_deployment.yml": "4f822703e1407cf4e5b82517ba55d9b0e1160db7a5bd4c46b9a0a0cae2bc5c84",
+    "playbooks/docker/prepare_macvlan_parents.yml": "b9733dabc973c20f8889f43bcb8591bb5e11bb152832d311e55f62ef675421f0",
+    "playbooks/docker/stop_all_docker.yaml": "8065e4db34bdebfafc6cf500bf29562052c7ca4fdfb6371c192f573180b272ff",
+    "playbooks/docker/stop_auto_upgrade_docker.yaml": "088802adc2904b31970d8e555c94e2d417aa398dd37d583c0d263c0073e17409",
+    "playbooks/docker/tasks/check_network.yml": "246222067325b3192b71d881897ea65a70492f0228891ef16e96616b18a25b52",
+    "playbooks/docker/tasks/validate_networks.yml": "988929fcf7b9ce546f3b6f3b0152980058a6ba5e3b16d7afbbad3ea2bddc5515",
+    "playbooks/docker/update_containers.yml": "d0a7b2e6df7cafc3921fb6672943eeaa87992c3c31c95d34267b7f435865aa0a",
+    "playbooks/identity/configure_kerberos.yml": "456d44fe33043a503558ae76bb48cf363dea074837b8694b51cc5cbb9c1fc787",
+    "playbooks/identity/generate_keytabs.yml": "84d8a3604125e6a9b6faaffa273237bbe7a2be790ce5d26cbca42e5738ea6416",
+    "playbooks/lynis.yml": "4a395bd1b768357a60a69b1fa97db2d32ef6fa094ff5f690a3476203966d3333",
+    "playbooks/maintenance/audit_fstab.yml": "c3019678df30343f53efdee7dd6d6988344620da730dbc17475496ce5439e8d4",
+    "playbooks/maintenance/audit_uid_1000.yaml": "2adb968f7029b66c0c3bae48c202d595c8a1037be9e4b43bde687f9b4a7baae3",
+    "playbooks/maintenance/check-dns.yml": "a37175b0984ee88c470ff086e1a3569b2e23ae7b875ab938cbdad25f0341641a",
+    "playbooks/maintenance/cleanup_backups_and_logs.yml": "f3bf78780cd789c226151e3048dcdc3c15fa9490f118a873750c558a3ba302b8",
+    "playbooks/maintenance/clear_postfix_que.yaml": "23413bdf20510665cd2f98056c294ca64888dd053f2dfe6efb32b5a91c2dbb28",
+    "playbooks/maintenance/disable_syslog_forwarding.yml": "deb8b4116e3117df5b9954179f5278db7f5d15d84828febfd38b85b5df39b1cf",
+    "playbooks/maintenance/get_resolv.yml": "446a07009858504cc0235469896ef2d2550ce5780606f4f8ca03641e9a131fb5",
+    "playbooks/maintenance/manage_controller_schedules.yml": "939b44f02c4c8531a8e4f378285b78e749b07498a50fb4a30f6936cc5b6d365a",
+    "playbooks/maintenance/mount_all.yaml": "c8d51609933fbb3e8c0f6cdde5085e83aee33e7e1f150d31c446d463e2564fb6",
+    "playbooks/maintenance/prepare_paths.yml": "d40cec648acce6683e6f14bd534ebe630f05dcb01d77e242caa814a03904e810",
+    "playbooks/maintenance/rotate_service_user_passwords.yml": "e59b2a52fbb956e2b02c430a77d9877964b8a800f1067b7cfaceb4af74370f61",
+    "playbooks/maintenance/set_fstab.yaml": "2470aacd1df703250783e699ea025e25154cee355568039691e460f1a147c2c1",
+    "playbooks/maintenance/test_mail.yaml": "84d58fc4c883d2b02ce9d339995d4133147bdea0183c3a83bcc22bbaa0e2abed",
+    "playbooks/maintenance/uninstall_chrony.yml": "e37c712578d93c9257aeb0f4775b29cbdb5e001fff92359b403cfa930983d557",
+    "playbooks/network/openwrt/check_dns.yml": "2c95dadfc2e66bd1f0fa1d1aa033e36ec01cdab52bbec9b40e845e2e0916e911",
+    "playbooks/network/openwrt/check_wan.yml": "c4728451ae3a4da483c8b06ea937bf9187ad1210395da58a4869e750e00946d9",
+    "playbooks/network/openwrt/compare_packages.yml": "9474b4d3acd9d335a436793b43284e4f5e42cb4dbbb8d34348f4250cca5c1828",
+    "playbooks/network/openwrt/configure_mac_vlans.yml": "a343f2fe42875588d7f3e48357b386484b64080704b07f2ee6100b75fc93686c",
+    "playbooks/network/openwrt/manage_openwrt_gui.yml": "49e398e5076374a157b4b444f03d144d8e4cb46524b7c8695b1946531e24e150",
+    "playbooks/network/openwrt/openwrt_client_stats.yml": "f2f6d64aa990004a568e75dec55976053855256b506b80aa3b320ea5b34c5048",
+    "playbooks/network/openwrt/openwrt_compare.yaml": "df28baaacfc7ac0afd9dcb8089dcd76f5dbcb04b287a5244d298f62835686e23",
+    "playbooks/network/openwrt/openwrt_get_wlan-channel.yml": "9a57dc25364259515484ebe876117577a9f0208233341ca83865f43d2f4c3970",
+    "playbooks/network/openwrt/openwrt_health_check.yml": "aa9200f303c385bb8953010a2af1615c8b8c53dbdcaf37c10f4f9aefff95a38f",
+    "playbooks/network/openwrt/openwrt_reboot.yml": "43f8a033698e6bb916ea2a179c55a951aedf67b3051f587bcd1e0d85fb143a8c",
+    "playbooks/network/snmp_check.yml": "74f48869885be82c55e045078b28f910a8dee92206ef578082845416a0e11c69",
+    "playbooks/optional.yml": "f07d79d7af5eea9e50d70d8ad1d3baab4d7757c11d9d35c3069006edd3136753",
+    "playbooks/pki/deploy_apache_certificate.yml": "1554b6670bba4baf512de2ec5191ae1a01d23d784eef0a9ea3d767ebd172f468",
+    "playbooks/pki/distribute_root_ca.yml": "65499152a5c1c81a8ff0aedaceba11c840713fcb0e55ec1b653a4eadab22e8ed",
+    "playbooks/pki/renew_crl.yml": "c95c2b9349f67c35b9e89224ed9054f304b325e5d6d75e0256ae06ba25e5461b",
+    "playbooks/reporting/lynis_summary.yml": "e25b8ca86a25a895d213bfda2d132d99977e01319cf155e87dcef94a83b90af1",
+    "playbooks/security/proxmox_stack_hardening.yml": "ba2f8fd96c3ec230317e1050b869f96ccb493749dea544ceacdedcbb30a47ea3",
+    "playbooks/security/sss/config.yml": "d1b22dce5910c5aa8ed42cc96a99ade545f0a5d4e5fc6614ec030416c8d7de0b",
+    "playbooks/security/sss/files/generate.py": "624716d9dd7fd1729faca0f14644cc0002b929d155e2ccc72909c753a98de8ec",
+    "playbooks/security/sss/files/install-voraussetzungen.ps1": "fa28f7b8e753020826a29dcb1903039d90b010e83275860e7b9d78e00e3c9c68",
+    "playbooks/security/sss/files/install-voraussetzungen.sh": "606e4aa85f3f098b6f21477dfff02592d5b143907d986008eb7d27858a2b587b",
+    "playbooks/security/sss/files/notfall_entschluesselung.html": "bb215d8ddcb07df787327363a7af89cdca19519cb6d552fce97f914a8c7b7b81",
+    "playbooks/security/sss/files/recover.py": "2e97a285f5b1e48fbaf2a1a6d5ac499906e0e13a551b44d63c75465e3030379a",
+    "playbooks/security/sss/files/start-html.ps1": "65bcb4433e7e10c8dc38209e8dbadbb59317e2cf34e21eafdb80c93183f4ecd0",
+    "playbooks/security/sss/files/start-html.sh": "6a8161d2d70c0c2575589955464cbd815bd81ac3ba3f3f584bc4b9b2ef6cdf3d",
+    "playbooks/security/sss/run.sh": "62a56bfb9a6d2a06cbdf6c956896bb8904de02699390b298bfc904d16c9b8adc",
+    "playbooks/security/sss/setup.yml": "34f482f96aa7063a1a923713f363bc96802d605a022728bcbf0d0351c0e772ec",
+    "playbooks/security/sss/start-generator.sh": "d78f187d9ca2a0834001cd5f8695e68ee164b34002f0b343461348311018b737",
+    "playbooks/security/sss/treuhaender.yml": "5f7b18077db17b9c47b1fe45959237031cff86e9328394e3ad708ea4427b1a0c",
+    "playbooks/site.yml": "a1370917868ac4cb7aa2118cf0211e6d21a817d6d13fc41793bf079d1b48d325",
+    "playbooks/storage/truenas/configure_routing.yml": "375dd803655711c41aa4ece708868dfae63a209b51b03df20625a1ca8abb7274",
+    "playbooks/storage/zfs/optimize.yml": "828e0e86950b65ce0d1755c779f56db5d84ece81f00c4b9a7a2a8b54503bb756",
+    "playbooks/zsh.yml": "9c8de8a0086afb61e8df93d67b59329632ee983cf94359f059ddf3c9c1091297",
+    "requirements.yml": "8083b3518550b7947f8861bae274474d61f8f1f7cc097d762f79d06fbdfa92f3",
+    "roles/accounting/handlers/main.yml": "d619513b404b71338ef918026e3b8f03107f3122781875e2bca2efaf2a70c47c",
+    "roles/accounting/tasks/main.yml": "f4b5f53a6c763381adb97790326b498d3717636b019e2aac32408b0962166f7e",
+    "roles/baseline/tasks/main.yml": "87a7219760f84883a88c9fc8adfe9ec78bd8fec3601b022a0717dbf812c161b1",
+    "roles/checkmk_agent/defaults/main.yml": "3ac93cd4a2232d3e47a3e797cd5a0ca3db1b7343af439291fb90d5935adbdfaf",
+    "roles/fail2ban/defaults/main.yml": "5bb52f807b33493ab59615b1f8dbae46f3b7c3dce54c959e213a5fc58c098f86",
+    "roles/fail2ban/handlers/main.yml": "53ada0da742407a6a6ec10d7ce0cf3fb76f9ef0dcfd1e1acf6173101fe569fee",
+    "roles/fail2ban/tasks/main.yml": "6e0fe6271ca3ee60fefe88b201facbab079ef460193497baaa9f943ba98491e0",
+    "roles/fail2ban/templates/jail.local.j2": "8b9e77ec35342eb330b94928c5f2fce990f4c46af1a5b31ea57b7167f9a04451",
+    "roles/kerberos/defaults/main.yml": "6f54f15bcd6f8333a08e51f07c10d3c4c1decb907c335e240ddeea31e5659cee",
+    "roles/kerberos/tasks/main.yml": "99359d4ce364030c1eb27dccb193f3a708abcdf5bd110d71a556ff625f9bd487",
+    "roles/kerberos/templates/krb5.conf.j2": "be50abf6586827c49764c8433422cbcf1b2607d6d79877d5b09f54efdac52d7d",
+    "roles/lynis/tasks/main.yml": "9333ec3ddfaf508a9235a5f34f551a3ea251673925e3d77d070bfa3f8144da9d",
+    "roles/motd/handlers/main.yml": "2acdf7a492d63aa060e1bcd4efda6e52075521b94d3affb445225443e9da421b",
+    "roles/motd/tasks/main.yml": "77a6b0770712e7cd3cfc6650921a9782bbbfbf5deaee62eebc0b4526bc76be0f",
+    "roles/motd/templates/00-header.j2": "3fac08a455019724fc32d43471237bb905f6af8303fe5667d569a41a8d5d13e7",
+    "roles/motd/templates/10-system-info.j2": "f655aaf7b9b7c31463871d73d3951963e9ae1deedb9662b9d9dda102d974b234",
+    "roles/motd/templates/90-updates-available.j2": "feb97925f49eff54fda357645b3b622361c764666629e28f96472f3eb73ed5b9",
+    "roles/openwrt_mac_vlans/tasks/main.yml": "5628066232c3a4e2f408a940c008314338d89dea21c738b67546066b8a684298",
+    "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py": "c6681dad60dc3fe64ab38d5ad9bcbed65de3b088e2b6aff950ea209341d97b5b",
+    "roles/openwrt_reboot/tasks/main.yml": "837b0d8bd5dc9dcc93b744577644aea7a31b0bae88c60d9aaf57b9dc2dca8933",
+    "roles/postfix/handlers/main.yml": "8049e36b086cb29149f1adaa2ca9b06ed64412746f9a44dd85c6bb871109264d",
+    "roles/postfix/tasks/main.yml": "f22d64fd1eb91a845d293b76ad166d54a0bad82773a6c1e7205dd642525a0ea7",
+    "roles/postfix/templates/main.cf.j2": "57e5e134ceb67336b7173adbf3b8e4251f98e40dd71126f8698479ced0699a0a",
+    "roles/postfix/templates/sasl_passwd.j2": "dd59c3a3e0cb0932d0b9438bac7e1854e90ceaecee1ab7f25ba400ba033d4d40",
+    "roles/postfix/templates/sender_canonical.j2": "db3626c9db0861654897e365b6710eb3d7eefde8c9b9227bd0f2d939044b3039",
+    "roles/rsyslog/handlers/main.yml": "8a4037da639a25ea0513c4f08eb78f578bfbe78f60b8377a3d726f2bc7faf70c",
+    "roles/rsyslog/tasks/main.yml": "870bef1a818ecd78d13da0bb88ddd5bdfea01dcda2a30fc251d84d20e9d0045e",
+    "roles/security_base/tasks/main.yml": "0a5a737f5a3fc60f8474dc88cf2107dde6f70f4887b9da51c2d141d39134b691",
+    "roles/security_ssh/defaults/main.yml": "dbff17c98ddc68e47ce52ad0ad813ad063f484d1bfbcd7b85d59946de0f467e6",
+    "roles/security_ssh/handlers/main.yml": "cb7c8b71e8c66e339d9ff62e23630fbefadb56fa063624dd0c8eb3ae1533af9d",
+    "roles/security_ssh/tasks/main.yml": "6ba94983454841184a5090e36e822e68f25d73df6388200a0df22c4f8baa7c0a",
+    "roles/security_ssh/templates/00-managed-hardening.conf.j2": "d20a82533eee522fd65d7831386abc41c31e5012660eeb1b8432adbf5a172376",
+    "roles/security_tools/tasks/main.yml": "1e85044f692d043623e2d4559636c56fd86dcc5886d5ececd897cabdd510aafc",
+    "roles/timezone_chrony/handlers/main.yml": "9142135adc212900e25ed123110e56c256ce6329c2cf1cd23e9f0a6b8629782c",
+    "roles/timezone_chrony/tasks/main.yml": "4ac0e7e107245b6c86f78138a39b2c9f4a68c558ac4d0387c970356a6ba239c1",
+    "roles/timezone_chrony/templates/chrony.conf.j2": "74bd10f95cb0eb562b7b8342b9f4dc9676c0f881ba6165e447639bd974be719e",
+    "roles/zsh/defaults/main.yml": "0cc206d027ab493b0fe9d91f7b1be68b8ab9d40aa91bb848f2d17ca8990174c8",
+    "roles/zsh/files/p10k.zsh": "338dec990091cfbc17b6ee0543c45e0a34cfdd585893cd2f8c5ccaf5307113ab",
+    "roles/zsh/templates/zshrc.j2": "bfe2d001bce6a157eb2aa3c2f264b3b09fc2d6bf96a5bd93278d277c50e2ed6c",
+    "scripts/check_docker.sh": "13f0374176bfcfc1dcf887a4773fcf59ff51eb45cd7bfa4d9feef9afba57479d",
+    "scripts/check_docker_sources.py": "c9ae291ebb2e8c44cc4493dca622cff31c4972dca197fdbd79be319975edda14",
+    "scripts/control_runtime.py": "7024d359970c6f6e60957813ae4e4dc46003a7f13d002c1023448460ee57d86b",
+    "scripts/deploy_apache_certificate.sh": "f6361013266443e876656f9b1060ec87434491a56ff0cf694c613af26a40de35",
+    "scripts/doctor.sh": "9190dfd9692d01537758723b30c04c80c88763a67fd45cc2310878c2971320b9",
+    "scripts/export_docker_users.py": "d3d8fbb53933aa7584131d479674dc1ea36110ccf020bd4a30f44585927fbefd",
+    "scripts/feature_audit.py": "09d354c24b29ecfcbdcd52808bd6699e61bc8712e51b1de08d384facbeda49fe",
+    "scripts/feature_catalog.json": "c9be6630c9f27b85a4b149c5a198ee676e0453ec53a5968c2af6676f15ef7103",
+    "scripts/generate_inventory.py": "782acb3248c06b08d81221f1113347cdafc4347cfc011dd20b98ad8e0a62fada",
+    "scripts/run_docker_update.sh": "29ebece2bd26f30a00b056be79cf76e28728ab0beb628757713dae9dd04b46c1",
+    "scripts/update_inventory.sh": "bd39b44766a96c970dd50ef2f90c4fa59243ff3b4dba1b9da845911e997357ad",
+    "templates/lynis_summary.j2": "84f883ec672667db44fba0e38ea6a69a8ce60837fcdb185d9c1506b0f6a97d10",
+    "templates/summary_templates.j2": "e033fa7bd0684d25350540cc645b8773efdf29bdcc9bea76c395860270d836f6",
+    "bin/setup-runtime": "2fc28973f55863d8aa4f79e366f1b10121e5ee951f04c82f9c0be90e4628fb95",
+    "bin/install-controller": "b7be6c8dcd6e0056de9eebb5cea49b8a1072edf1f3783294ad173ba1d5e47691",
+    "tools/install_controller.py": "5ffcc7081875a976c94768665ad63deb60c100f7ccda1e9bf7a5e007e0b42096",
+    "lib/controller_environment.sh": "9d98781433bb2330912f12525aca553b833761803006434d06a934c987be18e6",
+    "controller-base.json": "d2e2576af96f85bd6f90b54fa0313f30c53567dff718c48286877b2e84949071",
+    "requirements-controller.txt": "1b2833493fbc444c46467095ffe46b5d7c537fc7c5ed9b3143b6451085151abb",
+    "requirements-extra.yml": "e49aba39141e82b6b5a83935ca6233f93dc8030d82b8e1c15e95302cbfb75516",
+    "update_check/rollout.py": "dea940bbbe2fefee6e7446e9c5a167da1f59ec929b21415e409672d8dda8f9a3",
+    "playbooks/controller_smoke.yml": "dd8f0294944bea99e3c2381c7d714dd2e0db13610fa9a7e3c019004bc16f2e37",
+    "update_check/staging_manifest.py": "20e546bb86533adf593a35420af6a0b35cb2484a8b732cd5c3e745758a3cf34d",
+    "tools/github_https.py": "1cd2cf56539bd49c05403088732d2fe2a61b1b2a4a33427f9c55dd9d94742d2f",
+    "tools/pipe_install.py": "a787639f1efdb397f0538f129f1fb6681924e29a3fa1582d475ee40f7a843d82",
+    "playbooks/scripts/stage_library.yml": "f981967c97e6c2d4f19154d7693b21b02ac2700779876605dea82f7038700db8",
+    "roles/script_library/tasks/main.yml": "6f50ce15ad462998f74e280d18d0cbec114abc5c10bbb601ad33ae5250295558",
+    "descriptions/playbooks/playbooks__scripts__stage_library.md": "b4aa3a81d4812c8a5df956dfec269d73c889b785f6b1c69edd77471ead2a5cbf",
+    "artifacts/script-library/lib/common/hm_check_mount.sh": "cba2e85dd764ccc9700ca29d49d2c66257c8d8f25f7a1e20fc1f59520ded752d",
+    "artifacts/script-library/lib/common/hm_gpg_encrypt.sh": "f38be7f05ddd5c3aa4eea9271f979f8e2d10795e7ea64f9c0f9abb708e553417",
+    "artifacts/script-library/lib/common/hm_load_config.sh": "03322de51b09e358f37157009daeb2c6db5c44bcccde851f140492330b19bede",
+    "artifacts/script-library/lib/common/hm_lock.sh": "41e4bb0208f058153ae6d87c511c8b3730042739f627d4696d38f2006127348e",
+    "artifacts/script-library/lib/common/hm_log.sh": "ffb388977c2a1c787fbf17a91294f2f47ee5ebb747d7857ed9e22cba921470fd",
+    "artifacts/script-library/lib/common/hm_mail_ascii.sh": "84371463f8deb9f397392dcca56a874e6b8b51732300b731895f4ffabbccfe39",
+    "artifacts/script-library/lib/common/hm_mail_command.sh": "c5ee75517c8c1f34b3241741b545a444302fa5e433f63bcce4acdb5cc0fb7cbe",
+    "artifacts/script-library/lib/common/hm_require_config.sh": "771149eccf6589726d2a8aa434701dff73ee3a4cfc4898ba7e4bcc11e6740c87",
+    "artifacts/script-library/lib/common/hm_retention.sh": "f8b3be38a79437cc62e0aa03e4c5776081da3db65c390e47a1c071483b784e69",
+    "artifacts/script-library/lib/common/hm_send_mail.sh": "6f63ba5d19efe07251691c06ba3acd9c8ed5f5d30eceaf9faf5d68fe0535867c",
+    "artifacts/script-library/lib/common/hm_send_telegram.sh": "0c82b5a8756f02cd020005ebcfa7b588fee1067b44dff7105e286f334ed9992c",
+    "artifacts/script-library/lib/common/log_message.sh": "5734c665791bf8ce0ed832a24e9f61409502c06822520bba0b121fce9847c3eb",
+    "artifacts/script-library/lib/common/mail.sh": "14aad2f3afe6f1a0e2c6597680cd4c97b332dce3409c8f5449c266aef8881f9e",
+    "artifacts/script-library/lib/common/mailx.sh": "2202d07ad3e3ec1b3705218d6655ba7d1a2c9aa2f83e6e30181f997cea1a76ee",
+    "artifacts/script-library/lib/common/send_email.sh": "80214cc9ae3542b5f0612ec83091492b760503b639c68bd24026f36c3c6310ad",
+    "artifacts/script-library/lib/common/send_telegram_message.sh": "361b7d0a9aa88021893f53b53b6b581588b85b3becf68abef1e45fc43c06dca5",
+    "artifacts/script-library/lib/data/mail-translations.json": "ce7668aa25394d1467de3998816266a14e58080c730893cf150719fa1f366ba5",
+    "artifacts/script-library/lib/load.sh": "7125a71ff01fbf7d26dd274ec2149a722bec457dfab5562860a3dbe67703c4e1"
+  },
+  "scope": "Basis und lokale Controller-Installation",
+  "version_files": [
+    "VERSION.txt"
+  ],
+  "lifecycle_basis": "Neutraler Workspace-Quellstand",
+  "file_features": {
+    "bin/control.d/backup-archive-apply.json": [
+      "backup"
+    ],
+    "bin/control.d/backup-archive-apply.sh": [
+      "backup"
+    ],
+    "bin/control.d/backup-archive-preview.json": [
+      "backup"
+    ],
+    "bin/control.d/backup-archive-preview.sh": [
+      "backup"
+    ],
+    "bin/control.d/backup-playbook.json": [
+      "backup"
+    ],
+    "bin/control.d/backup-playbook.sh": [
+      "backup"
+    ],
+    "bin/control.d/backup.json": [
+      "backup"
+    ],
+    "bin/control.d/backup.sh": [
+      "backup"
+    ],
+    "bin/control.d/checkmk-download.json": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-download.sh": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-migration-apply.json": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-migration-apply.sh": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-migration-plan.json": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-migration-plan.sh": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-uninstall.json": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk-uninstall.sh": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk.json": [
+      "checkmk"
+    ],
+    "bin/control.d/checkmk.sh": [
+      "checkmk"
+    ],
+    "bin/control.d/chrony-uninstall.json": [
+      "chrony"
+    ],
+    "bin/control.d/chrony-uninstall.sh": [
+      "chrony"
+    ],
+    "bin/control.d/controller-backup.json": [
+      "backup"
+    ],
+    "bin/control.d/controller-backup.sh": [
+      "backup"
+    ],
+    "bin/control.d/docker-auto-update-stop.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-auto-update-stop.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-check.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-check.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-deploy-all.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-deploy-all.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-deploy.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-deploy.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-ips.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-ips.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-macvlan-prepare.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-macvlan-prepare.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-stop.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-stop.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-update.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-update.sh": [
+      "docker"
+    ],
+    "bin/control.d/docker-users-export.json": [
+      "docker"
+    ],
+    "bin/control.d/docker-users-export.sh": [
+      "docker"
+    ],
+    "bin/control.d/inventory-check.json": [
+      "proxmox"
+    ],
+    "bin/control.d/inventory-check.sh": [
+      "proxmox"
+    ],
+    "bin/control.d/inventory.json": [
+      "proxmox"
+    ],
+    "bin/control.d/inventory.sh": [
+      "proxmox"
+    ],
+    "bin/control.d/keytabs.json": [
+      "kerberos"
+    ],
+    "bin/control.d/keytabs.sh": [
+      "kerberos"
+    ],
+    "bin/control.d/lynis.json": [
+      "lynis"
+    ],
+    "bin/control.d/lynis.sh": [
+      "lynis"
+    ],
+    "bin/control.d/mail-test.json": [
+      "postfix"
+    ],
+    "bin/control.d/mail-test.sh": [
+      "postfix"
+    ],
+    "bin/control.d/openwrt-channel.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-channel.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-clients.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-clients.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-config-diff.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-config-diff.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-gui-off.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-gui-off.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-gui-on.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-gui-on.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-health.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-health.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-mac-vlans.json": [
+      "openwrt_mac_vlans"
+    ],
+    "bin/control.d/openwrt-mac-vlans.sh": [
+      "openwrt_mac_vlans"
+    ],
+    "bin/control.d/openwrt-package-diff.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-package-diff.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-reboot.json": [
+      "openwrt"
+    ],
+    "bin/control.d/openwrt-reboot.sh": [
+      "openwrt"
+    ],
+    "bin/control.d/postfix-queue-clear.json": [
+      "postfix"
+    ],
+    "bin/control.d/postfix-queue-clear.sh": [
+      "postfix"
+    ],
+    "bin/control.d/proxmox-hardening.json": [
+      "proxmox"
+    ],
+    "bin/control.d/proxmox-hardening.sh": [
+      "proxmox"
+    ],
+    "bin/control.d/rsyslog-disable.json": [
+      "rsyslog"
+    ],
+    "bin/control.d/rsyslog-disable.sh": [
+      "rsyslog"
+    ],
+    "bin/control.d/schedules.json": [
+      "schedules"
+    ],
+    "bin/control.d/schedules.sh": [
+      "schedules"
+    ],
+    "bin/control.d/telegraf.json": [
+      "telegraf"
+    ],
+    "bin/control.d/telegraf.sh": [
+      "telegraf"
+    ],
+    "bin/control.d/truenas-routing.json": [
+      "truenas"
+    ],
+    "bin/control.d/truenas-routing.sh": [
+      "truenas"
+    ],
+    "bin/control.d/zfs-optimize.json": [
+      "proxmox"
+    ],
+    "bin/control.d/zfs-optimize.sh": [
+      "proxmox"
+    ],
+    "bin/control.d/zsh.json": [
+      "zsh"
+    ],
+    "bin/control.d/zsh.sh": [
+      "zsh"
+    ],
+    "playbooks/backup/archive_legacy.yml": [
+      "backup"
+    ],
+    "playbooks/backup/backup_all.yml": [
+      "backup"
+    ],
+    "playbooks/backup/backup_controller_configs.yml": [
+      "backup"
+    ],
+    "playbooks/backup/run_ansible_backup.sh": [
+      "backup"
+    ],
+    "playbooks/checkmk/uninstall_agent.yml": [
+      "checkmk"
+    ],
+    "playbooks/docker/check_docker.yml": [
+      "docker"
+    ],
+    "playbooks/docker/deploy_docker_networks.yaml": [
+      "docker"
+    ],
+    "playbooks/docker/deploy_docker_stacks.yml": [
+      "docker"
+    ],
+    "playbooks/docker/deploy_docker_users.yml": [
+      "docker"
+    ],
+    "playbooks/docker/get_docker_ips.yaml": [
+      "docker"
+    ],
+    "playbooks/docker/prepare_deployment.yml": [
+      "docker"
+    ],
+    "playbooks/docker/prepare_macvlan_parents.yml": [
+      "docker"
+    ],
+    "playbooks/docker/stop_all_docker.yaml": [
+      "docker"
+    ],
+    "playbooks/docker/stop_auto_upgrade_docker.yaml": [
+      "docker"
+    ],
+    "playbooks/identity/generate_keytabs.yml": [
+      "kerberos"
+    ],
+    "playbooks/lynis.yml": [
+      "lynis"
+    ],
+    "playbooks/maintenance/clear_postfix_que.yaml": [
+      "postfix"
+    ],
+    "playbooks/maintenance/disable_syslog_forwarding.yml": [
+      "rsyslog"
+    ],
+    "playbooks/maintenance/manage_controller_schedules.yml": [
+      "schedules"
+    ],
+    "playbooks/maintenance/test_mail.yaml": [
+      "postfix"
+    ],
+    "playbooks/maintenance/uninstall_chrony.yml": [
+      "chrony"
+    ],
+    "playbooks/network/openwrt/compare_packages.yml": [
+      "openwrt"
+    ],
+    "playbooks/network/openwrt/configure_mac_vlans.yml": [
+      "openwrt_mac_vlans"
+    ],
+    "playbooks/network/openwrt/manage_openwrt_gui.yml": [
+      "openwrt"
+    ],
+    "playbooks/network/openwrt/openwrt_client_stats.yml": [
+      "openwrt"
+    ],
+    "playbooks/network/openwrt/openwrt_compare.yaml": [
+      "openwrt"
+    ],
+    "playbooks/network/openwrt/openwrt_get_wlan-channel.yml": [
+      "openwrt"
+    ],
+    "playbooks/network/openwrt/openwrt_health_check.yml": [
+      "openwrt"
+    ],
+    "playbooks/network/openwrt/openwrt_reboot.yml": [
+      "openwrt"
+    ],
+    "playbooks/reporting/lynis_summary.yml": [
+      "lynis"
+    ],
+    "playbooks/security/proxmox_stack_hardening.yml": [
+      "proxmox"
+    ],
+    "playbooks/storage/truenas/configure_routing.yml": [
+      "truenas"
+    ],
+    "playbooks/storage/zfs/optimize.yml": [
+      "proxmox"
+    ],
+    "playbooks/zsh.yml": [
+      "zsh"
+    ],
+    "roles/accounting/handlers/main.yml": [
+      "accounting"
+    ],
+    "roles/accounting/tasks/main.yml": [
+      "accounting"
+    ],
+    "roles/baseline/tasks/main.yml": [
+      "baseline"
+    ],
+    "roles/checkmk_agent/defaults/main.yml": [
+      "checkmk"
+    ],
+    "roles/fail2ban/defaults/main.yml": [
+      "fail2ban"
+    ],
+    "roles/fail2ban/handlers/main.yml": [
+      "fail2ban"
+    ],
+    "roles/fail2ban/tasks/main.yml": [
+      "fail2ban"
+    ],
+    "roles/fail2ban/templates/jail.local.j2": [
+      "fail2ban"
+    ],
+    "roles/kerberos/defaults/main.yml": [
+      "kerberos"
+    ],
+    "roles/kerberos/tasks/main.yml": [
+      "kerberos"
+    ],
+    "roles/kerberos/templates/krb5.conf.j2": [
+      "kerberos"
+    ],
+    "roles/lynis/tasks/main.yml": [
+      "lynis"
+    ],
+    "roles/motd/handlers/main.yml": [
+      "motd"
+    ],
+    "roles/motd/tasks/main.yml": [
+      "motd"
+    ],
+    "roles/motd/templates/00-header.j2": [
+      "motd"
+    ],
+    "roles/motd/templates/10-system-info.j2": [
+      "motd"
+    ],
+    "roles/motd/templates/90-updates-available.j2": [
+      "motd"
+    ],
+    "roles/openwrt_mac_vlans/tasks/main.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py": [
+      "openwrt"
+    ],
+    "roles/openwrt_reboot/tasks/main.yml": [
+      "openwrt"
+    ],
+    "roles/postfix/handlers/main.yml": [
+      "postfix"
+    ],
+    "roles/postfix/tasks/main.yml": [
+      "postfix"
+    ],
+    "roles/postfix/templates/main.cf.j2": [
+      "postfix"
+    ],
+    "roles/postfix/templates/sasl_passwd.j2": [
+      "postfix"
+    ],
+    "roles/postfix/templates/sender_canonical.j2": [
+      "postfix"
+    ],
+    "roles/rsyslog/handlers/main.yml": [
+      "rsyslog"
+    ],
+    "roles/rsyslog/tasks/main.yml": [
+      "rsyslog"
+    ],
+    "roles/security_base/tasks/main.yml": [
+      "security_base"
+    ],
+    "roles/security_ssh/defaults/main.yml": [
+      "ssh_hardening"
+    ],
+    "roles/security_ssh/handlers/main.yml": [
+      "ssh_hardening"
+    ],
+    "roles/security_ssh/tasks/main.yml": [
+      "ssh_hardening"
+    ],
+    "roles/security_ssh/templates/00-managed-hardening.conf.j2": [
+      "ssh_hardening"
+    ],
+    "roles/security_tools/tasks/main.yml": [
+      "security_tools"
+    ],
+    "roles/timezone_chrony/handlers/main.yml": [
+      "chrony"
+    ],
+    "roles/timezone_chrony/tasks/main.yml": [
+      "chrony"
+    ],
+    "roles/timezone_chrony/templates/chrony.conf.j2": [
+      "chrony"
+    ],
+    "roles/zsh/defaults/main.yml": [
+      "zsh"
+    ],
+    "roles/zsh/files/p10k.zsh": [
+      "zsh"
+    ],
+    "roles/zsh/templates/zshrc.j2": [
+      "zsh"
+    ],
+    "scripts/check_docker.sh": [
+      "docker"
+    ],
+    "scripts/check_docker_sources.py": [
+      "docker"
+    ],
+    "scripts/export_docker_users.py": [
+      "docker"
+    ],
+    "scripts/run_docker_update.sh": [
+      "docker"
+    ],
+    "scripts/update_inventory.sh": [
+      "proxmox"
+    ]
+  }
+}

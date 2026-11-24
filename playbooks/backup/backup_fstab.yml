@@ -1,0 +1,18 @@
+- name: FSTAB sichern
+  hosts: all_script_hosts
+  gather_facts: false
+  become: true
+  vars:
+    backup_kind: fstab
+    backup_paths:
+    - /etc/fstab
+  tasks:
+  - name: Sicherung ausführen
+    ansible.builtin.include_tasks: tasks/linux.yml
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool

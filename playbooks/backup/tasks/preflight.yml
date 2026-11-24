@@ -1,0 +1,30 @@
+---
+- name: Voraussetzungen prüfen
+  ansible.builtin.assert:
+    that:
+      - not ansible_check_mode
+      - inventory_hostname is match('^[A-Za-z0-9][A-Za-z0-9_.-]*$')
+      - backup_kind in backup_retention
+      - backup_root is match('^/[A-Za-z0-9_.-]+(/[A-Za-z0-9_.-]+)+$')
+      - "'.' not in backup_root.split('/') and '..' not in backup_root.split('/')"
+    fail_msg: Sicherungen benötigen einen echten Lauf und einen lokal festgelegten absoluten backup_root.
+
+- name: Mount-Markierung prüfen
+  ansible.builtin.stat:
+    path: "{{ backup_root }}/.mount_ok"
+    follow: false
+    get_checksum: false
+    get_mime: false
+  delegate_to: localhost
+  become: false
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  register: backup_mount_marker
+
+- name: Mount-Markierung bestätigen
+  ansible.builtin.assert:
+    that:
+      - backup_mount_marker.stat.exists
+      - backup_mount_marker.stat.isreg | default(false)
+      - not (backup_mount_marker.stat.islnk | default(false))
+    fail_msg: "Backup abgebrochen: {{ backup_root }}/.mount_ok fehlt oder ist keine reguläre Datei."

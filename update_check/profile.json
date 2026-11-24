@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "profile": "homelab",
+  "basis": "Neutraler Workspace-Quellstand",
+  "conditions": "Nur ausdruecklich deaktivierte oder durch belegte Registrydefaults ausgeschaltete Features sind nicht aktiv versionspflichtig.",
+  "role_features": {
+    "baseline": [
+      "baseline"
+    ],
+    "timezone_chrony": [
+      "chrony"
+    ],
+    "fail2ban": [
+      "fail2ban"
+    ],
+    "motd": [
+      "motd"
+    ],
+    "security_ssh": [
+      "ssh_hardening"
+    ],
+    "security_base": [
+      "security_base"
+    ],
+    "accounting": [
+      "accounting"
+    ],
+    "security_tools": [
+      "security_tools"
+    ],
+    "rsyslog": [
+      "rsyslog"
+    ],
+    "checkmk_agent": [
+      "checkmk"
+    ],
+    "lynis": [
+      "lynis"
+    ],
+    "postfix": [
+      "postfix"
+    ],
+    "kerberos": [
+      "kerberos"
+    ],
+    "zsh": [
+      "zsh"
+    ],
+    "openwrt_mac_vlans": [
+      "openwrt"
+    ],
+    "openwrt_operations": [
+      "openwrt"
+    ],
+    "openwrt_reboot": [
+      "openwrt"
+    ]
+  },
+  "feature_defaults": {
+    "backup": true,
+    "checkmk": false,
+    "chrony": false,
+    "docker": false,
+    "proxmox": false,
+    "kerberos": false,
+    "lynis": false,
+    "postfix": false,
+    "openwrt": false,
+    "openwrt_mac_vlans": false,
+    "rsyslog": false,
+    "schedules": true,
+    "telegraf": false,
+    "truenas": false,
+    "zsh": false
+  },
+  "intentional_differences": "Dateihashes gelten ausschliesslich fuer dieses Profil; getrennte Erweiterungen sind nicht Teil der gemeinsamen Basis.",
+  "cleanup_plan_version": "1.0.0"
+}

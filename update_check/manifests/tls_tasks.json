@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "id": "tls_tasks",
+  "version": "1.1.0",
+  "files": {
+    "playbooks/backup/notify.yml": "6c98bb087ad90ddc21828e24a37e5e6d3eb56c75231edf68ebaaf36e3ab62463",
+    "playbooks/checkmk.yml": "302abd08cb511631a0e8efdc87986ccb9ddb9d5ca91b9edf9b57c2a0f21e8058",
+    "playbooks/checkmk/migrate_hosts.yml": "af5bb115f7151904689af456c5fa0137c433e6a92f80f79b5ee8f9955580fdb5",
+    "playbooks/checkmk/tasks/reconcile_host.yml": "3ed963988183c619c9269430d41f19025d4e8ee4467bc138af16b9da54edf7d7",
+    "playbooks/checkmk/tasks/rename_host.yml": "34002de5d1417b08677d5a2038dd4f334bab9e789e58945f03299255dcd5ddbb",
+    "playbooks/maintenance/notify.yml": "73d8909fa4d67e4b925ee1d68489bb38db6b239301ef6a13bc00661e6bb76ad2",
+    "playbooks/maintenance/wan_check.yaml": "6f0447b10a53a1e0034309699904952cc044fe2023a2979018a8467a58588223",
+    "playbooks/monitoring/deploy_telegraf.yml": "1083b693d95153cab46e7dc29f616023f4ab30b86bd092402b879eb32c776bb0",
+    "roles/checkmk_agent/tasks/main.yml": "6c78d0c143ac37cfd2a9e01840dbfb5eb20f669dc471ff0b3ceada35da065392",
+    "roles/openwrt_operations/tasks/main.yml": "7efd1845e3170ed8c3a754e5ce75e49f5320ed80d3b0cbe98bcb8362d4757858",
+    "roles/zsh/tasks/main.yml": "ff58fc7d379351b666e9b3572553cbe2f40a5b99f1799aad922d86a322393924",
+    "scripts/download_checkmk_artifacts.sh": "84b960c4956dcdf8ea3a6baabc00e0f440fdb2e72f74186267effd4f840893c1",
+    "scripts/plan_checkmk_migration.py": "63f99f3beed71806ebb2b6eb4725ebb511fe3b8cab2bdb4cf4ae62cb34b4cce0",
+    "templates/monitoring/telegraf.conf.j2": "cfa37b7cbf21c6d684e2b75df266a35a18e2e3523c144062ad6231b0098438e5"
+  },
+  "scope": "Gepruefte neutrale Vorlagenquelle, kein Produktivexport",
+  "version_files": [],
+  "file_features": {
+    "playbooks/checkmk.yml": [
+      "checkmk"
+    ],
+    "playbooks/checkmk/migrate_hosts.yml": [
+      "checkmk"
+    ],
+    "playbooks/monitoring/deploy_telegraf.yml": [
+      "telegraf"
+    ],
+    "roles/checkmk_agent/tasks/main.yml": [
+      "checkmk"
+    ],
+    "roles/openwrt_operations/tasks/main.yml": [
+      "openwrt"
+    ],
+    "roles/zsh/tasks/main.yml": [
+      "zsh"
+    ],
+    "scripts/download_checkmk_artifacts.sh": [
+      "checkmk"
+    ],
+    "scripts/plan_checkmk_migration.py": [
+      "checkmk"
+    ]
+  }
+}

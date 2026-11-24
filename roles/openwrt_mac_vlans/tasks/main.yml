@@ -1,0 +1,126 @@
+---
+- name: Zentrale Einstellungen pruefen
+  ansible.builtin.assert:
+    that:
+    - openwrt_managed_prefix | default('ansible_vlan') is match('^[A-Za-z][A-Za-z0-9_]*$')
+    - openwrt_iot_ssid | length > 0
+    - openwrt_multimedia_network is match('^[A-Za-z0-9_]+$')
+    - openwrt_multimedia_vlan_id | int > 0
+    - openwrt_multimedia_vlan_id | int < 4095
+    - openwrt_multimedia_clients is sequence
+    - openwrt_multimedia_clients is not string
+    - openwrt_multimedia_clients is not mapping
+    - openwrt_multimedia_clients | map(attribute='mac') | unique | length == openwrt_multimedia_clients | length
+    fail_msg: Bitte group_vars/openwrt_router/mac_vlans.yml pruefen.
+- name: MAC-Adressen validieren
+  ansible.builtin.assert:
+    that:
+    - item.mac is match('^([0-9a-f]{2}:){5}[0-9a-f]{2}$')
+  loop: '{{ openwrt_multimedia_clients }}'
+  loop_control:
+    label: '{{ item.name | default(item.mac) }}'
+- name: Verwaltete WLAN-Konfiguration abgleichen
+  ansible.builtin.raw: |
+    set -eu
+    umask 077
+    prefix={{ openwrt_managed_prefix | default('ansible_vlan') | quote }}
+    ssid={{ openwrt_iot_ssid | quote }}
+    network={{ openwrt_multimedia_network | quote }}
+    vid={{ openwrt_multimedia_vlan_id | int | string | quote }}
+    macs={{ openwrt_multimedia_clients | map(attribute='mac') | join(' ') | quote }}
+    fail() { echo "FEHLER: $*" >&2; exit 1; }
+    [ "$(uci -q get "network.$network")" = interface ] || fail "Schnittstelle $network zuerst manuell anlegen."
+    [ -z "$(uci changes wireless)" ] || fail 'Ungespeicherte WLAN-Aenderungen vorhanden.'
+    ifaces=
+    for iface in $(uci show wireless | sed -n 's/^wireless\.\([^.=]*\)=wifi-iface$/\1/p'); do
+      [ "$(uci -q get "wireless.$iface.ssid" || true)" = "$ssid" ] || continue
+      [ "$(uci -q get "wireless.$iface.mode" || true)" = ap ] || continue
+      [ "$(uci -q get "wireless.$iface.disabled" || true)" != 1 ] || continue
+      radio=$(uci -q get "wireless.$iface.device")
+      [ "$(uci -q get "wireless.$radio.disabled" || true)" != 1 ] || continue
+      case "$iface" in *'['*) fail 'Benannte wifi-iface-Abschnitte erforderlich.';; esac
+      case "$(uci -q get "wireless.$iface.encryption" || true)" in
+        sae-mixed|sae|psk2|psk2+ccmp) ;; *) fail 'Nicht unterstuetzte Verschluesselung.';;
+      esac
+      key=$(uci -q get "wireless.$iface.key")
+      key_length=$(printf '%s' "$key" | wc -c)
+      [ "$key_length" -ge 8 ] && [ "$key_length" -le 63 ] || fail 'Passphrase muss 8 bis 63 Zeichen lang sein.'
+      case "$key" in *'|'*) fail 'SAE-Trennzeichen in Passphrase.';; esac
+      for option in vlan_file vlan_bridge vlan_tagged_interface wpa_psk_file sae_password_file; do
+        [ -z "$(uci -q get "wireless.$iface.$option" || true)" ] || fail "Bestehende Sonderkonfiguration: $iface.$option"
+      done
+      [ "$(uci -q get "wireless.$iface.ppsk" || true)" != 1 ] || fail 'RADIUS-PPSK bereits aktiv.'
+      [ "$(uci -q get "wireless.$iface.dynamic_vlan" || true)" != 2 ] || fail 'Pflicht-VLAN bereits aktiv.'
+      ifaces="$ifaces $iface"
+    done
+    [ -n "$ifaces" ] || fail "SSID $ssid nicht gefunden."
+    for section in $(uci show wireless | sed -n -e 's/^wireless\.\([^.=]*\)=wifi-station$/\1/p' -e 's/^wireless\.\([^.=]*\)=wifi-vlan$/\1/p'); do
+      case "$section" in "${prefix}_"*) continue;; esac
+      owner=$(uci -q get "wireless.$section.iface" || true)
+      case " $ifaces " in *" $owner "*) ;; *) [ -z "$owner" ] || continue;; esac
+      [ "$(uci -q get "wireless.$section.vid" || true)" != "$vid" ] || fail 'Fremde Ziel-VLAN-Zuordnung vorhanden.'
+      for mac in $(uci -q get "wireless.$section.mac" || true); do
+        case " $macs " in *" $mac "*) fail 'MAC hat bereits eine fremde Zuordnung.';; esac
+      done
+    done
+    if {{ ansible_check_mode | ternary('true', 'false') }}; then
+      echo "CHANGED=0: Pruefung: SSID $ssid, Interfaces:$ifaces, Zielnetz $network, VLAN $vid."
+      echo "MACs: $macs"
+      exit 0
+    fi
+    if [ ! -f "/root/wireless.before-${prefix}" ]; then
+      cp -p /etc/config/wireless "/root/wireless.before-${prefix}"
+      chmod 600 "/root/wireless.before-${prefix}"
+    fi
+    before=$(cat /etc/config/wireless)
+    for section in $(uci show wireless | sed -n -e 's/^wireless\.\([^.=]*\)=wifi-station$/\1/p' -e 's/^wireless\.\([^.=]*\)=wifi-vlan$/\1/p'); do
+      case "$section" in "${prefix}_"*) uci delete "wireless.$section";; esac
+    done
+    for iface in $ifaces; do
+      uci set "wireless.$iface.dynamic_vlan=1"
+      uci set "wireless.$iface.vlan_no_bridge=1"
+      section="${prefix}_${iface}_vlan"
+      uci set "wireless.$section=wifi-vlan"
+      uci set "wireless.$section.iface=$iface"
+      uci set "wireless.$section.vid=$vid"
+      uci set "wireless.$section.network=$network"
+      uci set "wireless.$section.name=$vid"
+      key=$(uci -q get "wireless.$iface.key")
+      for mac in $macs; do
+        section="${prefix}_${iface}_$(printf '%s' "$mac" | tr -d ':')"
+        uci set "wireless.$section=wifi-station"
+        uci set "wireless.$section.iface=$iface"
+        uci set "wireless.$section.vid=$vid"
+        uci add_list "wireless.$section.mac=$mac"
+        uci set "wireless.$section.key=$key"
+      done
+    done
+    uci commit wireless
+    after=$(cat /etc/config/wireless)
+    if [ "$before" = "$after" ]; then
+      echo 'CHANGED=0'
+    else
+      : > "/root/.${prefix}-wifi-reload-pending"
+      echo 'CHANGED=1'
+    fi
+    echo 'WLAN-Konfiguration abgeglichen.'
+  check_mode: false
+  register: mac_config
+  changed_when: '''CHANGED=1'' in mac_config.stdout'
+- name: Geaenderte WLAN-Konfiguration aktivieren oder fehlgeschlagenen Reload nachholen
+  ansible.builtin.raw: |
+    set -eu
+    prefix={{ openwrt_managed_prefix | default('ansible_vlan') | quote }}
+    if [ ! -f "/root/.${prefix}-wifi-reload-pending" ]; then
+      echo 'RELOADED=0: Keine ausstehende WLAN-Aenderung.'
+      exit 0
+    fi
+    wifi reload
+    rm "/root/.${prefix}-wifi-reload-pending"
+    echo 'RELOADED=1: WLAN-Konfiguration aktiviert.'
+  when: not ansible_check_mode
+  register: mac_reload
+  changed_when: "'RELOADED=1' in mac_reload.stdout"
+- name: Ergebnis anzeigen
+  ansible.builtin.debug:
+    var: mac_config.stdout_lines

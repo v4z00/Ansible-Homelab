@@ -1,0 +1,5 @@
+---
+zsh_target_user: root
+zsh_target_home: /root
+zsh_oh_my_zsh_install_url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+zsh_powerlevel10k_repo: https://github.com/romkatv/powerlevel10k.git

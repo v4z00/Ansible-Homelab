@@ -1,0 +1,6 @@
+script_stage_enabled: false
+script_release_id: example_pilot01
+script_stage_files:
+  - {src: bin/example.sh, kind: script}
+  - {src: lib/common.sh, kind: library}
+  - {src: config/example.conf, kind: config}

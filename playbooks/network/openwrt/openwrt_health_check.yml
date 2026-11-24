@@ -1,0 +1,8 @@
+- name: OpenWrt health
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: health
+  roles:
+  - openwrt_operations

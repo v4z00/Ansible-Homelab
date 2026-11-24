@@ -1,0 +1,24 @@
+features:
+  openwrt: false
+  truenas: false
+  zsh: false
+  backup: false
+  schedules: false
+truenas_hostname: storage.example.invalid
+truenas_override_ip: ""
+zfs_property_settings: []
+controller_schedules: []
+controller_notification_command: []
+# In vorhandenen features-Block einfuegen, nicht zweite Definition erzeugen.
+openwrt_mac_vlans_enabled: false
+openwrt_iot_ssid: example_iot
+openwrt_multimedia_network: example_media
+openwrt_multimedia_vlan_id: null  # Lokale VLAN-ID vor der Aktivierung setzen.
+openwrt_multimedia_clients: []
+
+# Tatsächlich eingebundenes Ziel mit regulärer .mount_ok-Datei setzen.
+backup_root: ""
+
+# Lokale absolute Quellpfade für die jeweiligen Backup-Gruppen.
+bond_monitor_backup_paths: []
+certificate_backup_paths: []

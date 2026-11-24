@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-reboot",
+      "description": "OpenWrt-APs seriell neu starten; Boot-ID pruefen; --limit ZIEL erforderlich",
+      "handler": "bin/control.d/openwrt-reboot.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/openwrt_reboot.yml",
+        "roles/openwrt_reboot/tasks/main.yml",
+        "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-reboot",
+          "args": []
+        },
+        {
+          "name": "openwrt-reboot",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

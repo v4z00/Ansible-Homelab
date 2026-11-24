@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "replaces": [
+    "bin/control.d/dns-check.sh",
+    "bin/control.d/wan-check.sh",
+    "configure_server_BASE.sh",
+    "examples/tls/settings.example.yml",
+    "update_check/cleanup_plan.json",
+    "update_check/integrity.json",
+    "update_check/manifests/controller_basis.json",
+    "update_check/manifests/tls_tasks.json",
+    "update_check/profile.json",
+    "update_check/release.json",
+    "update_check/settings_catalog.json",
+    "update_check/settings_contract.json"
+  ],
+  "profile": "Homelab"
+}

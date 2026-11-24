@@ -1,0 +1,8 @@
+- name: OpenWrt config-diff
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: config-diff
+  roles:
+  - openwrt_operations

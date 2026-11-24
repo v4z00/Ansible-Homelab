@@ -1,0 +1,8 @@
+- name: OpenWrt dns
+  hosts: openwrt_router
+  gather_facts: false
+  become: false
+  vars:
+    openwrt_operation: dns
+  roles:
+  - openwrt_operations

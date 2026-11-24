@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "zfs-optimize",
+      "description": "ZFS-Eigenschaften optimieren",
+      "handler": "bin/control.d/zfs-optimize.sh",
+      "feature": "proxmox",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/storage/zfs/optimize.yml"
+      ],
+      "aliases": [
+        {
+          "name": "zfs-optimize",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

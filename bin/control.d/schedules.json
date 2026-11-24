@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "schedules",
+      "description": "Zentrale Cronjobs auf dem Controller einrichten",
+      "handler": "bin/control.d/schedules.sh",
+      "feature": "schedules",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/maintenance/manage_controller_schedules.yml"
+      ],
+      "aliases": [
+        {
+          "name": "schedules",
+          "args": []
+        }
+      ],
+      "feature_default": false
+    }
+  ]
+}

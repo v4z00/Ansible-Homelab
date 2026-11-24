@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "openwrt-package-diff",
+      "description": "OpenWrt-Paketlisten vergleichen",
+      "handler": "bin/control.d/openwrt-package-diff.sh",
+      "feature": "openwrt",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/network/openwrt/compare_packages.yml"
+      ],
+      "aliases": [
+        {
+          "name": "wifi-diff-pkgs",
+          "args": []
+        },
+        {
+          "name": "openwrt-package-diff",
+          "args": []
+        }
+      ]
+    }
+  ]
+}

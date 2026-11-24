@@ -1,0 +1,27 @@
+- name: TrueNAS-Namenszuordnung pflegen
+  hosts: all_linux_systems
+  gather_facts: false
+  become: false
+  pre_tasks:
+  - name: Ausdrueckliches Ziel pruefen
+    ansible.builtin.assert:
+      that:
+      - ansible_limit | default('') | length > 0
+      fail_msg: Mit --limit HOST oder GRUPPE starten.
+  - name: Feature pruefen
+    ansible.builtin.assert:
+      that:
+      - features.truenas | default(false) | bool
+  tasks:
+  - name: Zielnamen und Zieladresse pruefen
+    ansible.builtin.assert:
+      that:
+      - truenas_hostname | default('') is match('^[A-Za-z0-9][A-Za-z0-9.-]+$')
+      - truenas_override_ip | default('') | length == 0 or truenas_override_ip is match('^[0-9a-fA-F:.]+$')
+  - name: Verwalteten TrueNAS-Block pflegen
+    ansible.builtin.blockinfile:
+      path: /etc/hosts
+      marker: '# {mark} ANSIBLE TRUENAS ROUTE'
+      block: '{{ truenas_override_ip | default('''') }} {{ truenas_hostname }}'
+      state: '{{ ''present'' if truenas_override_ip | default('''') | length > 0 else ''absent'' }}'
+      backup: true

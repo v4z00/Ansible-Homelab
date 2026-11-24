@@ -1,0 +1,132 @@
+---
+- name: OpenWrt-Funktion pruefen
+  ansible.builtin.assert:
+    that:
+      - features.openwrt | default(false) | bool
+      - openwrt_operation in ['gui', 'clients', 'channel', 'health', 'config-diff', 'package-diff', 'dns', 'wan']
+      - openwrt_operation != 'gui' or (state | default('off') | string | lower) in ['on', 'off', 'true', 'false']
+- name: OpenWrt-Daten lesen oder GUI gezielt steuern
+  ansible.builtin.raw: |
+    set -eu
+    operation={{ openwrt_operation | quote }}
+    case "$operation" in
+      gui)
+        [ -x /etc/init.d/uhttpd ] || { echo 'uhttpd fehlt.' >&2; exit 1; }
+        before_enabled=0; before_running=0
+        /etc/init.d/uhttpd enabled >/dev/null 2>&1 && before_enabled=1 || true
+        /etc/init.d/uhttpd running >/dev/null 2>&1 && before_running=1 || true
+        desired={{ ((state | default('off') | string | lower) in ['on', 'true']) | ternary('1', '0') }}
+        if [ "$before_enabled" = "$desired" ] && [ "$before_running" = "$desired" ]; then
+          echo 'CHANGED=0'; exit 0
+        fi
+        if {{ ansible_check_mode | ternary('true', 'false') }}; then
+          echo 'CHANGED=1: GUI-Zustand wuerde geaendert.'; exit 0
+        fi
+        if [ "$desired" = 1 ]; then /etc/init.d/uhttpd enable; /etc/init.d/uhttpd start
+        else /etc/init.d/uhttpd stop; /etc/init.d/uhttpd disable; fi
+        echo 'CHANGED=1'
+        ;;
+      clients)
+        command -v iw >/dev/null || { echo 'iw fehlt.' >&2; exit 1; }
+        for iface in $(iw dev | awk '$1 == "Interface" {print $2}'); do
+          echo "Interface: $iface"
+          iw dev "$iface" station dump
+        done
+        ;;
+      channel)
+        command -v iw >/dev/null || { echo 'iw fehlt.' >&2; exit 1; }
+        for iface in $(iw dev | awk '$1 == "Interface" {print $2}'); do
+          echo "Interface: $iface"
+          iw dev "$iface" info
+          iw dev "$iface" survey dump
+        done
+        ;;
+      health)
+        ubus call system board
+        uptime
+        free
+        df -h / /tmp
+        /etc/init.d/uhttpd status 2>/dev/null || true
+        if command -v iw >/dev/null; then iw dev; fi
+        if command -v apk >/dev/null; then apk info | wc -l
+        elif command -v opkg >/dev/null; then opkg list-installed | wc -l; fi
+        ;;
+      config-diff)
+        # Positive list: no WLAN keys, shared secrets or authentication passwords.
+        for section in network wireless system; do
+          uci -q show "$section" | awk '
+            /^[^=]+=(interface|device|bridge-vlan|wifi-device|wifi-iface|wifi-vlan|wifi-station|system)$/ {print; next}
+            /\.(device|name|type|ports|vlan|vid|proto|mtu|metric|delegate|network|ssid|mode|encryption|band|htmode|disabled|mac|iface|dynamic_vlan|vlan_no_bridge|vlan_filtering|stp|igmp_snooping)=/ {print}
+          '
+        done | sort
+        ;;
+      package-diff)
+        if command -v apk >/dev/null; then apk info -v | sort
+        elif command -v opkg >/dev/null; then opkg list-installed | sort
+        else echo 'Kein unterstuetzter Paketmanager.' >&2; exit 1; fi
+        ;;
+      dns)
+        for target in {{ dns_check_domains | default(['example.com']) | map('quote') | join(' ') }}; do
+          nslookup "$target"
+        done
+        ;;
+      wan)
+        if command -v uclient-fetch >/dev/null; then
+          uclient-fetch -q {{ ((tls_validate_certs | default({})).get('openwrt_wan_check', tls_validate_certs_default | default(true)) | bool) | ternary('', '--no-check-certificate') }} -O /dev/null {{ wan_check_url | default('https://example.com/') | quote }}
+        elif command -v wget >/dev/null; then
+          wget -q {{ ((tls_validate_certs | default({})).get('openwrt_wan_check', tls_validate_certs_default | default(true)) | bool) | ternary('', '--no-check-certificate') }} -O /dev/null {{ wan_check_url | default('https://example.com/') | quote }}
+        else echo 'Kein HTTP-Client vorhanden.' >&2; exit 1; fi
+        echo 'HTTP-Ziel erreichbar.'
+        ;;
+    esac
+  check_mode: false
+  register: openwrt_result
+  changed_when: "openwrt_operation == 'gui' and 'CHANGED=1' in openwrt_result.stdout"
+- name: Ergebnis anzeigen
+  ansible.builtin.debug:
+    msg: '{{ openwrt_result.stdout_lines }}'
+- name: Vergleich benoetigt mindestens zwei ausgewaehlte APs
+  ansible.builtin.assert:
+    that: ansible_play_hosts_all | length >= 2
+    fail_msg: 'Fuer einen Vergleich zwei APs oder die Gruppe openwrt_router auswaehlen.'
+  when: openwrt_operation in ['config-diff', 'package-diff']
+  run_once: true
+- name: Sicheren lokalen Reportordner anlegen
+  ansible.builtin.file:
+    path: '{{ playbook_dir }}/../../../artifacts/openwrt'
+    state: directory
+    mode: '0700'
+  delegate_to: localhost
+  when: openwrt_operation in ['config-diff', 'package-diff']
+  run_once: true
+  check_mode: false
+- name: Bereinigten Vergleichsstand lokal speichern
+  ansible.builtin.copy:
+    content: '{{ openwrt_result.stdout }}'
+    dest: '{{ playbook_dir }}/../../../artifacts/openwrt/{{ inventory_hostname | regex_replace("[^A-Za-z0-9_.-]", "_") }}-{{ openwrt_operation }}.txt'
+    mode: '0600'
+  delegate_to: localhost
+  when: openwrt_operation in ['config-diff', 'package-diff']
+  check_mode: false
+- name: Die beiden ausgewaehlten APs vergleichen
+  ansible.builtin.command:
+    argv:
+      - diff
+      - '-u'
+      - '{{ playbook_dir }}/../../../artifacts/openwrt/{{ compare_a | regex_replace("[^A-Za-z0-9_.-]", "_") }}-{{ openwrt_operation }}.txt'
+      - '{{ playbook_dir }}/../../../artifacts/openwrt/{{ compare_b | regex_replace("[^A-Za-z0-9_.-]", "_") }}-{{ openwrt_operation }}.txt'
+  vars:
+    compare_a: '{{ openwrt_compare_router_a | default(ansible_play_hosts_all[0]) }}'
+    compare_b: '{{ openwrt_compare_router_b | default(ansible_play_hosts_all[1]) }}'
+  delegate_to: localhost
+  run_once: true
+  when: openwrt_operation in ['config-diff', 'package-diff']
+  check_mode: false
+  register: openwrt_diff
+  changed_when: false
+  failed_when: openwrt_diff.rc not in [0, 1]
+- name: Unterschiede anzeigen
+  ansible.builtin.debug:
+    msg: '{{ openwrt_diff.stdout_lines | default([]) }}'
+  when: openwrt_operation in ['config-diff', 'package-diff']
+  run_once: true

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "backup-playbook",
+      "description": "Alle Backups in einem Ansible-Lauf starten",
+      "handler": "bin/control.d/backup-playbook.sh",
+      "feature": "backup",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/backup/backup_all.yml"
+      ],
+      "aliases": [
+        {
+          "name": "backup-playbook",
+          "args": []
+        }
+      ],
+      "feature_default": false
+    }
+  ]
+}

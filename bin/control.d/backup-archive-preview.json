@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "commands": [
+    {
+      "name": "backup-archive-preview",
+      "description": "Alte automatische Backups nur auflisten",
+      "handler": "bin/control.d/backup-archive-preview.sh",
+      "feature": "backup",
+      "requires": [
+        "lib/control/helpers.sh",
+        "playbooks/backup/archive_legacy.yml"
+      ],
+      "aliases": [
+        {
+          "name": "backup-archive-preview",
+          "args": []
+        }
+      ],
+      "feature_default": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+- name: Bisherige automatische Sicherungen archivieren
+  hosts: localhost
+  gather_facts: false
+  vars:
+    backup_kind: cron
+    archive_apply: false
+    ansible_python_interpreter: '{{ ansible_playbook_python }}'
+  tasks:
+  - name: Backup-Ziel prüfen
+    ansible.builtin.include_tasks: tasks/preflight.yml
+  - name: Verschiebung anzeigen oder ausführen
+    ansible.builtin.command:
+      argv:
+      - '{{ backup_controller_python }}'
+      - '-'
+      - '{{ backup_root }}'
+      - '{{ archive_apply | bool | ternary(''apply'', ''preview'') }}'
+      stdin: "import json, pathlib, sys, uuid\nfrom datetime import datetime, timezone\nroot = pathlib.Path(sys.argv[1])\n\
+        apply = sys.argv[2] == 'apply'\ndef check(path):\n    if path.resolve() != path.absolute():\n        raise\
+        \ SystemExit('Symlink oder unerwarteter Pfad: ' + str(path))\ndef mounted():\n    marker = root / '.mount_ok'\n\
+        \    if marker.is_symlink() or not marker.is_file():\n        raise SystemExit('Mount-Markierung fehlt oder\
+        \ ist ungueltig: ' + str(marker))\nmounted()\ncheck(root)\nif not (root / 'Confbackups').is_dir():\n   \
+        \ raise SystemExit('Confbackups fehlt')\nsources = [root / 'Confbackups' / name for name in ['cron', 'fstab',\
+        \ 'Scripte']]\nfor source in sources:\n    check(source)\n    if source.exists() and not source.is_dir():\n\
+        \        raise SystemExit('Kein Ordner: ' + str(source))\ntarget = root / '_old' / (datetime.now(timezone.utc).strftime('%Y-%m-%d_%H-%M-%S')\
+        \ + '-' + uuid.uuid4().hex[:8]) / 'Confbackups'\ncheck(target)\nmoves = [{'from': str(p), 'to': str(target\
+        \ / p.name)} for p in sources if p.exists()]\nif apply and moves:\n    target.mkdir(parents=True, exist_ok=False)\n\
+        \    for source in sources:\n        if source.exists():\n            mounted()\n            check(source)\n\
+        \            check(target)\n            source.rename(target / source.name)\nprint(json.dumps({'applied':\
+        \ apply and bool(moves), 'moves': moves}, indent=2))\n"
+    register: archive_result
+    changed_when: (archive_result.stdout | from_json).applied
+  - name: Ergebnis anzeigen
+    ansible.builtin.debug:
+      msg: '{{ archive_result.stdout | from_json }}'
+  pre_tasks:
+  - name: Backup-Defaults und vorhandene lokale Variablen laden
+    ansible.builtin.include_tasks: tasks/load_defaults.yml
+  - name: Backup-Funktion pruefen
+    ansible.builtin.assert:
+      that:
+      - features.backup | default(true) | bool
