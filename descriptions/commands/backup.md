@@ -1,24 +1,20 @@
-# Vollstaendigen Backup-Wrapper inklusive Meldung starten
-
-Vollstaendigen Backup-Wrapper inklusive Meldung starten
+# Backup mit Abschlussmeldung starten
 
 Aufruf: `bin/control backup [Optionen]`.
 
 Vorhandene Kurzformen: `backup-full`, `backup`.
 
-Feature: backup. Die aktuelle Aktivierung prueft weiterhin Control.
-
-Keine vollstaendige strukturierte Parameterbeschreibung im Bestand. Den bestehenden Terminalablauf und dessen Hilfe verwenden; keine Optionen erfinden.
+Der Befehl gehört zum Feature `backup`.
 
 Voraussetzungen laut Registry:
 - `lib/control/helpers.sh`
 - `playbooks/backup/run_ansible_backup.sh`
 
-## Parameter und maschinenlesbarer Vertrag
+## Sicherungsquellen zuordnen
 
-Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
-als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
-Vertrauliche Werte werden nicht dokumentiert.
+Ordne die gewünschten Hosts lokal den Inventory-Gruppen `bond_monitor_backup_hosts` und `certificate_backup_hosts` zu. Hinterlege die absoluten Quellpfade in `bond_monitor_backup_paths` und `certificate_backup_paths`.
+
+## Parameter für die TUI
 
 ```json
 {
@@ -44,6 +40,3 @@ Vertrauliche Werte werden nicht dokumentiert.
 
 - `bin/control.d/backup.json`
 - `bin/control.d/backup.sh`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.

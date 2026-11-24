@@ -183,7 +183,7 @@
       "mode": "0644"
     },
     "descriptions/commands/backup.md": {
-      "sha256": "1d4f39a2e7d29c03b3948e292705a3178fe1dbe1f560a12fd9829503a93d1bc1",
+      "sha256": "92522dd875106a3b12b1b866c7cba10f8919c62f33cde773e842940cdaac7639",
       "mode": "0644"
     },
     "descriptions/commands/controller-backup.md": {
@@ -215,7 +215,7 @@
       "mode": "0644"
     },
     "descriptions/commands/openwrt-mac-vlans.md": {
-      "sha256": "6b5c4c98e38d72a9af0338a7cc981c6cfefe2d60d968bb0eb8fdb294ef46d2c4",
+      "sha256": "90643d6b1d8ede5330a6272fe70db68962b3c6503729d9fbb1417862deefdd28",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-package-diff.md": {
@@ -223,7 +223,7 @@
       "mode": "0644"
     },
     "descriptions/commands/openwrt-reboot.md": {
-      "sha256": "493162eadb10b840375e19a77317348af74630390cec99158f5400b5d80be7c1",
+      "sha256": "f0ca0e5191b57793209117c443a817328b977f5e25775f75c0c8fdd4532ee3cf",
       "mode": "0644"
     },
     "descriptions/commands/schedules.md": {
@@ -244,6 +244,10 @@
     },
     "descriptions/configurations/examples__homelab_settings.example.md": {
       "sha256": "cec5e417d23ba3c4daeb3eae2acffca8c0e2efcd1058397f8ca0f39add2c80e1",
+      "mode": "0644"
+    },
+    "descriptions/configurations/installation-homelab.md": {
+      "sha256": "2293df81dd00b9d3ce7f46edd16c70ea11695c08fdffd1687acee1924495baaf",
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__backup__archive_legacy.md": {

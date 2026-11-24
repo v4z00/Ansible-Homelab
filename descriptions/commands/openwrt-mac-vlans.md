@@ -1,12 +1,10 @@
 # WLAN-MAC-Sollzustand abgleichen und bei Aenderung automatisch neu laden
 
-WLAN-MAC-Sollzustand abgleichen und bei Aenderung automatisch neu laden
-
 Aufruf: `bin/control openwrt-mac-vlans [Optionen]`.
 
 Vorhandene Kurzformen: `openwrt-mac-vlans`.
 
-Feature: openwrt_mac_vlans. Die aktuelle Aktivierung prueft weiterhin Control.
+Der Befehl gehört zum Feature `openwrt_mac_vlans`.
 
 Voraussetzungen laut Registry:
 - `lib/control/helpers.sh`
@@ -15,11 +13,11 @@ Voraussetzungen laut Registry:
 
 Bei bestehenden verwalteten WLAN-Abschnitten `openwrt_managed_prefix` lokal auf das bisher verwendete Präfix setzen. Neue Installationen verwenden `ansible_vlan`.
 
-## Parameter und maschinenlesbarer Vertrag
+## Bestehende WLAN-Regeln übernehmen
 
-Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
-als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
-Vertrauliche Werte werden nicht dokumentiert.
+Für bereits verwaltete WLAN-Abschnitte setzt du `openwrt_managed_prefix` auf ihren bisherigen lokalen Präfix.
+
+## Parameter für die TUI
 
 ```json
 {
@@ -76,6 +74,3 @@ Vertrauliche Werte werden nicht dokumentiert.
 - `bin/control.d/openwrt-mac-vlans.json`
 - `bin/control.d/openwrt-mac-vlans.sh`
 - `lib/control/helpers.sh`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
