@@ -3,7 +3,7 @@
   "profile": "Homelab",
   "files": {
     "VERSION.txt": {
-      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9",
+      "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6",
       "mode": "0644"
     },
     "bin/control.d/.versions/homelab.json": {
@@ -539,11 +539,11 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "f7c9725afb22fdbd25aad16c931c1b2aa1719d0ae0c6476bdcbf5cad994172dd",
+      "sha256": "7c421036cccdebfe0aa1606f909ce9faa326766f9d58b1f85065969cfe288af7",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "a523d795c9a2370f162954cdb726306f6a53e563bba1fcf24ae8c7e8e210e9ea",
+      "sha256": "1ab2d997307851f783793953772e3efe088b5661233886b5ab21692d391500f8",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
@@ -555,15 +555,15 @@
       "mode": "0644"
     },
     "update_check/release.json": {
-      "sha256": "9059399574bed9b3fddc59f078b21598d996ab4d5c046533997f0ada452e9ecd",
+      "sha256": "0cb8009801202533e56219c2cc3cdb208197b187f7b93eff313a6d6b87101431",
       "mode": "0644"
     },
     "update_check/settings_catalog.json": {
-      "sha256": "be7438a13710f8fd11323e55388b147da2029787c2686eb718c7491fd9b50485",
+      "sha256": "fe7eb8cdf56b2fb027c4c439165c5d9f6431332700d200a520d145610f239ae1",
       "mode": "0644"
     },
     "update_check/settings_contract.json": {
-      "sha256": "cb88e9a1003e7e304ed9ade554298c8b8d9da244b76b7023e78df17e76082f8b",
+      "sha256": "707b83a9455c827da6d852d5a9f6dcbd78dac9d3770a62a938d5b2313247b70f",
       "mode": "0644"
     }
   }

@@ -1318,10 +1318,35 @@
     "proxmox_token_secret": {
       "description": "Optionaler Wert fuer die bestehende Implementierung; vorhandenen Standortwert beibehalten.",
       "source": "settings_contract.json"
+    },
+    "portainer_check_enabled": {
+      "description": "Zusätzlichen TCP-Test für Portainer nach dem Pflichtcheck aktivieren.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": false,
+      "example_only": false,
+      "default": false
+    },
+    "portainer_check_host": {
+      "description": "Optionales TCP-Ziel. Ohne Eintrag gilt die Ansible-Adresse des Docker-Hosts.",
+      "source": "examples/settings/all_settings.example.yml"
+    },
+    "portainer_check_port": {
+      "description": "TCP-Port für den optionalen Portainer-Test.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 9443,
+      "example_only": false,
+      "default": 9443
+    },
+    "portainer_check_timeout": {
+      "description": "Wartezeit für den Portainer-TCP-Test in Sekunden.",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": 5,
+      "example_only": false,
+      "default": 5
     }
   },
   "example_sources": {
-    "examples/settings/all_settings.example.yml": "60fb5ad7f27e12d935fdab485d5c14f84acdf3bb9bb9cc51a408d2e843b911e6",
+    "examples/settings/all_settings.example.yml": "6c08dd222fa9c8c19a0d75b747591fa83415e2161094098a430a16c4c0d51779",
     "examples/checkmk/settings.example.yml": "9a7e32e0c13537df34ae3297ba1ecf11563385f85eb5ae6edcf3526c6fa6671b",
     "examples/checkmk/plugins.example.yml": "76ca07a6b7cbc1e0af93cc4a3392f59265f8ca63a964c24b4378c4038cb9ca81",
     "examples/access/host_access.example.yml": "f205017617d3b7dd346ddb972a6618a36fa35d89ccb0359f8658432e0e889243",
@@ -1435,7 +1460,11 @@
     "crl_container_name",
     "checkmk_agent_version",
     "checkmk_download_base_url",
-    "checkmk_linux_plugins"
+    "checkmk_linux_plugins",
+    "portainer_check_enabled",
+    "portainer_check_host",
+    "portainer_check_port",
+    "portainer_check_timeout"
   ],
   "policy": "Beispielwerte sind Vorschlaege. Bestehende gueltige lokale Werte haben Vorrang und werden weder als Fehler gewertet noch automatisch ersetzt."
 }

@@ -54,7 +54,7 @@
     "bin/control.d/docker-macvlan-prepare.sh": "c53f7870a201d3ef0d9da4bf5dbfe44d1bb40b6d188b732b0d96b4f0fdb98453",
     "bin/control.d/docker-stop.json": "794c4121f59a0732ecd08efcb027a398777d28472e71c4130bc30628ee51d1a2",
     "bin/control.d/docker-stop.sh": "6356c6a4980d4a2251d7a14184869b4a4616ffca01349ff81b2755f571741737",
-    "bin/control.d/docker-update.json": "64972b09739a1b6cc4c8b0e8a29108ee38d746f5e1d0f0de21608e7ab07276e3",
+    "bin/control.d/docker-update.json": "f43ab973642b6db693086ac2a13d82ede8b94185fe50007c22ccd5e0c7fca098",
     "bin/control.d/docker-update.sh": "473e7c7fcf7bc2bb8402d6ac602d0e4c47fba2acd42387a4716cd283553b2cdf",
     "bin/control.d/docker-users-export.json": "9efe561a10d07c3a8a0a26b1536eba3ae0cda5bc4dc3731a3dbd85e095822c14",
     "bin/control.d/docker-users-export.sh": "f90580ede7d8c608dd1b8420c6e0ec1062ac995afd2c3990b0757212ac7c0a4c",
@@ -171,7 +171,7 @@
     "playbooks/docker/stop_auto_upgrade_docker.yaml": "088802adc2904b31970d8e555c94e2d417aa398dd37d583c0d263c0073e17409",
     "playbooks/docker/tasks/check_network.yml": "246222067325b3192b71d881897ea65a70492f0228891ef16e96616b18a25b52",
     "playbooks/docker/tasks/validate_networks.yml": "988929fcf7b9ce546f3b6f3b0152980058a6ba5e3b16d7afbbad3ea2bddc5515",
-    "playbooks/docker/update_containers.yml": "d0a7b2e6df7cafc3921fb6672943eeaa87992c3c31c95d34267b7f435865aa0a",
+    "playbooks/docker/update_containers.yml": "513144530ef76378ae40c8757d9375546bab2e3350989650bc620b6859e7b309",
     "playbooks/identity/configure_kerberos.yml": "456d44fe33043a503558ae76bb48cf363dea074837b8694b51cc5cbb9c1fc787",
     "playbooks/identity/generate_keytabs.yml": "84d8a3604125e6a9b6faaffa273237bbe7a2be790ce5d26cbca42e5738ea6416",
     "playbooks/lynis.yml": "4a395bd1b768357a60a69b1fa97db2d32ef6fa094ff5f690a3476203966d3333",
@@ -271,7 +271,7 @@
     "scripts/feature_audit.py": "09d354c24b29ecfcbdcd52808bd6699e61bc8712e51b1de08d384facbeda49fe",
     "scripts/feature_catalog.json": "c9be6630c9f27b85a4b149c5a198ee676e0453ec53a5968c2af6676f15ef7103",
     "scripts/generate_inventory.py": "782acb3248c06b08d81221f1113347cdafc4347cfc011dd20b98ad8e0a62fada",
-    "scripts/run_docker_update.sh": "29ebece2bd26f30a00b056be79cf76e28728ab0beb628757713dae9dd04b46c1",
+    "scripts/run_docker_update.sh": "c40305d8fb726a6b2d69592de6c7821861bfc63ceb6d6453dfad4b9752d53942",
     "scripts/update_inventory.sh": "bd39b44766a96c970dd50ef2f90c4fa59243ff3b4dba1b9da845911e997357ad",
     "templates/lynis_summary.j2": "84f883ec672667db44fba0e38ea6a69a8ce60837fcdb185d9c1506b0f6a97d10",
     "templates/summary_templates.j2": "e033fa7bd0684d25350540cc645b8773efdf29bdcc9bea76c395860270d836f6",
@@ -282,7 +282,7 @@
     "controller-base.json": "d2e2576af96f85bd6f90b54fa0313f30c53567dff718c48286877b2e84949071",
     "requirements-controller.txt": "1b2833493fbc444c46467095ffe46b5d7c537fc7c5ed9b3143b6451085151abb",
     "requirements-extra.yml": "e49aba39141e82b6b5a83935ca6233f93dc8030d82b8e1c15e95302cbfb75516",
-    "update_check/rollout.py": "0fb0bd49202e711e2f0ed3372e8af6c3ed7ed1ed2cfb33e8f6d5f501b56cb3da",
+    "update_check/rollout.py": "6eadaeb2d5a4fec42eeb9c75bd0ef65e3725aa7be7d1d7d5ba9e2922657bd583",
     "playbooks/controller_smoke.yml": "dd8f0294944bea99e3c2381c7d714dd2e0db13610fa9a7e3c019004bc16f2e37",
     "update_check/staging_manifest.py": "20e546bb86533adf593a35420af6a0b35cb2484a8b732cd5c3e745758a3cf34d",
     "tools/github_https.py": "1cd2cf56539bd49c05403088732d2fe2a61b1b2a4a33427f9c55dd9d94742d2f",
@@ -308,8 +308,9 @@
     "artifacts/script-library/lib/common/send_telegram_message.sh": "361b7d0a9aa88021893f53b53b6b581588b85b3becf68abef1e45fc43c06dca5",
     "artifacts/script-library/lib/data/mail-translations.json": "ce7668aa25394d1467de3998816266a14e58080c730893cf150719fa1f366ba5",
     "artifacts/script-library/lib/load.sh": "7125a71ff01fbf7d26dd274ec2149a722bec457dfab5562860a3dbe67703c4e1",
-    "tools/local_extension.py": "9a85046719430d57b9ce4d458205c6ef4d8e3b01b2dcdb506446190f9c9dc1d4",
-    "tools/local_callbacks/extension_receipt.py": "dba3e0b117c848b03ab6f2b487d27da3fd91f09ea7c804c827f64879225e7990"
+    "tools/local_extension.py": "2d7ff0e75b3d033332b7b4c9fa54a64ad0b22b608b5b9d72e19db5b4c89a54f7",
+    "tools/local_callbacks/extension_receipt.py": "dba3e0b117c848b03ab6f2b487d27da3fd91f09ea7c804c827f64879225e7990",
+    "playbooks/docker/check_portainer.yml": "83d9f3270f694e70adf9982c2ce92988aa7f389224026d5fc6de666d6f4247d1"
   },
   "scope": "Basis und lokale Controller-Installation",
   "version_files": [
@@ -802,6 +803,9 @@
     ],
     "scripts/update_inventory.sh": [
       "proxmox"
+    ],
+    "playbooks/docker/check_portainer.yml": [
+      "docker"
     ]
   }
 }

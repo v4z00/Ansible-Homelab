@@ -998,6 +998,26 @@
       "key": "proxmox_token_secret",
       "type": "string",
       "required": false
+    },
+    {
+      "key": "portainer_check_enabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "portainer_check_host",
+      "type": "string",
+      "required": false
+    },
+    {
+      "key": "portainer_check_port",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "key": "portainer_check_timeout",
+      "type": "integer",
+      "required": false
     }
   ],
   "tls_tasks": [
