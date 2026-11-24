@@ -15,6 +15,16 @@
       - item.state | default('present') in ['present','absent']
       - item.state | default('present') == 'absent' or item.job | default('') | length > 0
     loop: '{{ controller_schedules | default([]) }}'
+  - name: tmux für konfigurierte OpenWrt-Neustarts bereitstellen
+    ansible.builtin.apt:
+      name: tmux
+      state: present
+    loop: '{{ controller_schedules | default([]) }}'
+    loop_control:
+      label: '{{ item.name }}'
+    when:
+      - item.state | default('present') == 'present'
+      - item.job | default('') is search('bin/control (openwrt-reboot|wifi-reboot)( |$)')
   - name: Nur benannte Ansible-Cronjobs pflegen
     ansible.builtin.cron:
       name: Ansible {{ item.name }}

@@ -1,6 +1,6 @@
-# OpenWrt-APs seriell neu starten; Boot-ID pruefen; --limit ZIEL erforderlich
+# OpenWrt-APs in Wellen neu starten, Admin-APs zuletzt
 
-OpenWrt-APs seriell neu starten; Boot-ID pruefen; --limit ZIEL erforderlich
+OpenWrt-APs in Wellen neu starten, Admin-APs zuletzt
 
 Aufruf: `bin/control openwrt-reboot [Optionen]`.
 
@@ -14,6 +14,8 @@ Voraussetzungen laut Registry:
 - `roles/openwrt_reboot/tasks/main.yml`
 - `roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py`
 
+Gleiche Wellennummern starten parallel. Nach den nummerierten Wellen folgen die übrigen APs einzeln und zuletzt die Mitglieder von openwrt_admin_ap. Der Befehl läuft in tmux. Standardziel ist openwrt_router.
+
 ## Parameter und maschinenlesbarer Vertrag
 
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
@@ -25,7 +27,7 @@ Vertrauliche Werte werden nicht dokumentiert.
   "schema_version": 1,
   "kind": "command",
   "ref": "openwrt-reboot",
-  "title": "OpenWrt-APs seriell neu starten; Boot-ID pruefen; --limit ZIEL erforderlich",
+  "title": "OpenWrt-APs in Wellen neu starten, Admin-APs zuletzt",
   "documented": true,
   "fields": [
     {
@@ -61,11 +63,15 @@ Vertrauliche Werte werden nicht dokumentiert.
   "sources": [
     "bin/control.d/openwrt-reboot.json",
     "bin/control.d/openwrt-reboot.sh",
-    "lib/control/helpers.sh"
+    "lib/control/helpers.sh",
+    "playbooks/network/openwrt/reboot_wave.yml",
+    "scripts/openwrt_reboot_worker.sh"
   ],
   "source_hashes": {
-    "bin/control.d/openwrt-reboot.json": "8527984cd4355bca99e7999300a7f30bb4722c357dafdd6102e65708ad3f5413",
-    "bin/control.d/openwrt-reboot.sh": "85372a64387c4e662d8301c42882ae1421cb49b8b9d5dfe2ccead3f39b7440ba"
+    "bin/control.d/openwrt-reboot.json": "6425dba65542ddeaad184c407fecabd075842359887f18ae4ef543c66a40541d",
+    "bin/control.d/openwrt-reboot.sh": "eca75b8eabbbbcc72eb7dcf1985d90e8979151723ae2b4b27c6db5233945b6a8",
+    "playbooks/network/openwrt/reboot_wave.yml": "a9c67e241c1e43c5e229373d924126addd0487af7f63e9b0ca529604cc7a6c2e",
+    "scripts/openwrt_reboot_worker.sh": "fb3dcf6d9999f63fbac03b7897a2bf367034d548c9aba9eb9fbd096b38aba1fc"
   }
 }
 ```

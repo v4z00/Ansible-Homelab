@@ -4,11 +4,13 @@ Vorhandener Einstieg: `playbooks/network/openwrt/openwrt_reboot.yml`.
 
 Im Quelltext benannte Plays/Aufgaben:
 
-- OpenWrt-APs nacheinander neu starten
-- Feature und ausdrueckliche Zielauswahl pruefen
+- OpenWrt-APs in Wellen neu starten, Admin-APs zuletzt
+- Zielauswahl und Wellennummer prüfen
 
 Ausfuehrung bevorzugt ueber den passenden Control-Befehl. Die Datei allein beschreibt nicht alle effektiven Variablen: Rollen, Inventar und lokale Standortkonfiguration wirken weiterhin. Keine allgemeinen --check-/Limit-Garantien daraus ableiten.
 
+
+Gleiche Wellennummern starten parallel. Nach den nummerierten Wellen folgen die übrigen APs einzeln und zuletzt die Mitglieder von openwrt_admin_ap. Der Befehl läuft in tmux. Standardziel ist openwrt_router.
 
 ## Parameter und maschinenlesbarer Vertrag
 
@@ -29,7 +31,7 @@ Vertrauliche Werte werden nicht dokumentiert.
     "playbooks/network/openwrt/openwrt_reboot.yml"
   ],
   "source_hashes": {
-    "playbooks/network/openwrt/openwrt_reboot.yml": "43f8a033698e6bb916ea2a179c55a951aedf67b3051f587bcd1e0d85fb143a8c"
+    "playbooks/network/openwrt/openwrt_reboot.yml": "8e434225b6b1433c2a0c591e081eb8c850fd309ce6e7e09924518c176e8d1902"
   }
 }
 ```

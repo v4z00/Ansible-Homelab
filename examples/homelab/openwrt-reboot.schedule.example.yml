@@ -1,0 +1,11 @@
+---
+# Diesen Eintrag zur lokalen Liste controller_schedules hinzufügen.
+controller_schedules:
+  - name: OpenWrt Monatsneustart
+    minute: '0'
+    hour: '4'
+    weekday: '0'
+    job: >-
+      /usr/bin/test "$(/usr/bin/date -d '+7 days' +\%d)" -le 7 &&
+      cd /root/ansible && /root/ansible/bin/control openwrt-reboot
+      >> /root/ansible/logs/scheduler-openwrt-reboot.log 2>&1

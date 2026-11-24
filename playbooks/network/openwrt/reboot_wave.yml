@@ -1,0 +1,5 @@
+---
+- name: APs dieser Welle neu starten und Rückkehr abwarten
+  ansible.builtin.include_role:
+    name: openwrt_reboot
+  when: _openwrt_wave == reboot_wave

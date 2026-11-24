@@ -3,7 +3,7 @@
   "profile": "Homelab",
   "files": {
     "VERSION.txt": {
-      "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6",
+      "sha256": "998f6b887ed7a6ef44e84210d0237b715bed42ea7254f48dc418afec0a484103",
       "mode": "0644"
     },
     "bin/control.d/.versions/homelab.json": {
@@ -119,11 +119,11 @@
       "mode": "0755"
     },
     "bin/control.d/openwrt-reboot.json": {
-      "sha256": "8527984cd4355bca99e7999300a7f30bb4722c357dafdd6102e65708ad3f5413",
+      "sha256": "6425dba65542ddeaad184c407fecabd075842359887f18ae4ef543c66a40541d",
       "mode": "0644"
     },
     "bin/control.d/openwrt-reboot.sh": {
-      "sha256": "85372a64387c4e662d8301c42882ae1421cb49b8b9d5dfe2ccead3f39b7440ba",
+      "sha256": "eca75b8eabbbbcc72eb7dcf1985d90e8979151723ae2b4b27c6db5233945b6a8",
       "mode": "0755"
     },
     "bin/control.d/schedules.json": {
@@ -223,7 +223,7 @@
       "mode": "0644"
     },
     "descriptions/commands/openwrt-reboot.md": {
-      "sha256": "aa97058af9a33b9ef05fad5819a0b728f8bdd8c027cb195c3de143716abb956a",
+      "sha256": "493162eadb10b840375e19a77317348af74630390cec99158f5400b5d80be7c1",
       "mode": "0644"
     },
     "descriptions/commands/schedules.md": {
@@ -295,7 +295,7 @@
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__maintenance__manage_controller_schedules.md": {
-      "sha256": "8451a8c5cf68a6407cc290d80d05a435d1cbf8df1a7d65a4750742140a4dac34",
+      "sha256": "c6a33159d3c50ceb55f8e96f25014ecd966aa4afbbe5ab66239a6b3d1fff631e",
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__network__openwrt__check_dns.md": {
@@ -335,7 +335,7 @@
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__network__openwrt__openwrt_reboot.md": {
-      "sha256": "c6c2391f292284e2b558ae463496a6f4f2f34cf2e99eb1a9a8b88977cc050896",
+      "sha256": "64014002e9b38c066501989b39da586f38b543b95cfe4350474d9716a894331e",
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__storage__truenas__configure_routing.md": {
@@ -447,7 +447,7 @@
       "mode": "0644"
     },
     "playbooks/maintenance/manage_controller_schedules.yml": {
-      "sha256": "939b44f02c4c8531a8e4f378285b78e749b07498a50fb4a30f6936cc5b6d365a",
+      "sha256": "20c374fddc162d748362aa3eb0a739dcc53d38a4c65c720d4404aff96b405d06",
       "mode": "0644"
     },
     "playbooks/network/openwrt/check_dns.yml": {
@@ -487,7 +487,11 @@
       "mode": "0644"
     },
     "playbooks/network/openwrt/openwrt_reboot.yml": {
-      "sha256": "43f8a033698e6bb916ea2a179c55a951aedf67b3051f587bcd1e0d85fb143a8c",
+      "sha256": "8e434225b6b1433c2a0c591e081eb8c850fd309ce6e7e09924518c176e8d1902",
+      "mode": "0644"
+    },
+    "playbooks/network/openwrt/reboot_wave.yml": {
+      "sha256": "a9c67e241c1e43c5e229373d924126addd0487af7f63e9b0ca529604cc7a6c2e",
       "mode": "0644"
     },
     "playbooks/storage/truenas/configure_routing.yml": {
@@ -534,16 +538,20 @@
       "sha256": "bfe2d001bce6a157eb2aa3c2f264b3b09fc2d6bf96a5bd93278d277c50e2ed6c",
       "mode": "0644"
     },
+    "scripts/openwrt_reboot_worker.sh": {
+      "sha256": "fb3dcf6d9999f63fbac03b7897a2bf367034d548c9aba9eb9fbd096b38aba1fc",
+      "mode": "0644"
+    },
     "update_check/cleanup_plan.json": {
       "sha256": "02a5794fefa4d10566162154e9568810821a156262a251f5b7c1e109176fcdc3",
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "7c421036cccdebfe0aa1606f909ce9faa326766f9d58b1f85065969cfe288af7",
+      "sha256": "497a95254063e63590011c5fcdccf44e7d5e8f7c2b7cb82a8746816f2f8b2dfe",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "1ab2d997307851f783793953772e3efe088b5661233886b5ab21692d391500f8",
+      "sha256": "f587711eaa36c98bc1e48a42a562786d767da2b0429a463e36364d7b823f996f",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
@@ -555,7 +563,7 @@
       "mode": "0644"
     },
     "update_check/release.json": {
-      "sha256": "0cb8009801202533e56219c2cc3cdb208197b187f7b93eff313a6d6b87101431",
+      "sha256": "8a1457125db56d8f2f01016ef3f8f296aa31bc9a62c25ad15a8c7be43fb8ca52",
       "mode": "0644"
     },
     "update_check/settings_catalog.json": {

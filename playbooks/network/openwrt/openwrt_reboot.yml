@@ -1,16 +1,28 @@
 ---
-- name: OpenWrt-APs nacheinander neu starten
+- name: OpenWrt-APs in Wellen neu starten
   hosts: openwrt_router
   gather_facts: false
   become: false
-  serial: 1
+  strategy: linear
   any_errors_fatal: true
-  pre_tasks:
-    - name: Feature und ausdrueckliche Zielauswahl pruefen
+  tasks:
+    - name: Feature, Zielauswahl und Wellennummer prüfen
       ansible.builtin.assert:
         that:
           - features.openwrt | default(false) | bool
           - ansible_limit | default('') | length > 0
-        fail_msg: 'features.openwrt aktivieren und --limit HOST oder GRUPPE angeben.'
-  roles:
-    - role: openwrt_reboot
+          - openwrt_reboot_wave is not defined or ((openwrt_reboot_wave | string) is match('^[1-9][0-9]{0,4}$') and openwrt_reboot_wave | int <= 65535)
+        fail_msg: OpenWrt aktivieren, ein --limit angeben und Wellen von 1 bis 65535 verwenden.
+
+    - name: Welle für diesen AP bestimmen
+      ansible.builtin.set_fact:
+        _openwrt_wave: >-
+          {{ '3-admin-' ~ inventory_hostname if 'openwrt_admin_ap' in group_names
+             else '1-%05d' | format(openwrt_reboot_wave | int) if openwrt_reboot_wave is defined
+             else '2-einzeln-' ~ inventory_hostname }}
+
+    - name: Wellen der ausgewählten APs in derselben Reihenfolge abarbeiten
+      ansible.builtin.include_tasks: reboot_wave.yml
+      loop: "{{ ansible_play_hosts_all | map('extract', hostvars, '_openwrt_wave') | unique | sort }}"
+      loop_control:
+        loop_var: reboot_wave

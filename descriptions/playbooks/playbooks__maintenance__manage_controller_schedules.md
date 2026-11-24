@@ -13,6 +13,8 @@ Im Quelltext benannte Plays/Aufgaben:
 Ausfuehrung bevorzugt ueber den passenden Control-Befehl. Die Datei allein beschreibt nicht alle effektiven Variablen: Rollen, Inventar und lokale Standortkonfiguration wirken weiterhin. Keine allgemeinen --check-/Limit-Garantien daraus ableiten.
 
 
+Der monatliche OpenWrt-Job kommt aus controller_schedules. Die Zeitplanverwaltung installiert dafür tmux.
+
 ## Parameter und maschinenlesbarer Vertrag
 
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
@@ -32,7 +34,7 @@ Vertrauliche Werte werden nicht dokumentiert.
     "playbooks/maintenance/manage_controller_schedules.yml"
   ],
   "source_hashes": {
-    "playbooks/maintenance/manage_controller_schedules.yml": "939b44f02c4c8531a8e4f378285b78e749b07498a50fb4a30f6936cc5b6d365a"
+    "playbooks/maintenance/manage_controller_schedules.yml": "20c374fddc162d748362aa3eb0a739dcc53d38a4c65c720d4404aff96b405d06"
   }
 }
 ```

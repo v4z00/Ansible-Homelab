@@ -1,0 +1,19 @@
+---
+all:
+  children:
+    openwrt_router:
+      children:
+        ap_welle_eins:
+          vars:
+            openwrt_reboot_wave: 1
+          hosts:
+            ap-a.example.invalid:
+            ap-b.example.invalid:
+        ap_welle_zwei:
+          vars:
+            openwrt_reboot_wave: 2
+          hosts:
+            ap-c.example.invalid:
+        openwrt_admin_ap:
+          hosts:
+            ap-admin.example.invalid:

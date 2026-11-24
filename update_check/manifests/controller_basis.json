@@ -96,8 +96,8 @@
     "bin/control.d/openwrt-mac-vlans.sh": "0681f44b469c4a0da9ae39029ec2a707115e85fc0210c59ec49d6098dc39fd4d",
     "bin/control.d/openwrt-package-diff.json": "dd55300de032568468f7f0112606ae6854fdabcb69e8bc4fa963bbbe3a685dc9",
     "bin/control.d/openwrt-package-diff.sh": "e2f9482eac224eaa7759050b0729d7ed8b3e14ad18845996f48ec1e7452254bc",
-    "bin/control.d/openwrt-reboot.json": "8527984cd4355bca99e7999300a7f30bb4722c357dafdd6102e65708ad3f5413",
-    "bin/control.d/openwrt-reboot.sh": "85372a64387c4e662d8301c42882ae1421cb49b8b9d5dfe2ccead3f39b7440ba",
+    "bin/control.d/openwrt-reboot.json": "6425dba65542ddeaad184c407fecabd075842359887f18ae4ef543c66a40541d",
+    "bin/control.d/openwrt-reboot.sh": "eca75b8eabbbbcc72eb7dcf1985d90e8979151723ae2b4b27c6db5233945b6a8",
     "bin/control.d/optional.json": "7884d5df6f4342421f9527f9dfb7529fbd7182e5a120cbd524aabd0ca51439e3",
     "bin/control.d/optional.sh": "b91acb98f73f4771250a0e3ac593469a8dcd138e47a035a179af29bc39d9409e",
     "bin/control.d/ping.json": "eda87fbbd42632833792074bf2ebc3b832ef2a9b31b6f57ea31f4c568a02211b",
@@ -182,7 +182,7 @@
     "playbooks/maintenance/clear_postfix_que.yaml": "23413bdf20510665cd2f98056c294ca64888dd053f2dfe6efb32b5a91c2dbb28",
     "playbooks/maintenance/disable_syslog_forwarding.yml": "deb8b4116e3117df5b9954179f5278db7f5d15d84828febfd38b85b5df39b1cf",
     "playbooks/maintenance/get_resolv.yml": "446a07009858504cc0235469896ef2d2550ce5780606f4f8ca03641e9a131fb5",
-    "playbooks/maintenance/manage_controller_schedules.yml": "939b44f02c4c8531a8e4f378285b78e749b07498a50fb4a30f6936cc5b6d365a",
+    "playbooks/maintenance/manage_controller_schedules.yml": "20c374fddc162d748362aa3eb0a739dcc53d38a4c65c720d4404aff96b405d06",
     "playbooks/maintenance/mount_all.yaml": "c8d51609933fbb3e8c0f6cdde5085e83aee33e7e1f150d31c446d463e2564fb6",
     "playbooks/maintenance/prepare_paths.yml": "d40cec648acce6683e6f14bd534ebe630f05dcb01d77e242caa814a03904e810",
     "playbooks/maintenance/rotate_service_user_passwords.yml": "e59b2a52fbb956e2b02c430a77d9877964b8a800f1067b7cfaceb4af74370f61",
@@ -198,7 +198,7 @@
     "playbooks/network/openwrt/openwrt_compare.yaml": "df28baaacfc7ac0afd9dcb8089dcd76f5dbcb04b287a5244d298f62835686e23",
     "playbooks/network/openwrt/openwrt_get_wlan-channel.yml": "9a57dc25364259515484ebe876117577a9f0208233341ca83865f43d2f4c3970",
     "playbooks/network/openwrt/openwrt_health_check.yml": "aa9200f303c385bb8953010a2af1615c8b8c53dbdcaf37c10f4f9aefff95a38f",
-    "playbooks/network/openwrt/openwrt_reboot.yml": "43f8a033698e6bb916ea2a179c55a951aedf67b3051f587bcd1e0d85fb143a8c",
+    "playbooks/network/openwrt/openwrt_reboot.yml": "8e434225b6b1433c2a0c591e081eb8c850fd309ce6e7e09924518c176e8d1902",
     "playbooks/network/snmp_check.yml": "74f48869885be82c55e045078b28f910a8dee92206ef578082845416a0e11c69",
     "playbooks/optional.yml": "f07d79d7af5eea9e50d70d8ad1d3baab4d7757c11d9d35c3069006edd3136753",
     "playbooks/pki/deploy_apache_certificate.yml": "1554b6670bba4baf512de2ec5191ae1a01d23d784eef0a9ea3d767ebd172f468",
@@ -310,7 +310,9 @@
     "artifacts/script-library/lib/load.sh": "7125a71ff01fbf7d26dd274ec2149a722bec457dfab5562860a3dbe67703c4e1",
     "tools/local_extension.py": "2d7ff0e75b3d033332b7b4c9fa54a64ad0b22b608b5b9d72e19db5b4c89a54f7",
     "tools/local_callbacks/extension_receipt.py": "dba3e0b117c848b03ab6f2b487d27da3fd91f09ea7c804c827f64879225e7990",
-    "playbooks/docker/check_portainer.yml": "83d9f3270f694e70adf9982c2ce92988aa7f389224026d5fc6de666d6f4247d1"
+    "playbooks/docker/check_portainer.yml": "83d9f3270f694e70adf9982c2ce92988aa7f389224026d5fc6de666d6f4247d1",
+    "playbooks/network/openwrt/reboot_wave.yml": "a9c67e241c1e43c5e229373d924126addd0487af7f63e9b0ca529604cc7a6c2e",
+    "scripts/openwrt_reboot_worker.sh": "fb3dcf6d9999f63fbac03b7897a2bf367034d548c9aba9eb9fbd096b38aba1fc"
   },
   "scope": "Basis und lokale Controller-Installation",
   "version_files": [
@@ -806,6 +808,12 @@
     ],
     "playbooks/docker/check_portainer.yml": [
       "docker"
+    ],
+    "playbooks/network/openwrt/reboot_wave.yml": [
+      "openwrt"
+    ],
+    "scripts/openwrt_reboot_worker.sh": [
+      "openwrt"
     ]
   }
 }

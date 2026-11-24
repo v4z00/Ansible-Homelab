@@ -20,6 +20,30 @@ Der Installer prüft die SHA-256-Manifeste vor der Installation, richtet `/root/
 
 Ordne die gewünschten Hosts lokal den Inventory-Gruppen `bond_monitor_backup_hosts` und `certificate_backup_hosts` zu. Hinterlege die absoluten Quellpfade in `bond_monitor_backup_paths` und `certificate_backup_paths`. Für die Übernahme bestehender OpenWrt-Regeln setze `openwrt_managed_prefix` auf das bisherige lokale Präfix.
 
+## Monatlicher OpenWrt-Neustart
+
+Aktiviere `features.openwrt` lokal und ordne alle teilnehmenden APs der Gruppe `openwrt_router` zu.
+Gib Hosts oder Untergruppen mit `openwrt_reboot_wave` dieselbe Nummer, wenn sie gleichzeitig ausfallen dürfen.
+Wellen von 1 bis 65535 laufen aufsteigend und innerhalb einer Welle bis zum Ansible-Forks-Limit parallel.
+APs ohne Nummer folgen einzeln. Mitglieder von `openwrt_admin_ap` kommen einzeln ganz zum Schluss.
+Jeder AP muss eine neue Boot-ID melden und über ubus antworten, bevor die nächste Welle startet.
+Ein Fehler stoppt die folgenden Wellen. Das Inventarbeispiel steht in
+[openwrt-reboot.inventory.example.yml](examples/homelab/openwrt-reboot.inventory.example.yml).
+
+```bash
+bin/control openwrt-reboot --check
+bin/control openwrt-reboot --limit openwrt_router
+tmux attach -t ansible-openwrt-reboot
+```
+
+Der Befehl startet automatisch eine getrennte tmux-Sitzung auf dem Controller. Nach einer SSH- oder WLAN-Unterbrechung erneut anmelden und die Sitzung mit dem dritten Befehl öffnen. Mit `Strg-b d` wieder lösen. Ergebnis und Playbook-Ausgabe stehen unter `logs/`. Ohne Limit gilt die Gruppe `openwrt_router`.
+
+Für den letzten Sonntag jedes Monats um 04:00 Uhr den Eintrag aus
+[openwrt-reboot.schedule.example.yml](examples/homelab/openwrt-reboot.schedule.example.yml)
+zur lokalen Liste `controller_schedules` hinzufügen und `bin/control schedules` ausführen.
+Bei einem bestehenden Zeitplan den bisherigen Eintrag aktualisieren und seinen Namen beibehalten.
+Die Zeitplanverwaltung installiert tmux für den Job. Für einen manuellen Erststart ohne Zeitplan stellt `apt-get install tmux` die Abhängigkeit bereit.
+
 ## Arbeit mit einem Checkout
 
 Commits aktualisieren das SHA-256-Manifest über `.githooks`. Nach dem Klonen
