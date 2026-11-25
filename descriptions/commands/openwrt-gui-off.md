@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/openwrt-gui-off.json": "075ca9a677aa24b57972175600308cedd1b576175fa202a13daa01b08a64d5a8",
-    "bin/control.d/openwrt-gui-off.sh": "47a13a89a5a5027fcb735a82aa001070e80408f16d28cc382e7887971df85b64"
+    "bin/control.d/openwrt-gui-off.sh": "47a13a89a5a5027fcb735a82aa001070e80408f16d28cc382e7887971df85b64",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

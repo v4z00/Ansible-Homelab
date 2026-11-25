@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/backup-archive-preview.json": "1d3034c0c30b14c185d22676c89b2aacdb4aefa4ad63f92b52a45605eab2fff7",
-    "bin/control.d/backup-archive-preview.sh": "81a5745856135bf8023825681066b5a6b9c8366658dc680796c8530555fa64a4"
+    "bin/control.d/backup-archive-preview.sh": "81a5745856135bf8023825681066b5a6b9c8366658dc680796c8530555fa64a4",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

@@ -62,7 +62,8 @@ Für bereits verwaltete WLAN-Abschnitte setzt du `openwrt_managed_prefix` auf da
   ],
   "source_hashes": {
     "bin/control.d/openwrt-mac-vlans.json": "6df61f117e09123e59cbc7675aa2d1612cb33b57988dbe42f58444d73e8a945c",
-    "bin/control.d/openwrt-mac-vlans.sh": "0681f44b469c4a0da9ae39029ec2a707115e85fc0210c59ec49d6098dc39fd4d"
+    "bin/control.d/openwrt-mac-vlans.sh": "0681f44b469c4a0da9ae39029ec2a707115e85fc0210c59ec49d6098dc39fd4d",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

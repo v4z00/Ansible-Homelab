@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/openwrt-channel.json": "017640728e10559d235d401e623be20e73376b3be238e1ed14be145b6b3d96dc",
-    "bin/control.d/openwrt-channel.sh": "63663d2e81499b25870ffcaa8b938518455f1525520c81b0a1358e4f7265c459"
+    "bin/control.d/openwrt-channel.sh": "63663d2e81499b25870ffcaa8b938518455f1525520c81b0a1358e4f7265c459",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

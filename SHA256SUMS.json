@@ -3,7 +3,7 @@
   "profile": "Homelab",
   "files": {
     "VERSION.txt": {
-      "sha256": "3ab94c04d24986f3af288ba1cda2c0bbddbc5a89dff097182805f54578e1ea75",
+      "sha256": "d915cc95d6ca8f47ae297713ed46d4e5c5d99ddd29fc3c61e263bdf305f2b5b0",
       "mode": "0644"
     },
     "bin/control.d/.versions/homelab.json": {
@@ -171,75 +171,75 @@
       "mode": "0644"
     },
     "descriptions/commands/backup-archive-apply.md": {
-      "sha256": "0d6316afd01370565ffcaa7639f15612a87263084fc3016b0dc17d1628fe0d2c",
+      "sha256": "1379c50f63c638130cc216bb1e3c97fa7d79f400699351fd32a3155743c3d3ac",
       "mode": "0644"
     },
     "descriptions/commands/backup-archive-preview.md": {
-      "sha256": "1036e7ee3ffee49fcfd223225ef0ff17ef541547aa581dffcf245ea7e3f671b0",
+      "sha256": "66515540de23dd134adea9d3b4eb2bb33aea7b5301d4cbf2da2ad77afb05be89",
       "mode": "0644"
     },
     "descriptions/commands/backup-playbook.md": {
-      "sha256": "d956c1a2f8c6affb5a4990f1bb6523a881ad8fe1d96cdc948d19868f00725b6f",
+      "sha256": "640014f5193690d43a348daba8808d57b6c2af3abcaee99b48394a098707e2a5",
       "mode": "0644"
     },
     "descriptions/commands/backup.md": {
-      "sha256": "92522dd875106a3b12b1b866c7cba10f8919c62f33cde773e842940cdaac7639",
+      "sha256": "5155433e86bd5094f2b46933b3bcf1ee8e1cf538f5d52ad5e0ca58fa12502c30",
       "mode": "0644"
     },
     "descriptions/commands/controller-backup.md": {
-      "sha256": "859b48ce035d70bce32ff035fc9bdf1c0d0d4c027a1ec42397bcbc2c20c4bc15",
+      "sha256": "fdb2bfc3fd040fd0ff371c17abfbc3441a690c2eb0eea3a2d0ec93f1d1a1676f",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-channel.md": {
-      "sha256": "556dcfaac5d072566fa7d7600cd156d10c2bf547eb6a0bb44f1c5832de5d3fa9",
+      "sha256": "f4c95e0bfa2329a0941441a844c3c4675861c5a3f1920c4056bfe26c724b3cdf",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-clients.md": {
-      "sha256": "e9a11978e7d56d75436919092b8f8822cd85708c431f7116280d3cf59f7d9343",
+      "sha256": "92ad11e63b426c73fa93f5e737f5ed4f1fe739e9f90fb138f453407b362b7316",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-config-diff.md": {
-      "sha256": "bda0f0aaae78ce477ea9ecd9cfc1ddd2f852f0e2e174a44a0ba0c8ed0504e08d",
+      "sha256": "5aa811cef822bd8735b31c4fe035de298d22ddbb9defa9b49e2d80e11164f011",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-gui-off.md": {
-      "sha256": "9025bde0d9a5472ecba823b3441861601362b12e46289d760bd9b0d1874aaadd",
+      "sha256": "2f6a24debd4eda6e4b654c99f3c7543af86f7e4aed965a22b40c0a05264e2558",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-gui-on.md": {
-      "sha256": "9bca87134e614994a87ac0d3605c07bc6b159a5c1b2b8dde198013fc33c14f44",
+      "sha256": "e0610ad1b1fc27e2b60247a18ac3ad59a18f7e38e57b14e83c25bd5129fe1e00",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-health.md": {
-      "sha256": "51785aff27305e9a58987d86b06f2543a24d6557d3a154a4b97d31c71be53cdd",
+      "sha256": "5340228e272d68e66b32ea927034e7cbf47abf7dd4d1a066ae857a8ea48a7cb3",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-mac-vlans.md": {
-      "sha256": "94ea808774e37af334c1ea52071d97e3724b54446a36df4fc9a8bd211ac32501",
+      "sha256": "12d85fd117279cfcdbf04e7ee4db89353eca6a875dc3d81aaf4a4fc4a181cf53",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-package-diff.md": {
-      "sha256": "8156cecc47d01b71cb2f167d08043ab7155601311c815bf8b2f13fd98033257a",
+      "sha256": "d21d6e2f3478568a260e0ce27602a6106b0d6540d0fec435922b810e9482925c",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-reboot.md": {
-      "sha256": "33e40a84225eaca6c783f8eb579bcde1a95dbb2415e8db580bd04cc18d906477",
+      "sha256": "eaf365882e9a24c4eb9886096a8a6ed54fce86ab9c1399366baea4d5c49655d9",
       "mode": "0644"
     },
     "descriptions/commands/schedules.md": {
-      "sha256": "16bf8bd9fe8b6994685befa607cdc8e85824963446d9919d371b26a0f8b37130",
+      "sha256": "b52f2903fc518d3f490637ef2a5916b1d53de077d85c0f63ea808852d75cdc52",
       "mode": "0644"
     },
     "descriptions/commands/truenas-routing.md": {
-      "sha256": "4a0941931e3b489be7e1922ae6a8dcf4a42cbf08004c30e26e9ed983b75a783e",
+      "sha256": "fc4a90107d3b91d6ce80eb70f1cb1a12265b596027ba80bafc4dd698641e4c27",
       "mode": "0644"
     },
     "descriptions/commands/zfs-optimize.md": {
-      "sha256": "2bbcffebfd376fb21ea636a2c612949dc573e894335e4d0ed3500c1119c9789d",
+      "sha256": "555dae861f3e03ce9c2dd406f3ff24dd73216a9f4bf4a0b436b5858f8cecd85b",
       "mode": "0644"
     },
     "descriptions/commands/zsh.md": {
-      "sha256": "bdd01bf8de3e6b2c5db4526b43474d8039393bf1cba49c4619225f47b227d047",
+      "sha256": "e9667e83db400d1d46e643edd1a2a88babe3bfdcf900e2606b39e7d678aadb94",
       "mode": "0644"
     },
     "descriptions/configurations/examples__homelab_settings.example.md": {
@@ -359,7 +359,7 @@
       "mode": "0644"
     },
     "descriptions/releases/homelab.md": {
-      "sha256": "923383ccd01e2baf9ad305b06a2312dc332b2cdda0b543b4c6103d9b3b3ac768",
+      "sha256": "7fd89cfd58afa30c6261c6c215cac0f43953fccf892267c5295aaca23f5e8e20",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_mac_vlans.md": {
@@ -431,7 +431,7 @@
       "mode": "0644"
     },
     "playbooks/backup/run_ansible_backup.sh": {
-      "sha256": "72d0baa7b15e7ad8a0d9fa8be8fd38d9c714d0226972e6ae206fc847bf467f52",
+      "sha256": "1b5217984e28b2156fae42bfeeeb1e0d91e5cfe5f60842b4dbfcb9cda95cf1e0",
       "mode": "0755"
     },
     "playbooks/backup/tasks/commit.yml": {
@@ -550,16 +550,20 @@
       "sha256": "fb3dcf6d9999f63fbac03b7897a2bf367034d548c9aba9eb9fbd096b38aba1fc",
       "mode": "0644"
     },
+    "tools/job_tests/test_backup_summary.py": {
+      "sha256": "67407c609b708a33aaaa38eb77eaab110891fe76e90793a7efa2931d51bcc5a4",
+      "mode": "0644"
+    },
     "update_check/cleanup_plan.json": {
       "sha256": "02a5794fefa4d10566162154e9568810821a156262a251f5b7c1e109176fcdc3",
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "e4e6dc605fa054cec731909deba168cc783c4fb3941c6a02cd20b64cededd06f",
+      "sha256": "dc037ecca16e5707c367dccc2cf0eebbae1676c5550608278b89a00ab8d22229",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "8944e653e04a5f2b71fac8aee927885f199f3660bde8bb4ea5b13343d8b473d5",
+      "sha256": "e4c91b589d4b5b7d2499bf1992b27ebc61be66281e637e7924fa13fc404777da",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
@@ -571,7 +575,7 @@
       "mode": "0644"
     },
     "update_check/release.json": {
-      "sha256": "e3879ba64a7a917313cd0bbaa5f66a74fae1938e134030f92b4add68bf17efe7",
+      "sha256": "806d518f4eb8a2e5b3fbf4729e7d4650be0d915ac7f94fd17f1430c2eb3d11ab",
       "mode": "0644"
     },
     "update_check/settings_catalog.json": {

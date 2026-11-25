@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/openwrt-health.json": "01a65020071b841209762bfa9b0e4f5c8adf3b72c6acd247d300bbaad45e7ca1",
-    "bin/control.d/openwrt-health.sh": "f646fb2c5877974b30a0c0710c298fae89b7188bb0300d0f2ca11bdda84c3f28"
+    "bin/control.d/openwrt-health.sh": "f646fb2c5877974b30a0c0710c298fae89b7188bb0300d0f2ca11bdda84c3f28",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/zfs-optimize.json": "398c2e116bc0aee403db563b2632cdf64279b2b21199a88ce755884afb89f5ba",
-    "bin/control.d/zfs-optimize.sh": "bc7f8bf1fec1bd79fb598dc25e529b7c27b29815b95a207459acb0a7a908b7b0"
+    "bin/control.d/zfs-optimize.sh": "bc7f8bf1fec1bd79fb598dc25e529b7c27b29815b95a207459acb0a7a908b7b0",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

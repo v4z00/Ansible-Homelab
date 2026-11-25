@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/schedules.json": "9be2494da84886d4b219f8f144dcc088ba270d29f16f13d87314286f706841f0",
-    "bin/control.d/schedules.sh": "fd2f75482a85192639ed152ef402af36bc2258b439f449c8d603b0ba011f666b"
+    "bin/control.d/schedules.sh": "fd2f75482a85192639ed152ef402af36bc2258b439f449c8d603b0ba011f666b",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

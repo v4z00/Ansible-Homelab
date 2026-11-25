@@ -1,5 +1,17 @@
 # Changelog
 
+## s0.3.0 – Backup-Ergebnisse in der zentralen Zusammenfassung
+
+26. November 2026
+
+Der Backup-Wrapper erfasst seine Teilabläufe und Vorabfehler im eingerichteten
+Jobcontroller. Die zentrale Summary ersetzt dann die zusätzliche Backupmeldung.
+Ohne Controlleranbindung bleibt das bisherige Verhalten erhalten.
+
+Für die zentrale Erfassung zuerst Ansible-Allgm 0.4.0 bereitstellen und die
+Jobcontroller-Einrichtung mit den vorhandenen Kanalwerten und einem ausdrücklich
+gewählten Summary-Zeitplan durchführen. Das Update allein ändert keine Cronjobs.
+
 ## 0.2.3 – Versionsanzeige für Controller-Module
 
 Die Prüfsummen für den Versionsbefehl aus Allgm 0.3.1 sind nachgezogen. Die Modulstände lassen sich mit `bin/control module-versions` anzeigen.

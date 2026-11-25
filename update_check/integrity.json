@@ -8,11 +8,11 @@
     "probes.py": "22dbb65098b7adfce12c0dc0a39df14440748bbf3926416c432f2a7fbf69c75a",
     "VERSION.txt": "6cf4e084b47f33c9b02ef79279d157833868f8f70514169a768be353ee328fea",
     "tests/test_check.py": "0acd1d021c3fde1f64e782f565b9897a74bc6d34702bdbb650d52d28b05dea03",
-    "release.json": "e3879ba64a7a917313cd0bbaa5f66a74fae1938e134030f92b4add68bf17efe7",
+    "release.json": "806d518f4eb8a2e5b3fbf4729e7d4650be0d915ac7f94fd17f1430c2eb3d11ab",
     "settings_contract.json": "707b83a9455c827da6d852d5a9f6dcbd78dac9d3770a62a938d5b2313247b70f",
     "settings_catalog.json": "fe7eb8cdf56b2fb027c4c439165c5d9f6431332700d200a520d145610f239ae1",
-    "manifests/controller_basis.json": "8944e653e04a5f2b71fac8aee927885f199f3660bde8bb4ea5b13343d8b473d5",
-    "manifests/host_updates.json": "bcba8ababa9e9b7fc66473d87b78b4be808a42732a56caeeb4aacc67812ebca3",
+    "manifests/controller_basis.json": "e4c91b589d4b5b7d2499bf1992b27ebc61be66281e637e7924fa13fc404777da",
+    "manifests/host_updates.json": "9aba1d687ebe776a365f22ab260d9bd3f29dfe493af64963f5b11a9c94453b48",
     "manifests/tls_tasks.json": "79e65c5763a8a09eb9825d3e9b9543a1cd7571a02a213fded4c347db4f87bdca",
     "manifests/bootstrap.json": "9508caa12d375180587dd4022fc92c1d968dc3e86129bc02975ca0ab0d30dfdd",
     "manifests/version_pruefer.json": "b768bf3dce24ee07eec58217ce842fe0500f3e39570341d6467dc68cac681a05",
@@ -26,7 +26,7 @@
     "tests/test_local_extensions.py": "75489d27ee679bfe0084000862d225b99d22868c3b977e987a8d53b3dfb83a10",
     "tests/test_docker_update.py": "62d9d451034e60dee0d1cdc7faeff8ab2a852234497cacb60093005048892f7c",
     "tests/test_branches.py": "7a2f45d54df701d3f15e33cef5d2857ed2949dae99a9c4c3e6873fb03bfd9b4d",
-    "manifests/script_jobs.json": "94b534a187e8a8933b91378806071bacd1435c7741b2359b67df000b9eb84faf"
+    "manifests/script_jobs.json": "64bf6340aaf6317d1242053c4019facde7b267ecc91b5b2a2e5c858e5e593ded"
   },
   "trust": "Lokale Sollwerte, keine Signatur. Nicht aus veraenderten Live-Dateien automatisch neu erzeugen."
 }

@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/truenas-routing.json": "ade730ad4d7f758ebf8f6fd0f757352c0f059085b2abca4ebe746dd85523852a",
-    "bin/control.d/truenas-routing.sh": "452bd0a4b3053c63ce86a98c0d76a01e7299a8370fad77257866c9c209eedd97"
+    "bin/control.d/truenas-routing.sh": "452bd0a4b3053c63ce86a98c0d76a01e7299a8370fad77257866c9c209eedd97",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

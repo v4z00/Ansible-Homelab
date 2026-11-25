@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/openwrt-config-diff.json": "8aeac1b810197f5ef9f380c801a589ed3ad2c87f6bec1d42c10ed18a90f773ec",
-    "bin/control.d/openwrt-config-diff.sh": "2793edbb1ba03ad7a1876c093d49853bfee7251305ab764bb16879c1a635c4b3"
+    "bin/control.d/openwrt-config-diff.sh": "2793edbb1ba03ad7a1876c093d49853bfee7251305ab764bb16879c1a635c4b3",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```

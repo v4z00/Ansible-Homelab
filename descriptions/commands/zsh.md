@@ -63,7 +63,8 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "bin/control.d/zsh.json": "62f4e8db8a03050550f1669805c8f2af3c43b7cc19f9511de95bf36b9ce2e21b",
-    "bin/control.d/zsh.sh": "9b3981271ee1b03e6c5ce55c4e6c93635311541772282c2934f239c984edcada"
+    "bin/control.d/zsh.sh": "9b3981271ee1b03e6c5ce55c4e6c93635311541772282c2934f239c984edcada",
+    "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
   }
 }
 ```
