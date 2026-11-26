@@ -1,5 +1,12 @@
 # Changelog
 
+## s0.4.1 – Lokale Pakete auf der neuen Basis
+
+Das Profil übernimmt den Registerprüfer aus Allgm s0.7.0. Bei alten lokalen
+Freigaben meldet der Checker den nötigen Migrationsschritt. Der Ablauf steht
+in der Beschreibung `descriptions/commands/update-check.md`
+auf dem installierten Controller.
+
 ## s0.4.0 – Zweisprachige Controlleransicht
 
 Das Homelab-Profil übernimmt die Sprachwahl aus der Basis. Der Konfigurationsdialog
