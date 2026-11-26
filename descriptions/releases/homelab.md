@@ -1,5 +1,13 @@
 # Changelog
 
+## s0.4.7 – Systemd-Statusprofile der gemeinsamen Basis
+
+Die Pruefsummen passen zu Allgm s0.8.5 und Jobmodul 0.4.3. Das bestehende
+Skript-Deployment kann explizit gewaehlte systemd-Profile in dieselbe SQLite-/
+Summary-Auswertung aufnehmen. Keine automatische Diensterkennung aus Dateien,
+keine Service- oder Cronumstellung durch die reine Statusanbindung.
+Ohne konfigurierte Profilauswahl ist fuer bestehende Hosts nichts zu tun.
+
 ## s0.4.6 – Lesende systemd-Bestandsabfrage der Basis
 
 Die Prüfsummen passen zu Allgm s0.8.4 mit dem eigenständigen Sammler für
