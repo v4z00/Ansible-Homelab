@@ -567,7 +567,7 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "429e0f3844861c0865c90c467f7d3ecac3ea462cb3439ef48af048c92693451a",
+      "sha256": "0c66ef8d67ed67cc122cd4707362d221b628321d6f4c6d98b37e5d2aaf9b0312",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
