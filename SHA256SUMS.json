@@ -167,7 +167,7 @@
       "mode": "0755"
     },
     "controller-overlay.json": {
-      "sha256": "d948f379b623fea0f2e37d41bda7c7f5380c9e5c44dedbf2c71f436a56dfa70c",
+      "sha256": "9515a14b9b0b33da0f64e8bd71f6c23e48990d822c22ec8baaed2cff89cdee61",
       "mode": "0644"
     },
     "descriptions/commands/backup-archive-apply.md": {
@@ -188,6 +188,10 @@
     },
     "descriptions/commands/controller-backup.md": {
       "sha256": "fdb2bfc3fd040fd0ff371c17abfbc3441a690c2eb0eea3a2d0ec93f1d1a1676f",
+      "mode": "0644"
+    },
+    "descriptions/commands/dns-check.md": {
+      "sha256": "3291fb4ba244ca728ebfe1b9a4050a42b7212bc205275df1f565ffc6bad58cd8",
       "mode": "0644"
     },
     "descriptions/commands/openwrt-channel.md": {
@@ -232,6 +236,10 @@
     },
     "descriptions/commands/truenas-routing.md": {
       "sha256": "fc4a90107d3b91d6ce80eb70f1cb1a12265b596027ba80bafc4dd698641e4c27",
+      "mode": "0644"
+    },
+    "descriptions/commands/wan-check.md": {
+      "sha256": "3912093624fb96f01ef1d0a524e46abd8e518dcd97062c6ec35ba72e0fc6af6d",
       "mode": "0644"
     },
     "descriptions/commands/zfs-optimize.md": {

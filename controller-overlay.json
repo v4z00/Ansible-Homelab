@@ -4,6 +4,8 @@
     "bin/control.d/dns-check.sh",
     "bin/control.d/wan-check.sh",
     "configure_server_BASE.sh",
+    "descriptions/commands/dns-check.md",
+    "descriptions/commands/wan-check.md",
     "examples/tls/settings.example.yml",
     "update_check/cleanup_plan.json",
     "update_check/integrity.json",
