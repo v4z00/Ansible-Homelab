@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3 – Homelab mit Allgm 0.8.1
+
+Das Profil unterstützt die neue gemeinsame Basis, optionale Git-Add-ons und die deutsch- und englischsprachige Bedienung. Vor dem ersten Wechsel eines älteren Controllers den [Migrationsweg der Basis](https://github.com/v4z00/Ansible-Allgm/blob/main/descriptions/commands/update-check.md#sss-aus-einem-älteren-controller-übernehmen) prüfen.
+
 ## s0.4.3 – Erweiterungen mit der gemeinsamen Basis pflegen
 
 Das Profil übernimmt die Prüfsummen der Basis s0.8.1 für Installation und lokale Einmalpakete. Die Beispiele für eigene Befehle, Git-Add-ons und die Archivierung stehen im [Entwicklerleitfaden](https://github.com/v4z00/Ansible-Allgm/blob/staging/EXTENDING.de.md).
