@@ -1,5 +1,12 @@
 # Changelog
 
+## s0.4.12 – Mehrere Cronfenster und Dienststandardwerte
+
+Prüfdaten passen zu Allgm s0.8.10 / Jobmodul 0.5.3. Die Statusprüfung unterstützt
+mehrere tägliche bzw. häufige Termine und konfigurierbare Beobachtungsfristen.
+Das eigenständige Dienstdeployment nutzt seine Root-Standardwerte vollständig.
+Keine automatische Jobauswahl, Änderung der Zeitpläne oder Prozessbeendigung.
+
 ## s0.4.11 – Korrigierte Zahlenprüfung für Dienstprofile
 
 Prüfdaten passen zu Allgm s0.8.9 / Jobmodul 0.5.2. Numerische Zeitwerte aus
