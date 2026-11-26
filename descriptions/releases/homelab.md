@@ -1,5 +1,11 @@
 # Changelog
 
+## s0.4.10 – Private Dienstprofile der gemeinsamen Basis
+
+Prüfdaten passen zu Allgm s0.8.8 / Jobmodul 0.5.1. Optionale Profil-Libraries
+und private, aus Hostvariablen gerenderte JSON-Konfiguration unterstützen getrennte
+Dienstbenutzer. Keine automatische Auswahl, Aktivierung oder Rechteerweiterung.
+
 ## s0.4.9 – Registerablage der gemeinsamen Basis
 
 Prüfdaten passen zu Allgm s0.8.7 / Prüfer 1.5.4. Lokale Zusatzregister können
