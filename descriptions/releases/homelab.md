@@ -1,5 +1,13 @@
 # Changelog
 
+## s0.4.8 – Private Dienstprofile aus der Basis
+
+Die Prüfsummen passen zu Allgm s0.8.6 / Jobmodul 0.5.0. Private Quellordner
+lassen sich je Profil unter einem expliziten Zielpfad bereitstellen; systemd-Units
+entstehen aus Profilwerten. Listenprofile bleiben reine Statusanbindungen.
+Keine Dienst-/Cronumstellung durch ein Controllerupdate. Vor Nutzung die privaten
+Quellen prüfen und den gezielten Aufruf zuerst mit `--check` ausführen.
+
 ## s0.4.7 – Systemd-Statusprofile der gemeinsamen Basis
 
 Die Pruefsummen passen zu Allgm s0.8.5 und Jobmodul 0.4.3. Das bestehende
