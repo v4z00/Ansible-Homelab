@@ -1,5 +1,11 @@
 # Changelog
 
+## s0.4.5 – Jobberichte mit der korrigierten Basis
+
+Die Prüfsummen passen zu Allgm s0.8.3. Die Basis erhält offene Versandkanäle bei
+Abbrüchen und weist unvollständige Ansible-Abfragen auch bei Teilantworten aus.
+Keine neue Konfiguration, kein Hostdeployment und keine Cronumstellung nötig.
+
 ## s0.4.4 – OpenWrt-Aufgaben und TrueNAS-Zieladressen
 
 Jede OpenWrt-Operation hat eine eigene Taskdatei. Für den TrueNAS-Eintrag in der Hosts-Datei werden einzelne IPv4- und IPv6-Adressen akzeptiert. Ein leerer Wert entfernt den Eintrag wie bisher. Im Einstellungsbeispiel entsprechen Backup und Zeitpläne jetzt den bestehenden Release-Defaults.
