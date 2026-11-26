@@ -1,5 +1,10 @@
 # Changelog
 
+## s0.4.6 – Lesende systemd-Bestandsabfrage der Basis
+
+Die Prüfsummen passen zu Allgm s0.8.4 mit dem eigenständigen Sammler für
+Custom-/Skriptservices. Kein Unitwechsel, Hostdeployment oder Cronupdate.
+
 ## s0.4.5 – Jobberichte mit der korrigierten Basis
 
 Die Prüfsummen passen zu Allgm s0.8.3. Die Basis erhält offene Versandkanäle bei
