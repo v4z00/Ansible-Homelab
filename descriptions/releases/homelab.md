@@ -1,5 +1,9 @@
 # Changelog
 
+## s0.4.2 – Betriebspfade der gemeinsamen Basis
+
+Das Profil verwendet die neuen Einstellungen der Basis s0.8.0 für Docker, Apache und das Checkmk-Backup. Bestehende absolute Pfadangaben haben weiter Vorrang.
+
 ## s0.4.1 – Lokale Pakete auf der neuen Basis
 
 Das Profil übernimmt den Registerprüfer aus Allgm s0.7.0. Bei alten lokalen

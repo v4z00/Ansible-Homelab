@@ -656,8 +656,7 @@
       "description": "Konfigurationswert docker_local_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
       "source": "examples/settings/all_settings.example.yml",
       "example": "/root/docker-configs",
-      "example_only": false,
-      "default": "/root/docker-configs"
+      "example_only": true
     },
     "docker_remote_base_dir": {
       "description": "Konfigurationswert docker_remote_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
@@ -722,8 +721,7 @@
       "description": "Konfigurationswert local_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
       "source": "examples/settings/all_settings.example.yml",
       "example": "{{ docker_local_base_dir }}",
-      "example_only": false,
-      "default": "{{ docker_local_base_dir }}"
+      "example_only": true
     },
     "remote_base_dir": {
       "description": "Konfigurationswert remote_base_dir fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
@@ -831,8 +829,7 @@
       "description": "Konfigurationswert checkmk_migration_plan fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
       "source": "examples/settings/all_settings.example.yml",
       "example": "{{ playbook_dir }}/../../x/reports/checkmk_migration_plan.yml",
-      "example_only": false,
-      "default": "{{ playbook_dir }}/../../x/reports/checkmk_migration_plan.yml"
+      "example_only": true
     },
     "checkmk_backup_target_host": {
       "description": "Konfigurationswert checkmk_backup_target_host fuer die bestehende Rolle; Bedeutung und Typ anhand des zugeordneten Beispiels pruefen.",
@@ -1343,17 +1340,127 @@
       "example": "de",
       "example_only": false,
       "default": "de"
+    },
+    "controller_reports_dir": {
+      "description": "Report directory for Checkmk, Docker and fstab audits. Relative paths start at the controller project.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "x/reports",
+      "example_only": true
+    },
+    "docker_deploy_pause_summary": {
+      "description": "Pause after the deployment summary. The orphan-stack confirmation is independent.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": true,
+      "example_only": false,
+      "default": true
+    },
+    "checkmk_backup_mode": {
+      "description": "Run the pre-migration OMD backup in Docker or directly on the backup host with native.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "docker",
+      "example_only": false,
+      "default": "docker",
+      "choices": [
+        "docker",
+        "native"
+      ]
+    },
+    "apache_certificate_filename": {
+      "description": "Certificate file name inside the certificate source directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "certificate.crt",
+      "example_only": false,
+      "default": "certificate.crt"
+    },
+    "apache_intermediate_filename": {
+      "description": "Intermediate certificate file name inside the source directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "intermediate1.crt",
+      "example_only": false,
+      "default": "intermediate1.crt"
+    },
+    "apache_encrypted_key_filename": {
+      "description": "Encrypted input key file name used by the preparation script.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "wildcard_example_org.key",
+      "example_only": false,
+      "default": "wildcard_example_org.key"
+    },
+    "apache_private_key_filename": {
+      "description": "Prepared key file name in the source directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "wildcard_example_org_unencrypted.key",
+      "example_only": false,
+      "default": "wildcard_example_org_unencrypted.key"
+    },
+    "apache_certificate_target_filename": {
+      "description": "Certificate file name in the destination directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "cert.cert",
+      "example_only": false,
+      "default": "cert.cert"
+    },
+    "apache_private_key_target_filename": {
+      "description": "Private key file name in the destination directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "key.key",
+      "example_only": false,
+      "default": "key.key"
+    },
+    "apache_certificate_directory": {
+      "description": "Remote Apache certificate directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/cert",
+      "example_only": false,
+      "default": "/cert"
+    },
+    "apache_certificate_source_directory": {
+      "description": "Optional absolute certificate source directory.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/srv/certificates/2030",
+      "example_only": true
+    },
+    "apache_certificate_source": {
+      "description": "Optional absolute certificate source file.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/srv/certificates/2030/certificate.crt",
+      "example_only": true
+    },
+    "apache_intermediate_source": {
+      "description": "Optional absolute intermediate source file.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/srv/certificates/2030/intermediate1.crt",
+      "example_only": true
+    },
+    "apache_private_key_source": {
+      "description": "Optional absolute prepared key source file.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/srv/certificates/2030/service.key",
+      "example_only": true
+    },
+    "apache_certificate_target": {
+      "description": "Optional absolute certificate destination file.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/etc/apache2/tls/service.crt",
+      "example_only": true
+    },
+    "apache_private_key_target": {
+      "description": "Optional absolute key destination file.",
+      "source": "examples/settings/controller_paths.example.yml",
+      "example": "/etc/apache2/tls/service.key",
+      "example_only": true
     }
   },
   "example_sources": {
-    "examples/settings/all_settings.example.yml": "6c08dd222fa9c8c19a0d75b747591fa83415e2161094098a430a16c4c0d51779",
+    "examples/settings/all_settings.example.yml": "de813875024c9a4a77bbe7cd827533bc7b8d429c9a3ba8747f0b42b49dfcba9d",
     "examples/checkmk/settings.example.yml": "9a7e32e0c13537df34ae3297ba1ecf11563385f85eb5ae6edcf3526c6fa6671b",
     "examples/checkmk/plugins.example.yml": "76ca07a6b7cbc1e0af93cc4a3392f59265f8ca63a964c24b4378c4038cb9ca81",
     "examples/access/host_access.example.yml": "f205017617d3b7dd346ddb972a6618a36fa35d89ccb0359f8658432e0e889243",
     "examples/access/credentials.example.yml": "8d8306f1b8aaad5f1805478edd993ffd18bd7f8ff6d294bbe6b9c00ad1889ad6",
     "examples/bootstrap/settings.example.yml": "068720677b7512eabcd223e1cf0b51856a86ce48a27e2791e1eeb933f7845e70",
     "examples/tls/settings.example.yml": "6a808204365ce6c8048d1daba494d96e9611e07b3ad62c0d27df70ce59ed57cb",
-    "examples/homelab/settings.example.yml": "1bf965cbf7fa7f15d14de5fb242e2ca6fb0e3b845ec0486bc0f383e23be9118f"
+    "examples/homelab/settings.example.yml": "1bf965cbf7fa7f15d14de5fb242e2ca6fb0e3b845ec0486bc0f383e23be9118f",
+    "examples/settings/controller_paths.example.yml": "5221bdc30a837a0ec4af252ba47b37d791605bcac9f4023bb3039b9b1013490f"
   },
   "top_level_order": [
     "site_id",
@@ -1465,7 +1572,23 @@
     "portainer_check_host",
     "portainer_check_port",
     "portainer_check_timeout",
-    "controller_lang"
+    "controller_lang",
+    "controller_reports_dir",
+    "docker_deploy_pause_summary",
+    "checkmk_backup_mode",
+    "apache_certificate_filename",
+    "apache_intermediate_filename",
+    "apache_encrypted_key_filename",
+    "apache_private_key_filename",
+    "apache_certificate_target_filename",
+    "apache_private_key_target_filename",
+    "apache_certificate_directory",
+    "apache_certificate_source_directory",
+    "apache_certificate_source",
+    "apache_intermediate_source",
+    "apache_private_key_source",
+    "apache_certificate_target",
+    "apache_private_key_target"
   ],
   "policy": "Beispielwerte sind Vorschlaege. Bestehende gueltige lokale Werte haben Vorrang und werden weder als Fehler gewertet noch automatisch ersetzt."
 }

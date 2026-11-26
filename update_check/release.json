@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "profile": "homelab",
-  "controller_release": "0.4.1",
+  "controller_release": "0.4.2",
   "manifest_basis": "Geprüfter Workspace-Quellstand",
   "manifests": [
     "manifests/controller_basis.json",
@@ -11,7 +11,7 @@
     "manifests/version_pruefer.json",
     "manifests/script_jobs.json"
   ],
-  "checker_release": "1.5.0",
+  "checker_release": "1.5.1",
   "delivery_scope": "workspace",
   "feature_defaults": {
     "backup": true,

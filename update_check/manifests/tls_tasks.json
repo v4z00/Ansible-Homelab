@@ -5,7 +5,7 @@
   "files": {
     "playbooks/backup/notify.yml": "6c98bb087ad90ddc21828e24a37e5e6d3eb56c75231edf68ebaaf36e3ab62463",
     "playbooks/checkmk.yml": "0c256095a4982713aea2890075150b26a794f19416612115aebd847f495300a1",
-    "playbooks/checkmk/migrate_hosts.yml": "b611cda4de73246ce8cd36c7047a33649c3cb146e48c1e889adcb12a0e823e40",
+    "playbooks/checkmk/migrate_hosts.yml": "3ba3d4f0087e8aa340c0de5712453aff5b4fba104f4d89db426e19a39ad01a6a",
     "playbooks/checkmk/tasks/reconcile_host.yml": "a305df48db7746910d0469ed6acb7ddf10585380ee8114a46c3c3c3acc6e20e6",
     "playbooks/checkmk/tasks/rename_host.yml": "e7a9daded429fb90d6f023be8ae7deaf6e8545bd1477c32c748b3dff39eab04e",
     "playbooks/maintenance/notify.yml": "f595650ca46703dd8d40a8970f474e0cad3a40686c95ecea5506b582c5bf938b",
@@ -15,7 +15,7 @@
     "roles/openwrt_operations/tasks/main.yml": "7efd1845e3170ed8c3a754e5ce75e49f5320ed80d3b0cbe98bcb8362d4757858",
     "roles/zsh/tasks/main.yml": "ff58fc7d379351b666e9b3572553cbe2f40a5b99f1799aad922d86a322393924",
     "scripts/download_checkmk_artifacts.sh": "84b960c4956dcdf8ea3a6baabc00e0f440fdb2e72f74186267effd4f840893c1",
-    "scripts/plan_checkmk_migration.py": "63f99f3beed71806ebb2b6eb4725ebb511fe3b8cab2bdb4cf4ae62cb34b4cce0",
+    "scripts/plan_checkmk_migration.py": "fe40b84c6e45526383baf1f05b84c747ad764441fe8d824db649149e6f9de415",
     "templates/monitoring/telegraf.conf.j2": "cfa37b7cbf21c6d684e2b75df266a35a18e2e3523c144062ad6231b0098438e5"
   },
   "scope": "Gepruefte neutrale Vorlagenquelle, kein Produktivexport",
