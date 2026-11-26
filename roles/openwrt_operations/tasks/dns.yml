@@ -1,0 +1,10 @@
+---
+- name: DNS-Namen auflösen
+  ansible.builtin.raw: |
+    set -eu
+    for target in {{ dns_check_domains | default(['example.com']) | map('quote') | join(' ') }}; do
+      nslookup "$target"
+    done
+  check_mode: false
+  register: openwrt_result
+  changed_when: false

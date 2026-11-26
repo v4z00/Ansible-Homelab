@@ -35,7 +35,7 @@ Vertrauliche Werte werden nicht dokumentiert.
     "roles/openwrt_operations/tasks/main.yml"
   ],
   "source_hashes": {
-    "roles/openwrt_operations/tasks/main.yml": "7efd1845e3170ed8c3a754e5ce75e49f5320ed80d3b0cbe98bcb8362d4757858"
+    "roles/openwrt_operations/tasks/main.yml": "26044db79c40ae2bd06273c6e8f524beeae1fa989e87db053d5a068bfb9cc904"
   },
   "i18n": {
     "de": {

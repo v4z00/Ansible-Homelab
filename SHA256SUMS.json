@@ -251,7 +251,7 @@
       "mode": "0644"
     },
     "descriptions/configurations/examples__homelab_settings.example.md": {
-      "sha256": "fb0b6c62083c25f9b9a0a32ff3e4142f388c4e7e004100badb0cabdab7a1bf3e",
+      "sha256": "afc50441cf08c84edda7524945a5b6ce5994a5d1b9bff9be4657f92f6cbb8424",
       "mode": "0644"
     },
     "descriptions/configurations/installation-homelab.md": {
@@ -351,7 +351,7 @@
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__storage__truenas__configure_routing.md": {
-      "sha256": "fa6bef977fbea8db8adc77b47cc24d6c0d2214dcaf74d5ca776095cd2eebd93b",
+      "sha256": "9cc631cacd0009c89e5bf9d4ef44e2b9582497576bfb3c42f586d8f41f00d3c3",
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__storage__zfs__optimize.md": {
@@ -375,7 +375,7 @@
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_operations.md": {
-      "sha256": "7c165c50c046baad3ee967f8ab8a8b82bad74d0026d58ff113f2473bd0dbd234",
+      "sha256": "ce02ff3f92c070e5b1fdf2b55a97ed97717b6dd9234642e47e8a9f4497178a7a",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_reboot.md": {
@@ -511,7 +511,7 @@
       "mode": "0644"
     },
     "playbooks/storage/truenas/configure_routing.yml": {
-      "sha256": "99aa4fde8bca4fdaff8c24b3c5bd2467d9ed83261a5f7a17411a5502b2969b86",
+      "sha256": "02a178b3a6bf7327fea6807504a4466d0af1334a17d17bdc547789a8761d18db",
       "mode": "0644"
     },
     "playbooks/storage/zfs/optimize.yml": {
@@ -526,8 +526,40 @@
       "sha256": "5628066232c3a4e2f408a940c008314338d89dea21c738b67546066b8a684298",
       "mode": "0644"
     },
+    "roles/openwrt_operations/tasks/channel.yml": {
+      "sha256": "38b078f6f866f5a64840702385fe2137e6a5f2b08e4e03aff156cdcc55bc7a60",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/clients.yml": {
+      "sha256": "7e3e2561f2a73513b9b66eedd0446ccc5e1eb48784569d04943dad91c36c61e5",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/config-diff.yml": {
+      "sha256": "9d5a23a402611f1b9ca5888a95ed5c79a4720fd6612ef1a7809949695dc99177",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/dns.yml": {
+      "sha256": "1ceb27bba5d9acc143293e66203d261a5645102ce8544f8ba37f0bb4d752e74f",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/gui.yml": {
+      "sha256": "eb0306a1f028c9503972a97a1f48be5674902ba11ebeb40ecc6b6a5cd7924fda",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/health.yml": {
+      "sha256": "0f8236984aefe3aa965d8d145d82dc612532665a04ed72f5173a078ff255cea6",
+      "mode": "0644"
+    },
     "roles/openwrt_operations/tasks/main.yml": {
-      "sha256": "7efd1845e3170ed8c3a754e5ce75e49f5320ed80d3b0cbe98bcb8362d4757858",
+      "sha256": "26044db79c40ae2bd06273c6e8f524beeae1fa989e87db053d5a068bfb9cc904",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/package-diff.yml": {
+      "sha256": "46f5109df7bc5286f52a9b061ea45f1bbef176e22209c1295db9dc202caf14f4",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/wan.yml": {
+      "sha256": "775e9d0119db7c3046728a805e11d4e388fd87eacfe83b22cd75ed947a495767",
       "mode": "0644"
     },
     "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py": {
@@ -567,15 +599,15 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "0c66ef8d67ed67cc122cd4707362d221b628321d6f4c6d98b37e5d2aaf9b0312",
+      "sha256": "2eaa397344559ca451707edfff6b10bf816caf3bdf434a78b73e289afeef391f",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "50ea21b28c114305d3c7ff390953cd497d7028af7f0e8fb7e11dff0147107625",
+      "sha256": "7b501bc4fa4323afad673763175f6751174e4a8be2d92a952075a7cdd262b630",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
-      "sha256": "978c6a110c0e138a9486e100b80ee0fe541dccd4603139bb71296cfcb0723acd",
+      "sha256": "72d603ff337ca827b8301919c2e7894300098b41b8eb9320dc18f177d404a371",
       "mode": "0644"
     },
     "update_check/profile.json": {

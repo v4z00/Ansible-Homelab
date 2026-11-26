@@ -17,7 +17,12 @@
     ansible.builtin.assert:
       that:
       - truenas_hostname | default('') is match('^[A-Za-z0-9][A-Za-z0-9.-]+$')
-      - truenas_override_ip | default('') | length == 0 or truenas_override_ip is match('^[0-9a-fA-F:.]+$')
+      - >-
+        truenas_override_ip | default('') | length == 0 or
+        (truenas_override_ip is string
+         and '/' not in truenas_override_ip
+         and ('.' in truenas_override_ip or ':' in truenas_override_ip)
+         and (truenas_override_ip | ansible.utils.ipaddr) is not false)
   - name: Verwalteten TrueNAS-Block pflegen
     ansible.builtin.blockinfile:
       path: /etc/hosts

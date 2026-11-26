@@ -1,0 +1,32 @@
+---
+- name: OpenWrt-GUI steuern
+  ansible.builtin.raw: |
+    set -eu
+    [ -x /etc/init.d/uhttpd ] || {
+      echo 'uhttpd fehlt.' >&2
+      exit 1
+    }
+    before_enabled=0
+    before_running=0
+    /etc/init.d/uhttpd enabled >/dev/null 2>&1 && before_enabled=1 || true
+    /etc/init.d/uhttpd running >/dev/null 2>&1 && before_running=1 || true
+    desired={{ ((state | default('off') | string | lower) in ['on', 'true']) | ternary('1', '0') }}
+    if [ "$before_enabled" = "$desired" ] && [ "$before_running" = "$desired" ]; then
+      echo 'CHANGED=0'
+      exit 0
+    fi
+    if {{ ansible_check_mode | ternary('true', 'false') }}; then
+      echo 'CHANGED=1: GUI-Zustand wuerde geaendert.'
+      exit 0
+    fi
+    if [ "$desired" = 1 ]; then
+      /etc/init.d/uhttpd enable
+      /etc/init.d/uhttpd start
+    else
+      /etc/init.d/uhttpd stop
+      /etc/init.d/uhttpd disable
+    fi
+    echo 'CHANGED=1'
+  check_mode: false
+  register: openwrt_result
+  changed_when: "'CHANGED=1' in openwrt_result.stdout"

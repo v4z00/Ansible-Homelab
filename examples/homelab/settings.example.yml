@@ -1,15 +1,15 @@
 features:
   openwrt: false
+  openwrt_mac_vlans: false
   truenas: false
   zsh: false
-  backup: false
-  schedules: false
+  backup: true
+  schedules: true
 truenas_hostname: storage.example.invalid
 truenas_override_ip: ""
 zfs_property_settings: []
 controller_schedules: []
 controller_notification_command: []
-# In vorhandenen features-Block einfuegen, nicht zweite Definition erzeugen.
 openwrt_mac_vlans_enabled: false
 openwrt_iot_ssid: example_iot
 openwrt_multimedia_network: example_media

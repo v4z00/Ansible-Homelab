@@ -1,0 +1,14 @@
+---
+- name: Freigegebene Konfigurationswerte lesen
+  ansible.builtin.raw: |
+    set -eu
+    # Positive list: no WLAN keys, shared secrets or authentication passwords.
+    for section in network wireless system; do
+      uci -q show "$section" | awk '
+        /^[^=]+=(interface|device|bridge-vlan|wifi-device|wifi-iface|wifi-vlan|wifi-station|system)$/ {print; next}
+        /\.(device|name|type|ports|vlan|vid|proto|mtu|metric|delegate|network|ssid|mode|encryption|band|htmode|disabled|mac|iface|dynamic_vlan|vlan_no_bridge|vlan_filtering|stp|igmp_snooping)=/ {print}
+      '
+    done | sort
+  check_mode: false
+  register: openwrt_result
+  changed_when: false
