@@ -13,7 +13,11 @@ main() {
   while (($#)); do
     case $1 in
 
-      --help) printf '%s\n' 'install.sh'; return ;;
+      --addon|--addon-token-file)
+        (( $# >= 2 )) && [[ -n $2 && $2 != --* ]] || die "Missing value for $1"
+        options+=("$1" "$2")
+        shift 2 ;;
+      --help) printf '%s\n' 'install.sh [--addon NAME=HTTPS_URL] [--addon-token-file NAME=PATH]'; return ;;
       *) die 'Unbekannter Parameter. install.sh --help zeigt die Optionen.' ;;
     esac
   done

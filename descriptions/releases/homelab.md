@@ -1,5 +1,9 @@
 # Changelog
 
+## s0.3.1 – Git-Add-ons mit dem Homelab-Profil installieren
+
+Der Installer reicht `--addon NAME=HTTPS_URL` und `--addon-token-file NAME=PFAD` an die Basis weiter. Die Profil-Prüfsummen passen zum Add-on-fähigen Checker.
+
 ## s0.3.0 – Backup-Ergebnisse in der zentralen Zusammenfassung
 
 26. November 2026
