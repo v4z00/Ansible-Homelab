@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "controller_basis",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "files": {
     "bin/control": "78cd37987205975e1a3a60df61a6e59db117a564590fc07d1aa8b6af90ee9912",
     "bin/control.d/.versions/homelab.json": "9b6d1f4c5dcc236ed4dda21aa5d2853b8a01756b3c486e7ba497afeb9a88bedd",

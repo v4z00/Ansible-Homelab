@@ -1,5 +1,9 @@
 # Changelog
 
+## s0.4.4 – OpenWrt-Aufgaben und TrueNAS-Zieladressen
+
+Jede OpenWrt-Operation hat eine eigene Taskdatei. Für den TrueNAS-Eintrag in der Hosts-Datei werden einzelne IPv4- und IPv6-Adressen akzeptiert. Ein leerer Wert entfernt den Eintrag wie bisher. Im Einstellungsbeispiel entsprechen Backup und Zeitpläne jetzt den bestehenden Release-Defaults.
+
 ## s0.4.3 – Erweiterungen mit der gemeinsamen Basis pflegen
 
 Das Profil übernimmt die Prüfsummen der Basis s0.8.1 für Installation und lokale Einmalpakete. Die Beispiele für eigene Befehle, Git-Add-ons und die Archivierung stehen im [Entwicklerleitfaden](https://github.com/v4z00/Ansible-Allgm/blob/staging/EXTENDING.de.md).
