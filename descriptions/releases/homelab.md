@@ -1,5 +1,11 @@
 # Changelog
 
+## s0.4.9 – Registerablage der gemeinsamen Basis
+
+Prüfdaten passen zu Allgm s0.8.7 / Prüfer 1.5.4. Lokale Zusatzregister können
+bei ausdrücklicher Umstellung unter `ansible/.local/extensions` liegen. Bestehende
+Ablagen bleiben erhalten; beim Update wird nichts automatisch verschoben.
+
 ## s0.4.8 – Private Dienstprofile aus der Basis
 
 Die Prüfsummen passen zu Allgm s0.8.6 / Jobmodul 0.5.0. Private Quellordner

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "controller_basis",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "files": {
     "bin/control": "78cd37987205975e1a3a60df61a6e59db117a564590fc07d1aa8b6af90ee9912",
     "bin/control.d/.versions/homelab.json": "9b6d1f4c5dcc236ed4dda21aa5d2853b8a01756b3c486e7ba497afeb9a88bedd",
@@ -312,11 +312,11 @@
     "lib/i18n/status_codes.json": "5792f64c958fd1f7739e936a0a019285c16ca38ec963ef546cd3a01a54b027b5",
     "lib/i18n/de/errors.json": "847015aa6dafe1ad7d2af606cccde362ed0b96b8154dd01eb4ac9a8a0b90495b",
     "lib/i18n/en/errors.json": "d9b38b1f039dcc0feefc6d6f2e89c1ca14c597bb56d4b04e1a3f270fd9a1daa7",
-    "lib/i18n/de/local_register.json": "8c76a5c9c21a298feb18caad4b4559590743fffa1761b93c0c3772bf786faef3",
+    "lib/i18n/de/local_register.json": "3ac8ec5afcbcc0f0c7d8bac37f07ad19304961ca33d4bb19312f57f59adf2e05",
     "lib/i18n/de/migration.json": "c05e144bd8068002865563d008422d5a67c02a150942e2ae99ce7166002d2d64",
-    "lib/i18n/en/local_register.json": "8a8441e81fca6bdc6377f521695af1ce14c1d7386319e7fe8faeeb78b6a187ca",
+    "lib/i18n/en/local_register.json": "58dcd206e6ec7fbf99e656005538997325988e2c10d80713db1be6bb6f193692",
     "lib/i18n/en/migration.json": "3fbd51e16d1f8b138fcca422af11224f6261b4313caeacafa6d253d8660cf74a",
-    "tools/migrate_local_extensions.py": "a5b0677dc5e848b81ccee92b33703f1130764a12259b0391d87acbc7e9957799",
+    "tools/migrate_local_extensions.py": "7043675fffecee75166ef62bebe1859a90b27e5ebca38ee4bd6d085003ea43ba",
     "playbooks/docker/vars/paths.yml": "c671e6daceabe0325db7a1434ef7630d91ae2e1e30bc9aba1893db2d7c5f9249",
     "scripts/apache_certificate_files.py": "cab3219c00b8801e0791442e8632a36e723cd6fdbb09d526ecc68087c4966990",
     "roles/openwrt_operations/tasks/main.yml": "26044db79c40ae2bd06273c6e8f524beeae1fa989e87db053d5a068bfb9cc904",
