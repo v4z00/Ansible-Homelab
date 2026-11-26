@@ -1013,6 +1013,15 @@
       "key": "portainer_check_timeout",
       "type": "integer",
       "required": false
+    },
+    {
+      "key": "controller_lang",
+      "type": "string",
+      "required": false,
+      "choices": [
+        "de",
+        "en"
+      ]
     }
   ],
   "tls_tasks": [

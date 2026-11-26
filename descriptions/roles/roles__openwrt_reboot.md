@@ -30,6 +30,18 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "roles/openwrt_reboot/tasks/main.yml": "837b0d8bd5dc9dcc93b744577644aea7a31b0bae88c60d9aaf57b9dc2dca8933"
+  },
+  "i18n": {
+    "de": {
+      "title": "Rolle openwrt_reboot",
+      "description": "# Rolle openwrt_reboot\n\nRolle: `roles/openwrt_reboot`.\n\nIm Bestand definierte Aufgaben:\n\n- Geplanten Neustart im Check-Modus anzeigen\n- OpenWrt neu starten und neue Boot-ID bestaetigen\n\nDie Parameterliste beschreibt vorhandene oeffentliche Defaults. Task-interne Fakten, Registerwerte und Hostsecrets werden nicht in Eingabeparameter umgedeutet.\n\n\n## Parameter und maschinenlesbarer Vertrag\n\nDie Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind\nals solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.\nVertrauliche Werte werden nicht dokumentiert.\n\n## Quellen und Pflege\n\n- `roles/openwrt_reboot/tasks/main.yml`\n\nDiese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen\nBeschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.",
+      "fields": {}
+    },
+    "en": {
+      "title": "Role openwrt_reboot",
+      "description": "# Role openwrt_reboot\n\nRole: `roles/openwrt_reboot`.\n\nTask names as written in the role:\n\n- Geplanten Neustart im Check-Modus anzeigen\n- OpenWrt neu starten und neue Boot-ID bestaetigen\n\nThe parameters list public role defaults. Internal facts, registered values and private host credentials are not form inputs.\n\n## Parameters\n\nThe listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.\n\n## Sources and maintenance\n\n- `roles/openwrt_reboot/tasks/main.yml`\n\nMaintain this description and its source hashes together when the code changes. The database stores a cache.",
+      "fields": {}
+    }
   }
 }
 ```

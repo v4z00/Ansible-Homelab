@@ -29,6 +29,18 @@ Vertrauliche Werte werden nicht dokumentiert.
   ],
   "source_hashes": {
     "playbooks/network/openwrt/openwrt_health_check.yml": "aa9200f303c385bb8953010a2af1615c8b8c53dbdcaf37c10f4f9aefff95a38f"
+  },
+  "i18n": {
+    "de": {
+      "title": "Playbook playbooks/network/openwrt/openwrt_health_check.yml",
+      "description": "# Playbook playbooks/network/openwrt/openwrt_health_check.yml\n\nVorhandener Einstieg: `playbooks/network/openwrt/openwrt_health_check.yml`.\n\nIm Quelltext benannte Plays/Aufgaben:\n\n- OpenWrt health\n\nAusfuehrung bevorzugt ueber den passenden Control-Befehl. Die Datei allein beschreibt nicht alle effektiven Variablen: Rollen, Inventar und lokale Standortkonfiguration wirken weiterhin. Keine allgemeinen --check-/Limit-Garantien daraus ableiten.\n\n\n## Parameter und maschinenlesbarer Vertrag\n\nDie Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind\nals solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.\nVertrauliche Werte werden nicht dokumentiert.\n\n## Quellen und Pflege\n\n- `playbooks/network/openwrt/openwrt_health_check.yml`\n\nDiese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen\nBeschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.",
+      "fields": {}
+    },
+    "en": {
+      "title": "Playbook playbooks/network/openwrt/openwrt_health_check.yml",
+      "description": "# Playbook playbooks/network/openwrt/openwrt_health_check.yml\n\nPlaybook: `playbooks/network/openwrt/openwrt_health_check.yml`.\n\nPlay and task names as written in the playbook:\n\n- OpenWrt health\n\nRun the corresponding Control command. Roles, inventory and site settings also affect this playbook. Check support for --limit and check mode before use.\n\n## Parameters\n\nThe listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.\n\n## Sources and maintenance\n\n- `playbooks/network/openwrt/openwrt_health_check.yml`\n\nMaintain this description and its source hashes together when the code changes. The database stores a cache.",
+      "fields": {}
+    }
   }
 }
 ```

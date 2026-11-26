@@ -1,5 +1,10 @@
 # Changelog
 
+## s0.4.0 – Zweisprachige Controlleransicht
+
+Das Homelab-Profil übernimmt die Sprachwahl aus der Basis. Der Konfigurationsdialog
+und die Befehlsbeschreibungen für die TUI unterstützen Deutsch und Englisch.
+
 ## s0.3.2 – Optionale SSS-Installation
 
 Das Homelab-Profil verwendet die Basis s0.5.0. Wer den SSS-Notfallkoffer braucht,

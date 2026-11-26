@@ -65,6 +65,36 @@ Vertrauliche Werte werden nicht dokumentiert.
     "bin/control.d/openwrt-config-diff.json": "8aeac1b810197f5ef9f380c801a589ed3ad2c87f6bec1d42c10ed18a90f773ec",
     "bin/control.d/openwrt-config-diff.sh": "2793edbb1ba03ad7a1876c093d49853bfee7251305ab764bb16879c1a635c4b3",
     "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
+  },
+  "i18n": {
+    "de": {
+      "title": "OpenWrt-Konfigurationen vergleichen",
+      "description": "# OpenWrt-Konfigurationen vergleichen\n\nOpenWrt-Konfigurationen vergleichen\n\nAufruf: `bin/control openwrt-config-diff [Optionen]`.\n\nVorhandene Kurzformen: `wifi-diff-conf`, `openwrt-config-diff`.\n\nFeature: openwrt. Die aktuelle Aktivierung prueft weiterhin Control.\n\nVoraussetzungen laut Registry:\n- `lib/control/helpers.sh`\n- `playbooks/network/openwrt/openwrt_compare.yaml`\n\n## Parameter und maschinenlesbarer Vertrag\n\nDie Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind\nals solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.\nVertrauliche Werte werden nicht dokumentiert.\n\n## Quellen und Pflege\n\n- `bin/control.d/openwrt-config-diff.json`\n- `bin/control.d/openwrt-config-diff.sh`\n- `lib/control/helpers.sh`\n\nDiese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen\nBeschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.",
+      "fields": {
+        "targets": {
+          "label": "targets",
+          "description": "Inventory-Hosts/-Gruppen als Ansible --limit. Fachliche Pruefungen bleiben aktiv."
+        },
+        "check": {
+          "label": "check",
+          "description": "Ansible-Check-Mode anfordern. Ob Aktionen diesen vollstaendig unterstuetzen, bestimmt das Playbook."
+        }
+      }
+    },
+    "en": {
+      "title": "Compare OpenWrt configurations",
+      "description": "# Compare OpenWrt configurations\n\nCompare OpenWrt configurations\n\nRun: `bin/control openwrt-config-diff [options]`.\n\nAliases: `wifi-diff-conf`, `openwrt-config-diff`.\n\nFeature: openwrt. Control checks availability at runtime.\n\nRegistry prerequisites:\n- `lib/control/helpers.sh`\n- `playbooks/network/openwrt/openwrt_compare.yaml`\n\n## Parameters\n\nThe listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.\n\n## Sources and maintenance\n\n- `bin/control.d/openwrt-config-diff.json`\n- `bin/control.d/openwrt-config-diff.sh`\n- `lib/control/helpers.sh`\n\nMaintain this description and its source hashes together when the code changes. The database stores a cache.",
+      "fields": {
+        "targets": {
+          "label": "Target hosts or groups",
+          "description": "Limit Ansible to the selected inventory hosts or groups. The playbook still applies its own checks."
+        },
+        "check": {
+          "label": "Check mode",
+          "description": "Request Ansible check mode. Coverage depends on the playbook."
+        }
+      }
+    }
   }
 }
 ```

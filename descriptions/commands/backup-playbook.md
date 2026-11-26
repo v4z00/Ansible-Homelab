@@ -65,6 +65,36 @@ Vertrauliche Werte werden nicht dokumentiert.
     "bin/control.d/backup-playbook.json": "3ba285b2b48d8ffc03ba6bd04d6271d2570623ee1ff2bc78eaee411f13cda78f",
     "bin/control.d/backup-playbook.sh": "3501259b8f7411c316dd2520425a61e3ffdf32f0736f4793a9b8e43ccb5dbe09",
     "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
+  },
+  "i18n": {
+    "de": {
+      "title": "Alle Backups in einem Ansible-Lauf starten",
+      "description": "# Alle Backups in einem Ansible-Lauf starten\n\nAlle Backups in einem Ansible-Lauf starten\n\nAufruf: `bin/control backup-playbook [Optionen]`.\n\nVorhandene Kurzformen: `backup-playbook`.\n\nFeature: backup. Die aktuelle Aktivierung prueft weiterhin Control.\n\nVoraussetzungen laut Registry:\n- `lib/control/helpers.sh`\n- `playbooks/backup/backup_all.yml`\n\n## Parameter und maschinenlesbarer Vertrag\n\nDie Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind\nals solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.\nVertrauliche Werte werden nicht dokumentiert.\n\n## Quellen und Pflege\n\n- `bin/control.d/backup-playbook.json`\n- `bin/control.d/backup-playbook.sh`\n- `lib/control/helpers.sh`\n\nDiese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen\nBeschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.",
+      "fields": {
+        "targets": {
+          "label": "targets",
+          "description": "Inventory-Hosts/-Gruppen als Ansible --limit. Fachliche Pruefungen bleiben aktiv."
+        },
+        "check": {
+          "label": "check",
+          "description": "Ansible-Check-Mode anfordern. Ob Aktionen diesen vollstaendig unterstuetzen, bestimmt das Playbook."
+        }
+      }
+    },
+    "en": {
+      "title": "Run all backups in one Ansible play",
+      "description": "# Run all backups in one Ansible play\n\nRun all backups in one Ansible play\n\nRun: `bin/control backup-playbook [options]`.\n\nAliases: `backup-playbook`.\n\nFeature: backup. Control checks availability at runtime.\n\nRegistry prerequisites:\n- `lib/control/helpers.sh`\n- `playbooks/backup/backup_all.yml`\n\n## Parameters\n\nThe listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.\n\n## Sources and maintenance\n\n- `bin/control.d/backup-playbook.json`\n- `bin/control.d/backup-playbook.sh`\n- `lib/control/helpers.sh`\n\nMaintain this description and its source hashes together when the code changes. The database stores a cache.",
+      "fields": {
+        "targets": {
+          "label": "Target hosts or groups",
+          "description": "Limit Ansible to the selected inventory hosts or groups. The playbook still applies its own checks."
+        },
+        "check": {
+          "label": "Check mode",
+          "description": "Request Ansible check mode. Coverage depends on the playbook."
+        }
+      }
+    }
   }
 }
 ```

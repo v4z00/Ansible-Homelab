@@ -1336,6 +1336,13 @@
       "example": 5,
       "example_only": false,
       "default": 5
+    },
+    "controller_lang": {
+      "description": "Sprache für Controllerbefehle und Berichte (de oder en).",
+      "source": "examples/settings/all_settings.example.yml",
+      "example": "de",
+      "example_only": false,
+      "default": "de"
     }
   },
   "example_sources": {
@@ -1457,7 +1464,8 @@
     "portainer_check_enabled",
     "portainer_check_host",
     "portainer_check_port",
-    "portainer_check_timeout"
+    "portainer_check_timeout",
+    "controller_lang"
   ],
   "policy": "Beispielwerte sind Vorschlaege. Bestehende gueltige lokale Werte haben Vorrang und werden weder als Fehler gewertet noch automatisch ersetzt."
 }

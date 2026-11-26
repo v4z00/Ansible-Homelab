@@ -65,6 +65,36 @@ Vertrauliche Werte werden nicht dokumentiert.
     "bin/control.d/zsh.json": "62f4e8db8a03050550f1669805c8f2af3c43b7cc19f9511de95bf36b9ce2e21b",
     "bin/control.d/zsh.sh": "9b3981271ee1b03e6c5ce55c4e6c93635311541772282c2934f239c984edcada",
     "lib/control/helpers.sh": "71898aff95dfffd6873a1e6c4f90e3bdce23c25f6eed0df640dde87afd3bc19e"
+  },
+  "i18n": {
+    "de": {
+      "title": "Zsh Command Center ausrollen",
+      "description": "# Zsh Command Center ausrollen\n\nZsh Command Center ausrollen\n\nAufruf: `bin/control zsh [Optionen]`.\n\nVorhandene Kurzformen: `zsh-deploy`.\n\nFeature: zsh. Die aktuelle Aktivierung prueft weiterhin Control.\n\nVoraussetzungen laut Registry:\n- `lib/control/helpers.sh`\n- `playbooks/zsh.yml`\n\n## Parameter und maschinenlesbarer Vertrag\n\nDie Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind\nals solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.\nVertrauliche Werte werden nicht dokumentiert.\n\n## Quellen und Pflege\n\n- `bin/control.d/zsh.json`\n- `bin/control.d/zsh.sh`\n- `lib/control/helpers.sh`\n\nDiese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen\nBeschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.",
+      "fields": {
+        "targets": {
+          "label": "targets",
+          "description": "Inventory-Hosts/-Gruppen als Ansible --limit. Fachliche Pruefungen bleiben aktiv."
+        },
+        "check": {
+          "label": "check",
+          "description": "Ansible-Check-Mode anfordern. Ob Aktionen diesen vollstaendig unterstuetzen, bestimmt das Playbook."
+        }
+      }
+    },
+    "en": {
+      "title": "Deploy Zsh Command Center",
+      "description": "# Deploy Zsh Command Center\n\nDeploy Zsh Command Center\n\nRun: `bin/control zsh [options]`.\n\nAliases: `zsh-deploy`.\n\nFeature: zsh. Control checks availability at runtime.\n\nRegistry prerequisites:\n- `lib/control/helpers.sh`\n- `playbooks/zsh.yml`\n\n## Parameters\n\nThe listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.\n\n## Sources and maintenance\n\n- `bin/control.d/zsh.json`\n- `bin/control.d/zsh.sh`\n- `lib/control/helpers.sh`\n\nMaintain this description and its source hashes together when the code changes. The database stores a cache.",
+      "fields": {
+        "targets": {
+          "label": "Target hosts or groups",
+          "description": "Limit Ansible to the selected inventory hosts or groups. The playbook still applies its own checks."
+        },
+        "check": {
+          "label": "Check mode",
+          "description": "Request Ansible check mode. Coverage depends on the playbook."
+        }
+      }
+    }
   }
 }
 ```
