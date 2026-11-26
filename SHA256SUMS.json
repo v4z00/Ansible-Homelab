@@ -567,11 +567,11 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "d23298964f497f549ba7d67e3d9f3d826c52b6c5ff2a43350d5b54fbb6ec3ba6",
+      "sha256": "b562c781b97a22088c077a431cfa225ecb23d2494779bc82d4a33c982b6eefca",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "bdd8d724f0e656a2e9b4640cbea612a47ab99384a09e5b4b621bbf49224b9da8",
+      "sha256": "18ca928273e0afa714022ba6d63d0402f9fcb039132418554bfa06790ffc86a2",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
