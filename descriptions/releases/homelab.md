@@ -1,5 +1,11 @@
 # Changelog
 
+## s0.4.11 – Korrigierte Zahlenprüfung für Dienstprofile
+
+Prüfdaten passen zu Allgm s0.8.9 / Jobmodul 0.5.2. Numerische Zeitwerte aus
+lokalen Ansible-Variablen werden bei der Profilprüfung korrekt angenommen.
+Bestehende Auswahl und Aktivierung bleiben unverändert.
+
 ## s0.4.10 – Private Dienstprofile der gemeinsamen Basis
 
 Prüfdaten passen zu Allgm s0.8.8 / Jobmodul 0.5.1. Optionale Profil-Libraries
