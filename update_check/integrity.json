@@ -26,7 +26,7 @@
     "tests/test_local_extensions.py": "4b655c74bd450dd4752e7f3c3a259c35e5f6416d5c14e0131b4b13068e1d6639",
     "tests/test_docker_update.py": "62d9d451034e60dee0d1cdc7faeff8ab2a852234497cacb60093005048892f7c",
     "tests/test_branches.py": "381f52127176cf9fa4a1342ecabccc850b569902435a1aff91cdb02bcc053372",
-    "manifests/script_jobs.json": "99a267cb57f7385bc30101587b0be94af08a7ffecc4ef2be29a5822348f96810",
+    "manifests/script_jobs.json": "936c2769f69d1031ebd05a2cbb1b06b7455188e075cc3d7c1c47aa40399bebc5",
     "rollout.py": "5fee32129a8d78b1dc85e55e734ebc5845d5fbcde4a5cd92024fa83fd78e45f9",
     "staging_manifest.py": "9f400e659f5c2f252212467d6d1f85dbadabac04ed7af22cea96a8334d98d6e9",
     "legacy_sss.json": "5bebe1706ecfbccb4317aaebf4863aa018a118375b48ebd6d1fb20016615c50c",
