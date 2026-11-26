@@ -1,6 +1,72 @@
 # Changelog
 
+## 0.4.13 – Korrigierte Dienstpfade
+
+Diese Freigabe bündelt die Prüfdaten-Anpassungen seit 0.4.4 für Allgm 0.8.11 mit Jobmodul 0.5.4 und Controller-Prüfer 1.5.4. Zentrale Berichte, explizite private Dienstprofile und wiederkehrende Cronfenster verwenden damit die freigegebene gemeinsame Basis.
+
+Bestehende Hostvariablen, private Skriptquellen und Zeitpläne bleiben maßgeblich. Neue Dienstprofile werden separat ausgewählt und zuerst mit `--check` geprüft; das Controllerupdate aktiviert keine Dienste und stellt keine Cronjobs um. Eine gewünschte Registermigration erfolgt separat mit Vorschau und Sicherung über die [Anleitung der Basis](https://github.com/v4z00/Ansible-Allgm/blob/main/descriptions/commands/update-check.md).
+
+Prüfdaten passen zu Allgm s0.8.11 / Jobmodul 0.5.4. Neu erzeugte systemd-Units
+verwenden die gültige Syntax für Arbeitsverzeichnis und PID-Datei.
+Keine automatische Dienstaktivierung.
+
+## s0.4.12 – Mehrere Cronfenster und Dienststandardwerte
+
+Prüfdaten passen zu Allgm s0.8.10 / Jobmodul 0.5.3. Die Statusprüfung unterstützt
+mehrere tägliche bzw. häufige Termine und konfigurierbare Beobachtungsfristen.
+Das eigenständige Dienstdeployment nutzt seine Root-Standardwerte vollständig.
+Keine automatische Jobauswahl, Änderung der Zeitpläne oder Prozessbeendigung.
+
+## s0.4.11 – Korrigierte Zahlenprüfung für Dienstprofile
+
+Prüfdaten passen zu Allgm s0.8.9 / Jobmodul 0.5.2. Numerische Zeitwerte aus
+lokalen Ansible-Variablen werden bei der Profilprüfung korrekt angenommen.
+Bestehende Auswahl und Aktivierung bleiben unverändert.
+
+## s0.4.10 – Private Dienstprofile der gemeinsamen Basis
+
+Prüfdaten passen zu Allgm s0.8.8 / Jobmodul 0.5.1. Optionale Profil-Libraries
+und private, aus Hostvariablen gerenderte JSON-Konfiguration unterstützen getrennte
+Dienstbenutzer. Keine automatische Auswahl, Aktivierung oder Rechteerweiterung.
+
+## s0.4.9 – Registerablage der gemeinsamen Basis
+
+Prüfdaten passen zu Allgm s0.8.7 / Prüfer 1.5.4. Lokale Zusatzregister können
+bei ausdrücklicher Umstellung unter `ansible/.local/extensions` liegen. Bestehende
+Ablagen bleiben erhalten; beim Update wird nichts automatisch verschoben.
+
+## s0.4.8 – Private Dienstprofile aus der Basis
+
+Die Prüfsummen passen zu Allgm s0.8.6 / Jobmodul 0.5.0. Private Quellordner
+lassen sich je Profil unter einem expliziten Zielpfad bereitstellen; systemd-Units
+entstehen aus Profilwerten. Listenprofile bleiben reine Statusanbindungen.
+Keine Dienst-/Cronumstellung durch ein Controllerupdate. Vor Nutzung die privaten
+Quellen prüfen und den gezielten Aufruf zuerst mit `--check` ausführen.
+
+## s0.4.7 – Systemd-Statusprofile der gemeinsamen Basis
+
+Die Pruefsummen passen zu Allgm s0.8.5 und Jobmodul 0.4.3. Das bestehende
+Skript-Deployment kann explizit gewaehlte systemd-Profile in dieselbe SQLite-/
+Summary-Auswertung aufnehmen. Keine automatische Diensterkennung aus Dateien,
+keine Service- oder Cronumstellung durch die reine Statusanbindung.
+Ohne konfigurierte Profilauswahl ist fuer bestehende Hosts nichts zu tun.
+
+## s0.4.6 – Lesende systemd-Bestandsabfrage der Basis
+
+Die Prüfsummen passen zu Allgm s0.8.4 mit dem eigenständigen Sammler für
+Custom-/Skriptservices. Kein Unitwechsel, Hostdeployment oder Cronupdate.
+
+## s0.4.5 – Jobberichte mit der korrigierten Basis
+
+Die Prüfsummen passen zu Allgm s0.8.3. Die Basis erhält offene Versandkanäle bei
+Abbrüchen und weist unvollständige Ansible-Abfragen auch bei Teilantworten aus.
+Keine neue Konfiguration, kein Hostdeployment und keine Cronumstellung nötig.
+
 ## 0.4.4 – OpenWrt-Aufgaben und TrueNAS-Zieladressen
+
+Jede OpenWrt-Operation hat eine eigene Taskdatei. Für den TrueNAS-Eintrag in der Hosts-Datei werden einzelne IPv4- und IPv6-Adressen akzeptiert. Ein leerer Wert entfernt den Eintrag wie bisher. Im Einstellungsbeispiel entsprechen Backup und Zeitpläne jetzt den bestehenden Release-Defaults.
+
+## s0.4.4 – OpenWrt-Aufgaben und TrueNAS-Zieladressen
 
 Jede OpenWrt-Operation hat eine eigene Taskdatei. Für den TrueNAS-Eintrag in der Hosts-Datei werden einzelne IPv4- und IPv6-Adressen akzeptiert. Ein leerer Wert entfernt den Eintrag wie bisher. Im Einstellungsbeispiel entsprechen Backup und Zeitpläne jetzt den bestehenden Release-Defaults.
 
