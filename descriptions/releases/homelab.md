@@ -1,5 +1,11 @@
 # Changelog
 
+## s0.3.2 – Optionale SSS-Installation
+
+Das Homelab-Profil verwendet die Basis s0.5.0. Wer den SSS-Notfallkoffer braucht,
+registriert ihn einmal in der lokalen `versions.txt`. Die Profilprüfung folgt
+dem gemeinsamen Update und Rollback.
+
 ## s0.3.1 – Git-Add-ons mit dem Homelab-Profil installieren
 
 Der Installer reicht `--addon NAME=HTTPS_URL` und `--addon-token-file NAME=PFAD` an die Basis weiter. Die Profil-Prüfsummen passen zum Add-on-fähigen Checker.

@@ -127,13 +127,6 @@
       "example_only": false,
       "default": false
     },
-    "features.sss": {
-      "description": "Funktionsschalter fuer sss. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
-      "source": "examples/settings/all_settings.example.yml",
-      "example": false,
-      "example_only": false,
-      "default": false
-    },
     "features.openwrt": {
       "description": "Funktionsschalter fuer openwrt. Nur aktivieren, wenn dieses Modul eingerichtet werden soll.",
       "source": "examples/homelab/settings.example.yml",

@@ -93,11 +93,6 @@
       "required": false
     },
     {
-      "key": "features.sss",
-      "type": "boolean",
-      "required": false
-    },
-    {
       "key": "features.openwrt",
       "type": "boolean",
       "required": false

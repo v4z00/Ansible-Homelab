@@ -57,7 +57,6 @@ collections/
 /examples/README.txt
 /update_check/README.txt
 /playbooks/backup/README.md
-/playbooks/security/sss/VALIDIERUNG.md
 
 # Local component state and module-specific host variables
 /versions.txt
