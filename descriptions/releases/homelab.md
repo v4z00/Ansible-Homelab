@@ -1,5 +1,11 @@
 # Changelog
 
+## s0.4.13 – Korrigierte Dienstpfade
+
+Prüfdaten passen zu Allgm s0.8.11 / Jobmodul 0.5.4. Neu erzeugte systemd-Units
+verwenden die gültige Syntax für Arbeitsverzeichnis und PID-Datei.
+Keine automatische Dienstaktivierung.
+
 ## s0.4.12 – Mehrere Cronfenster und Dienststandardwerte
 
 Prüfdaten passen zu Allgm s0.8.10 / Jobmodul 0.5.3. Die Statusprüfung unterstützt
