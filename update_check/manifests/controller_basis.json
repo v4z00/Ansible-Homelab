@@ -257,7 +257,7 @@
     "scripts/doctor.sh": "9190dfd9692d01537758723b30c04c80c88763a67fd45cc2310878c2971320b9",
     "scripts/export_docker_users.py": "9bc050737ccee7fb08931010ee8993198908dddaf93b4589b1c5269ef0162cd9",
     "scripts/feature_audit.py": "ab6d679664182f5d1387b5b7740612e8afe3efbc328891f662d8c3d951e841b8",
-    "scripts/feature_catalog.json": "0cfde94a1832866be453f0b37e904ac8fd18e9c63f8d2d952df1ccdb9dcf9d2e",
+    "scripts/feature_catalog.json": "c0fe8a8f3479e331fa75c9c447f81e8bd57cba24a277e0892e7d0b7bac7efaee",
     "scripts/generate_inventory.py": "adba46bd0de0c2385a7fbba2915eb62a362b90e084c968c431eab879ecd9523c",
     "scripts/run_docker_update.sh": "b17d030fff002465b7fd8212f712cabfb92d01caa2a43322aeddd91a9a6e007b",
     "scripts/update_inventory.sh": "bd39b44766a96c970dd50ef2f90c4fa59243ff3b4dba1b9da845911e997357ad",
@@ -318,7 +318,7 @@
     "lib/i18n/en/migration.json": "3fbd51e16d1f8b138fcca422af11224f6261b4313caeacafa6d253d8660cf74a",
     "tools/migrate_local_extensions.py": "a5b0677dc5e848b81ccee92b33703f1130764a12259b0391d87acbc7e9957799",
     "playbooks/docker/vars/paths.yml": "c671e6daceabe0325db7a1434ef7630d91ae2e1e30bc9aba1893db2d7c5f9249",
-    "scripts/apache_certificate_files.py": "7e7c684282c654f0531d17617103cf33b421b4e64326d70ff1ac618ea53eb8b6"
+    "scripts/apache_certificate_files.py": "cab3219c00b8801e0791442e8632a36e723cd6fdbb09d526ecc68087c4966990"
   },
   "scope": "Basis und lokale Controller-Installation",
   "version_files": [
