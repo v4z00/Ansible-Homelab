@@ -1,5 +1,9 @@
 # Changelog
 
+## s0.4.3 – Erweiterungen mit der gemeinsamen Basis pflegen
+
+Das Profil übernimmt die Prüfsummen der Basis s0.8.1 für Installation und lokale Einmalpakete. Die Beispiele für eigene Befehle, Git-Add-ons und die Archivierung stehen im [Entwicklerleitfaden](https://github.com/v4z00/Ansible-Allgm/blob/staging/EXTENDING.de.md).
+
 ## s0.4.2 – Betriebspfade der gemeinsamen Basis
 
 Das Profil verwendet die neuen Einstellungen der Basis s0.8.0 für Docker, Apache und das Checkmk-Backup. Bestehende absolute Pfadangaben haben weiter Vorrang.
