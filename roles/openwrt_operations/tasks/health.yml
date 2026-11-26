@@ -1,0 +1,20 @@
+---
+- name: Systemzustand anzeigen
+  ansible.builtin.raw: |
+    set -eu
+    ubus call system board
+    uptime
+    free
+    df -h / /tmp
+    /etc/init.d/uhttpd status 2>/dev/null || true
+    if command -v iw >/dev/null; then
+      iw dev
+    fi
+    if command -v apk >/dev/null; then
+      apk info | wc -l
+    elif command -v opkg >/dev/null; then
+      opkg list-installed | wc -l
+    fi
+  check_mode: false
+  register: openwrt_result
+  changed_when: false

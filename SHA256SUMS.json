@@ -3,7 +3,7 @@
   "profile": "Homelab",
   "files": {
     "VERSION.txt": {
-      "sha256": "520a19075780a38b440395e2c70e20d7cddd96b8c2e2c2403b265cbb74a1b333",
+      "sha256": "175307e07ac7f0bdc0f3dba371ba3a202aaf3c0117368a93d2331e1bea4af4f3",
       "mode": "0644"
     },
     "bin/control.d/.versions/homelab.json": {
@@ -251,7 +251,7 @@
       "mode": "0644"
     },
     "descriptions/configurations/examples__homelab_settings.example.md": {
-      "sha256": "fb0b6c62083c25f9b9a0a32ff3e4142f388c4e7e004100badb0cabdab7a1bf3e",
+      "sha256": "afc50441cf08c84edda7524945a5b6ce5994a5d1b9bff9be4657f92f6cbb8424",
       "mode": "0644"
     },
     "descriptions/configurations/installation-homelab.md": {
@@ -351,7 +351,7 @@
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__storage__truenas__configure_routing.md": {
-      "sha256": "fa6bef977fbea8db8adc77b47cc24d6c0d2214dcaf74d5ca776095cd2eebd93b",
+      "sha256": "9cc631cacd0009c89e5bf9d4ef44e2b9582497576bfb3c42f586d8f41f00d3c3",
       "mode": "0644"
     },
     "descriptions/playbooks/playbooks__storage__zfs__optimize.md": {
@@ -367,7 +367,7 @@
       "mode": "0644"
     },
     "descriptions/releases/homelab.md": {
-      "sha256": "a654379b4351240e2d173262d4d5c4b16625e7941c3c6397461fc018863c0dcb",
+      "sha256": "0573e61f4331cc7794d97c3125e8d05c695ad597ad264be2294974fe8fe4621c",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_mac_vlans.md": {
@@ -375,7 +375,7 @@
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_operations.md": {
-      "sha256": "7c165c50c046baad3ee967f8ab8a8b82bad74d0026d58ff113f2473bd0dbd234",
+      "sha256": "ce02ff3f92c070e5b1fdf2b55a97ed97717b6dd9234642e47e8a9f4497178a7a",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_reboot.md": {
@@ -511,7 +511,7 @@
       "mode": "0644"
     },
     "playbooks/storage/truenas/configure_routing.yml": {
-      "sha256": "99aa4fde8bca4fdaff8c24b3c5bd2467d9ed83261a5f7a17411a5502b2969b86",
+      "sha256": "02a178b3a6bf7327fea6807504a4466d0af1334a17d17bdc547789a8761d18db",
       "mode": "0644"
     },
     "playbooks/storage/zfs/optimize.yml": {
@@ -526,8 +526,40 @@
       "sha256": "5628066232c3a4e2f408a940c008314338d89dea21c738b67546066b8a684298",
       "mode": "0644"
     },
+    "roles/openwrt_operations/tasks/channel.yml": {
+      "sha256": "38b078f6f866f5a64840702385fe2137e6a5f2b08e4e03aff156cdcc55bc7a60",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/clients.yml": {
+      "sha256": "7e3e2561f2a73513b9b66eedd0446ccc5e1eb48784569d04943dad91c36c61e5",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/config-diff.yml": {
+      "sha256": "9d5a23a402611f1b9ca5888a95ed5c79a4720fd6612ef1a7809949695dc99177",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/dns.yml": {
+      "sha256": "1ceb27bba5d9acc143293e66203d261a5645102ce8544f8ba37f0bb4d752e74f",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/gui.yml": {
+      "sha256": "eb0306a1f028c9503972a97a1f48be5674902ba11ebeb40ecc6b6a5cd7924fda",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/health.yml": {
+      "sha256": "0f8236984aefe3aa965d8d145d82dc612532665a04ed72f5173a078ff255cea6",
+      "mode": "0644"
+    },
     "roles/openwrt_operations/tasks/main.yml": {
-      "sha256": "7efd1845e3170ed8c3a754e5ce75e49f5320ed80d3b0cbe98bcb8362d4757858",
+      "sha256": "26044db79c40ae2bd06273c6e8f524beeae1fa989e87db053d5a068bfb9cc904",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/package-diff.yml": {
+      "sha256": "46f5109df7bc5286f52a9b061ea45f1bbef176e22209c1295db9dc202caf14f4",
+      "mode": "0644"
+    },
+    "roles/openwrt_operations/tasks/wan.yml": {
+      "sha256": "775e9d0119db7c3046728a805e11d4e388fd87eacfe83b22cd75ed947a495767",
       "mode": "0644"
     },
     "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py": {
@@ -567,15 +599,15 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "0c66ef8d67ed67cc122cd4707362d221b628321d6f4c6d98b37e5d2aaf9b0312",
+      "sha256": "25a4cd03f06744a96200cd7eeef47d59a89c6a8c397c5ea5b1a0a1f8e23f8eb7",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "50ea21b28c114305d3c7ff390953cd497d7028af7f0e8fb7e11dff0147107625",
+      "sha256": "583457b1339b39b05e76fbd82ec7abc3dcc4f9f175fad0e0d3066f3d0856ed53",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
-      "sha256": "978c6a110c0e138a9486e100b80ee0fe541dccd4603139bb71296cfcb0723acd",
+      "sha256": "72d603ff337ca827b8301919c2e7894300098b41b8eb9320dc18f177d404a371",
       "mode": "0644"
     },
     "update_check/profile.json": {
@@ -583,7 +615,7 @@
       "mode": "0644"
     },
     "update_check/release.json": {
-      "sha256": "dd192edf38d6db8f86a30cc33bf68f3590ff9e400271f68f4439b2c806de4fc0",
+      "sha256": "3bbe28560008c307ad4e899831014d7cd2fad2040df9effc805c87e84c1caeee",
       "mode": "0644"
     },
     "update_check/settings_catalog.json": {

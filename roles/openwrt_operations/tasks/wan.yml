@@ -1,0 +1,16 @@
+---
+- name: HTTP-Erreichbarkeit prüfen
+  ansible.builtin.raw: |
+    set -eu
+    if command -v uclient-fetch >/dev/null; then
+      uclient-fetch -q {{ ((tls_validate_certs | default({})).get('openwrt_wan_check', tls_validate_certs_default | default(true)) | bool) | ternary('', '--no-check-certificate') }} -O /dev/null {{ wan_check_url | default('https://example.com/') | quote }}
+    elif command -v wget >/dev/null; then
+      wget -q {{ ((tls_validate_certs | default({})).get('openwrt_wan_check', tls_validate_certs_default | default(true)) | bool) | ternary('', '--no-check-certificate') }} -O /dev/null {{ wan_check_url | default('https://example.com/') | quote }}
+    else
+      echo 'Kein HTTP-Client vorhanden.' >&2
+      exit 1
+    fi
+    echo 'HTTP-Ziel erreichbar.'
+  check_mode: false
+  register: openwrt_result
+  changed_when: false

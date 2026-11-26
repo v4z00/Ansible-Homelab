@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "controller_basis",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "files": {
     "bin/control": "78cd37987205975e1a3a60df61a6e59db117a564590fc07d1aa8b6af90ee9912",
     "bin/control.d/.versions/homelab.json": "9b6d1f4c5dcc236ed4dda21aa5d2853b8a01756b3c486e7ba497afeb9a88bedd",
@@ -207,7 +207,7 @@
     "playbooks/reporting/lynis_summary.yml": "7a7011c25897687e6a72d9f568065d524180c612050bd9a595629430fba4cff0",
     "playbooks/security/proxmox_stack_hardening.yml": "3c4aeefea67c66c75e7851284ab9bc048b727beb839b9e13e33cc306bd004284",
     "playbooks/site.yml": "a1370917868ac4cb7aa2118cf0211e6d21a817d6d13fc41793bf079d1b48d325",
-    "playbooks/storage/truenas/configure_routing.yml": "99aa4fde8bca4fdaff8c24b3c5bd2467d9ed83261a5f7a17411a5502b2969b86",
+    "playbooks/storage/truenas/configure_routing.yml": "02a178b3a6bf7327fea6807504a4466d0af1334a17d17bdc547789a8761d18db",
     "playbooks/storage/zfs/optimize.yml": "5ef294ac634ce70fecc1b0595158826b7c6188388a4b8df8803c203b36995883",
     "playbooks/zsh.yml": "9c8de8a0086afb61e8df93d67b59329632ee983cf94359f059ddf3c9c1091297",
     "requirements.yml": "8083b3518550b7947f8861bae274474d61f8f1f7cc097d762f79d06fbdfa92f3",
@@ -256,7 +256,7 @@
     "scripts/deploy_apache_certificate.sh": "e94115ec8e07b758a6a6b4b72cd9fac5ce5c6c308b9b8f98f9e1bcc360e17b6f",
     "scripts/doctor.sh": "9190dfd9692d01537758723b30c04c80c88763a67fd45cc2310878c2971320b9",
     "scripts/export_docker_users.py": "9bc050737ccee7fb08931010ee8993198908dddaf93b4589b1c5269ef0162cd9",
-    "scripts/feature_audit.py": "ab6d679664182f5d1387b5b7740612e8afe3efbc328891f662d8c3d951e841b8",
+    "scripts/feature_audit.py": "60ed98036ab8b0da8c1d5e7dc5dfa513bf3e6c9b7146116677bf06906448768a",
     "scripts/feature_catalog.json": "c0fe8a8f3479e331fa75c9c447f81e8bd57cba24a277e0892e7d0b7bac7efaee",
     "scripts/generate_inventory.py": "adba46bd0de0c2385a7fbba2915eb62a362b90e084c968c431eab879ecd9523c",
     "scripts/run_docker_update.sh": "b17d030fff002465b7fd8212f712cabfb92d01caa2a43322aeddd91a9a6e007b",
@@ -318,7 +318,16 @@
     "lib/i18n/en/migration.json": "3fbd51e16d1f8b138fcca422af11224f6261b4313caeacafa6d253d8660cf74a",
     "tools/migrate_local_extensions.py": "a5b0677dc5e848b81ccee92b33703f1130764a12259b0391d87acbc7e9957799",
     "playbooks/docker/vars/paths.yml": "c671e6daceabe0325db7a1434ef7630d91ae2e1e30bc9aba1893db2d7c5f9249",
-    "scripts/apache_certificate_files.py": "cab3219c00b8801e0791442e8632a36e723cd6fdbb09d526ecc68087c4966990"
+    "scripts/apache_certificate_files.py": "cab3219c00b8801e0791442e8632a36e723cd6fdbb09d526ecc68087c4966990",
+    "roles/openwrt_operations/tasks/main.yml": "26044db79c40ae2bd06273c6e8f524beeae1fa989e87db053d5a068bfb9cc904",
+    "roles/openwrt_operations/tasks/gui.yml": "eb0306a1f028c9503972a97a1f48be5674902ba11ebeb40ecc6b6a5cd7924fda",
+    "roles/openwrt_operations/tasks/clients.yml": "7e3e2561f2a73513b9b66eedd0446ccc5e1eb48784569d04943dad91c36c61e5",
+    "roles/openwrt_operations/tasks/channel.yml": "38b078f6f866f5a64840702385fe2137e6a5f2b08e4e03aff156cdcc55bc7a60",
+    "roles/openwrt_operations/tasks/health.yml": "0f8236984aefe3aa965d8d145d82dc612532665a04ed72f5173a078ff255cea6",
+    "roles/openwrt_operations/tasks/config-diff.yml": "9d5a23a402611f1b9ca5888a95ed5c79a4720fd6612ef1a7809949695dc99177",
+    "roles/openwrt_operations/tasks/package-diff.yml": "46f5109df7bc5286f52a9b061ea45f1bbef176e22209c1295db9dc202caf14f4",
+    "roles/openwrt_operations/tasks/dns.yml": "1ceb27bba5d9acc143293e66203d261a5645102ce8544f8ba37f0bb4d752e74f",
+    "roles/openwrt_operations/tasks/wan.yml": "775e9d0119db7c3046728a805e11d4e388fd87eacfe83b22cd75ed947a495767"
   },
   "scope": "Basis und lokale Controller-Installation",
   "version_files": [
@@ -732,7 +741,7 @@
       "motd"
     ],
     "roles/openwrt_mac_vlans/tasks/main.yml": [
-      "openwrt"
+      "openwrt_mac_vlans"
     ],
     "roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py": [
       "openwrt"
@@ -819,6 +828,33 @@
       "openwrt"
     ],
     "scripts/openwrt_reboot_worker.sh": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/main.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/gui.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/clients.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/channel.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/health.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/config-diff.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/package-diff.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/dns.yml": [
+      "openwrt"
+    ],
+    "roles/openwrt_operations/tasks/wan.yml": [
       "openwrt"
     ]
   }

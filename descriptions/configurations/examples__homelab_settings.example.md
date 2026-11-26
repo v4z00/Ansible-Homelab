@@ -114,7 +114,7 @@ Vertrauliche Werte werden nicht dokumentiert.
     "examples/homelab/settings.example.yml"
   ],
   "source_hashes": {
-    "examples/homelab/settings.example.yml": "1bf965cbf7fa7f15d14de5fb242e2ca6fb0e3b845ec0486bc0f383e23be9118f"
+    "examples/homelab/settings.example.yml": "b2a2466fbc36f8aaf1bc24b59cff3fcb42825f137dd0fc2c392c5b4a5135fddb"
   },
   "i18n": {
     "de": {

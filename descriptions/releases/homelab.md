@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 – OpenWrt-Aufgaben und TrueNAS-Zieladressen
+
+Jede OpenWrt-Operation hat eine eigene Taskdatei. Für den TrueNAS-Eintrag in der Hosts-Datei werden einzelne IPv4- und IPv6-Adressen akzeptiert. Ein leerer Wert entfernt den Eintrag wie bisher. Im Einstellungsbeispiel entsprechen Backup und Zeitpläne jetzt den bestehenden Release-Defaults.
+
 ## 0.4.3 – Homelab mit Allgm 0.8.1
 
 Das Profil unterstützt die neue gemeinsame Basis, optionale Git-Add-ons und die deutsch- und englischsprachige Bedienung. Vor dem ersten Wechsel eines älteren Controllers den [Migrationsweg der Basis](https://github.com/v4z00/Ansible-Allgm/blob/main/descriptions/commands/update-check.md#sss-aus-einem-älteren-controller-übernehmen) prüfen.

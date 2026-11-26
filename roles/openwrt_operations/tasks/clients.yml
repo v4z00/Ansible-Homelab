@@ -1,0 +1,15 @@
+---
+- name: WLAN-Clients anzeigen
+  ansible.builtin.raw: |
+    set -eu
+    command -v iw >/dev/null || {
+      echo 'iw fehlt.' >&2
+      exit 1
+    }
+    for iface in $(iw dev | awk '$1 == "Interface" {print $2}'); do
+      echo "Interface: $iface"
+      iw dev "$iface" station dump
+    done
+  check_mode: false
+  register: openwrt_result
+  changed_when: false

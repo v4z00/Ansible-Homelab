@@ -1,0 +1,15 @@
+---
+- name: Installierte Pakete lesen
+  ansible.builtin.raw: |
+    set -eu
+    if command -v apk >/dev/null; then
+      apk info -v | sort
+    elif command -v opkg >/dev/null; then
+      opkg list-installed | sort
+    else
+      echo 'Kein unterstuetzter Paketmanager.' >&2
+      exit 1
+    fi
+  check_mode: false
+  register: openwrt_result
+  changed_when: false
