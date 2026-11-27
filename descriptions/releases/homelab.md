@@ -1,8 +1,8 @@
 # Changelog
 
-## s0.4.15 – Compose builds and quieter service summaries
+## 0.4.15 – Compose builds and quieter service summaries
 
-Align checks with Allgm s0.8.13 and job module 0.5.5. Healthy systemd observations remain queryable without routine report entries. Docker deployment builds local images; updates retry registry pulls before container changes. The boolean `docker_compose_build` defaults to true and can be disabled in private host/group variables. Existing mandatory checks remain; no automatic host or cron migration.
+Align checks with Allgm 0.8.13 and job module 0.5.5. Healthy systemd observations remain queryable without routine report entries. Docker deployment builds local images; updates retry registry pulls before container changes. The boolean `docker_compose_build` defaults to true and can be disabled in private host/group variables. Existing mandatory checks remain; no automatic host or cron migration.
 
 ## 0.4.14 – English documentation and language selection
 

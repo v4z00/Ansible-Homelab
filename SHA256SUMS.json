@@ -367,7 +367,7 @@
       "mode": "0644"
     },
     "descriptions/releases/homelab.md": {
-      "sha256": "92919a76d9ff845ebd03d227a9d516c1efcbc01dd87852b72316d36376a96bc8",
+      "sha256": "fde3f5582a7d337a69df8fd04efe3949237aea9fe238a0fa6d306eb4ffe0741d",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_mac_vlans.md": {
