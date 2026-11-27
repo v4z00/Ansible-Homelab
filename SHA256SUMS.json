@@ -599,15 +599,15 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "3060ca18dfe05a4b297392d22c96d40b71dcdf33c334c3dfb3699e78b128823b",
+      "sha256": "8552e3efdc13244780285995e5c9cdbc91816945febbcac0dfab5ef8acf517b1",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "98c408610f1257bb6f469ae4bb36c981e099ca4be340cac6c06335b729ba2add",
+      "sha256": "642269d3fb0d1219dd5030d97abeb030f2aca543dcbbeb906b4c7952a23284c7",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {
-      "sha256": "8bd7449b90134e433931413b3dce9b5a515cb3c736691eb8d767a18a6728b775",
+      "sha256": "189b50e4c66e01b6cdaaca76f52731cc176876bf0f5f5aa91716b1113b741a1b",
       "mode": "0644"
     },
     "update_check/profile.json": {

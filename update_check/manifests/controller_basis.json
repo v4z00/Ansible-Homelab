@@ -263,7 +263,7 @@
     "scripts/update_inventory.sh": "bd39b44766a96c970dd50ef2f90c4fa59243ff3b4dba1b9da845911e997357ad",
     "templates/lynis_summary.j2": "84f883ec672667db44fba0e38ea6a69a8ce60837fcdb185d9c1506b0f6a97d10",
     "templates/summary_templates.j2": "c73458f405fa8f3fbbe1f76510db39c87929e9f5c5ef76f0481815136de563f4",
-    "bin/setup-runtime": "2fc28973f55863d8aa4f79e366f1b10121e5ee951f04c82f9c0be90e4628fb95",
+    "bin/setup-runtime": "24f88f27c7103dc52203585a16f5223540a8ceddb270c7f27914f14e43ca902c",
     "bin/install-controller": "606db45311631b739dcae6e717c4ea46c8fec10a35d71f835d9d3a6fa8311a56",
     "tools/install_controller.py": "ba99175981bf232f640cea854b3c26ab5d9f02a7e7f2c9a885603c1098277e8e",
     "lib/controller_environment.sh": "27e410fa59e9af5f70a35e72cf5b76f8913ab25ae7ac57fc995495ae0b8dd22f",

@@ -18,7 +18,7 @@
     "scripts/plan_checkmk_migration.py": "fe40b84c6e45526383baf1f05b84c747ad764441fe8d824db649149e6f9de415",
     "templates/monitoring/telegraf.conf.j2": "cfa37b7cbf21c6d684e2b75df266a35a18e2e3523c144062ad6231b0098438e5",
     "roles/checkmk_agent/tasks/linux.yml": "8aa1d752862aa41512a2024dbe7ee15c90a6d0360708f5f97c839cc40353d4e8",
-    "roles/checkmk_agent/tasks/windows.yml": "245499dae7f3bdea3854e53e11b8391e6f1b9392b27b17133cf82aca03babc4f"
+    "roles/checkmk_agent/tasks/windows.yml": "699e248aca276dd5f3e0f270f86839db8e8f9542f63cbd1d1ca9e7ad76c63510"
   },
   "scope": "Gepruefte neutrale Vorlagenquelle, kein Produktivexport",
   "version_files": [],
