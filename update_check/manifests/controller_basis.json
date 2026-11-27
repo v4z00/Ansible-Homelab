@@ -272,7 +272,7 @@
     "requirements-extra.yml": "e49aba39141e82b6b5a83935ca6233f93dc8030d82b8e1c15e95302cbfb75516",
     "update_check/rollout.py": "5fee32129a8d78b1dc85e55e734ebc5845d5fbcde4a5cd92024fa83fd78e45f9",
     "playbooks/controller_smoke.yml": "3efd8059b239450a32a79bfd14d9794e31f97243b0d2ebb83f7936a596c6e948",
-    "update_check/staging_manifest.py": "eea8c1955535919551f15c5c726fe1e6f3b7953c1cd156b5be3f31c33fd4dde0",
+    "update_check/staging_manifest.py": "613b305ea18aaecdcbb10310803916e01796598328551baff749f34ecc5e199d",
     "tools/github_https.py": "4939726758123ce18c3558bd22a668052a0bb028b62a1c71534b92ccb89e5bd5",
     "tools/pipe_install.py": "157eaba3117dc73aecb1c7e2a9f7424438196c62a761b9da96bb4822b4933ef0",
     "playbooks/scripts/stage_library.yml": "cee843513e8779c47c3121a540bb03702cb2a66336d4e75316cb02ffbee25a39",
