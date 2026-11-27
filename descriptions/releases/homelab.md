@@ -1,5 +1,19 @@
 # Changelog
 
+## s0.5.0 – Compose the Windows and host-security foundation
+
+Align the profile with Allgm s0.9.0, job module 0.6.0 and checker 1.5.5. Windows
+HTTPS access, separate bootstrap/Checkmk paths and PowerShell/SQLite primitives are
+available as a staging source preview. Host security outboxes can send directly;
+ordinary job summaries remain central. Existing Linux profiles keep their assignments.
+
+This checkpoint does not activate Windows tasks, migrate private scripts/SYSVOL or
+change GPOs. Authenticated Windows, ACL, MSI and signing pilots remain pending.
+Use bin/setup-runtime for pywinrm and prepare the pinned SQLite artifact separately.
+Older updater allowlists need the matching staging checkout installer, its preview
+and explicit plan hash for the first code update; select this Homelab profile with
+the new Allgm checkout. No production deployment or main promotion is included.
+
 ## 0.4.15 – Compose builds and quieter service summaries
 
 Align checks with Allgm 0.8.13 and job module 0.5.5. Healthy systemd observations remain queryable without routine report entries. Docker deployment builds local images; updates retry registry pulls before container changes. The boolean `docker_compose_build` defaults to true and can be disabled in private host/group variables. Existing mandatory checks remain; no automatic host or cron migration.

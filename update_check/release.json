@@ -1,17 +1,18 @@
 {
   "schema": 1,
   "profile": "homelab",
-  "controller_release": "0.4.15",
-  "manifest_basis": "Gepr\u00fcfter Workspace-Quellstand",
+  "controller_release": "0.5.0",
+  "manifest_basis": "Geprüfter Workspace-Quellstand",
   "manifests": [
     "manifests/controller_basis.json",
     "manifests/tls_tasks.json",
     "manifests/host_updates.json",
     "manifests/bootstrap.json",
     "manifests/version_pruefer.json",
-    "manifests/script_jobs.json"
+    "manifests/script_jobs.json",
+    "manifests/windows_foundation.json"
   ],
-  "checker_release": "1.5.4",
+  "checker_release": "1.5.5",
   "delivery_scope": "workspace",
   "feature_defaults": {
     "backup": true,
