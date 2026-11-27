@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "profile": "homelab",
-  "controller_release": "0.4.14",
+  "controller_release": "0.4.15",
   "manifest_basis": "Gepr\u00fcfter Workspace-Quellstand",
   "manifests": [
     "manifests/controller_basis.json",
