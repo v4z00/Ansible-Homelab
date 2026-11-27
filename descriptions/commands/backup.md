@@ -1,3 +1,35 @@
+# Run a backup with completion notification
+
+Run: `bin/control backup [options]`.
+
+Aliases: `backup-full`, `backup`.
+
+Feature: `backup`.
+
+Registry prerequisites:
+- `lib/control/helpers.sh`
+- `playbooks/backup/run_ansible_backup.sh`
+
+## Assign backup sources
+
+Assign target hosts locally to the inventory groups `bond_monitor_backup_hosts` and `certificate_backup_hosts`. Specify absolute source paths in `bond_monitor_backup_paths` and `certificate_backup_paths`.
+
+## Parameters
+
+## Sources and maintenance
+
+- `bin/control.d/backup.json`
+- `bin/control.d/backup.sh`
+
+## Central completion report
+
+From Ansible-Allgm 0.4.0, with the job controller configured, the wrapper records all seven backup parts in its SQLite database. A failing part allows other backups to continue, but the wrapper returns nonzero. Missing inventory assignments before the first play also count as failures. The central summary includes these Ansible results, and the wrapper sends no duplicate email or Telegram notification.
+
+Without a configured job controller the existing completion message remains in use. Updating code alone does not activate a new summary schedule or modify existing backup cron entries. For a pilot, query stored results before starting new backups.
+
+<details>
+<summary>Deutsch</summary>
+
 # Backup mit Abschlussmeldung starten
 
 Aufruf: `bin/control backup [Optionen]`.
@@ -15,6 +47,30 @@ Voraussetzungen laut Registry:
 Ordne die gewünschten Hosts lokal den Inventory-Gruppen `bond_monitor_backup_hosts` und `certificate_backup_hosts` zu. Hinterlege die absoluten Quellpfade in `bond_monitor_backup_paths` und `certificate_backup_paths`.
 
 ## Parameter für die TUI
+
+## Quellen und Pflege
+
+- `bin/control.d/backup.json`
+- `bin/control.d/backup.sh`
+
+## Zentraler Abschlussbericht
+
+Ab Ansible-Allgm 0.4.0 und eingerichtetem Jobcontroller zeichnet der Wrapper alle
+sieben Backupteile in dessen SQLite auf. Fehlerhafte Teile verhindern nicht die
+übrigen Sicherungen; der Gesamtaufruf bleibt bei einem Fehler ungleich null.
+Auch fehlende Inventory-Zuordnungen vor dem ersten Play werden als Fehler erfasst.
+Die spätere zentrale Job-Zusammenfassung enthält diese Ansible-Ergebnisse.
+Der Wrapper sendet dann keine zusätzliche eigene Telegram-/Mailmeldung.
+
+Ohne eingerichteten Jobcontroller gilt weiterhin die bisherige Abschlussmeldung.
+Das Codeupdate allein aktiviert keinen neuen Summary-Zeitplan und ändert keine
+produktiven Backup-Crons. Ein Pilot sollte zuerst ohne neue Backupstarts die
+bereits gespeicherten Ergebnisse abfragen.
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -50,21 +106,4 @@ Ordne die gewünschten Hosts lokal den Inventory-Gruppen `bond_monitor_backup_ho
 }
 ```
 
-## Quellen und Pflege
-
-- `bin/control.d/backup.json`
-- `bin/control.d/backup.sh`
-
-## Zentraler Abschlussbericht
-
-Ab Ansible-Allgm 0.4.0 und eingerichtetem Jobcontroller zeichnet der Wrapper alle
-sieben Backupteile in dessen SQLite auf. Fehlerhafte Teile verhindern nicht die
-übrigen Sicherungen; der Gesamtaufruf bleibt bei einem Fehler ungleich null.
-Auch fehlende Inventory-Zuordnungen vor dem ersten Play werden als Fehler erfasst.
-Die spätere zentrale Job-Zusammenfassung enthält diese Ansible-Ergebnisse.
-Der Wrapper sendet dann keine zusätzliche eigene Telegram-/Mailmeldung.
-
-Ohne eingerichteten Jobcontroller gilt weiterhin die bisherige Abschlussmeldung.
-Das Codeupdate allein aktiviert keinen neuen Summary-Zeitplan und ändert keine
-produktiven Backup-Crons. Ein Pilot sollte zuerst ohne neue Backupstarts die
-bereits gespeicherten Ergebnisse abfragen.
+</details>

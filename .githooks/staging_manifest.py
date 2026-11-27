@@ -15,7 +15,7 @@ CODE_DIRS = {"bin", "config", "descriptions", "lib", "playbooks", "roles",
 CODE_FILES = {"configure_server_BASE.sh", "controller-base.json", "requirements-controller.txt",
               "requirements.yml", "requirements-extra.yml", "VERSION.txt",
               "controller-overlay.json", "install-controller", "install.sh"}
-REPO_FILES = CODE_FILES | {".gitignore", "LICENSE", "README.md", MANIFEST}
+REPO_FILES = CODE_FILES | {".gitignore", "LICENSE", "README.md", "README.de.md", MANIFEST}
 BLOCKED = {"inventory", "inventories", "host_vars", "group_vars", "ansible.cfg",
            "inventory_config.yml", "inventory.yml", "settings.yml", "secrets.yml",
            "host_credentials.yml", "credentials.yml", ".env", "_local", "docs", "reports",

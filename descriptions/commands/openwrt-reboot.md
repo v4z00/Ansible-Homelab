@@ -1,3 +1,45 @@
+# Restart OpenWrt APs in waves, with admin APs last
+
+Run: `bin/control openwrt-reboot [options]`.
+
+Aliases: `wifi-reboot`, `openwrt-reboot`.
+
+Feature: `openwrt`.
+
+Registry prerequisites:
+- `lib/control/helpers.sh`
+- `playbooks/network/openwrt/openwrt_reboot.yml`
+- `roles/openwrt_reboot/tasks/main.yml`
+- `roles/openwrt_reboot/action_plugins/openwrt_verified_reboot.py`
+- `playbooks/network/openwrt/reboot_wave.yml`
+- `scripts/openwrt_reboot_worker.sh`
+- `lib/controller_environment.sh`
+
+## Schedule monthly restarts
+
+Enable `features.openwrt` locally and put participating APs in `openwrt_router`. Assign the same `openwrt_reboot_wave` to hosts or subgroups that may go offline together. Waves 1–65535 run in ascending order, in parallel up to Ansible’s forks limit. Unnumbered APs follow individually. Members of `openwrt_admin_ap` restart individually at the end. Each AP must report a new boot ID and respond via ubus before the next wave starts. Failure stops subsequent waves. [Inventory example](../../examples/homelab/openwrt-reboot.inventory.example.yml)
+
+```bash
+bin/control openwrt-reboot --check
+bin/control openwrt-reboot --limit openwrt_router
+tmux attach -t ansible-openwrt-reboot
+```
+
+The command starts a detached tmux session on the controller. After losing SSH or Wi-Fi, reconnect and use the third command to reattach. Detach with Ctrl-b d. Results and playbook output are under `logs/`. Without an explicit limit, the target is `openwrt_router`.
+
+To run at 04:00 on the last Sunday each month, add the [example schedule](../../examples/homelab/openwrt-reboot.schedule.example.yml) to local `controller_schedules` and run `bin/control schedules`. When updating an existing schedule, retain its name. Schedule management installs tmux for this job. For a first manual run without a schedule, install it with `apt-get install tmux`.
+
+## Parameters
+
+## Sources and maintenance
+
+- `bin/control.d/openwrt-reboot.json`
+- `bin/control.d/openwrt-reboot.sh`
+- `lib/control/helpers.sh`
+
+<details>
+<summary>Deutsch</summary>
+
 # OpenWrt-APs in Wellen neu starten, Admin-APs zuletzt
 
 Aufruf: `bin/control openwrt-reboot [Optionen]`.
@@ -40,6 +82,17 @@ Bei einem bestehenden Zeitplan den bisherigen Eintrag aktualisieren und seinen N
 Die Zeitplanverwaltung installiert tmux für den Job. Für einen manuellen Erststart ohne Zeitplan stellt `apt-get install tmux` die Abhängigkeit bereit.
 
 ## Parameter für die TUI
+
+## Quellen und Pflege
+
+- `bin/control.d/openwrt-reboot.json`
+- `bin/control.d/openwrt-reboot.sh`
+- `lib/control/helpers.sh`
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -126,8 +179,4 @@ Die Zeitplanverwaltung installiert tmux für den Job. Für einen manuellen Ersts
 }
 ```
 
-## Quellen und Pflege
-
-- `bin/control.d/openwrt-reboot.json`
-- `bin/control.d/openwrt-reboot.sh`
-- `lib/control/helpers.sh`
+</details>

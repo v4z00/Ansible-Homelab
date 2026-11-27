@@ -1,3 +1,31 @@
+# Reconcile wireless MAC rules and reload after changes
+
+Run: `bin/control openwrt-mac-vlans [options]`.
+
+Aliases: `openwrt-mac-vlans`.
+
+Feature: `openwrt_mac_vlans`.
+
+Registry prerequisites:
+- `lib/control/helpers.sh`
+- `playbooks/network/openwrt/configure_mac_vlans.yml`
+- `roles/openwrt_mac_vlans/tasks/main.yml`
+
+## Adopt existing wireless rules
+
+For existing managed wireless sections, set `openwrt_managed_prefix` to the prefix already in use. New installations use `ansible_vlan`.
+
+## Parameters
+
+## Sources and maintenance
+
+- `bin/control.d/openwrt-mac-vlans.json`
+- `bin/control.d/openwrt-mac-vlans.sh`
+- `lib/control/helpers.sh`
+
+<details>
+<summary>Deutsch</summary>
+
 # WLAN-MAC-Sollzustand abgleichen und bei Aenderung automatisch neu laden
 
 Aufruf: `bin/control openwrt-mac-vlans [Optionen]`.
@@ -16,6 +44,17 @@ Voraussetzungen laut Registry:
 Für bereits verwaltete WLAN-Abschnitte setzt du `openwrt_managed_prefix` auf das bisher verwendete Präfix. Neue Installationen verwenden `ansible_vlan`.
 
 ## Parameter für die TUI
+
+## Quellen und Pflege
+
+- `bin/control.d/openwrt-mac-vlans.json`
+- `bin/control.d/openwrt-mac-vlans.sh`
+- `lib/control/helpers.sh`
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -98,8 +137,4 @@ Für bereits verwaltete WLAN-Abschnitte setzt du `openwrt_managed_prefix` auf da
 }
 ```
 
-## Quellen und Pflege
-
-- `bin/control.d/openwrt-mac-vlans.json`
-- `bin/control.d/openwrt-mac-vlans.sh`
-- `lib/control/helpers.sh`
+</details>

@@ -1,3 +1,38 @@
+# Role zsh
+
+Role: `roles/zsh`.
+
+Task names as written in the role:
+
+- Zsh-Pakete installieren
+- Oh My Zsh unbeaufsichtigt installieren
+- Powerlevel10k installieren
+- Zsh-Konfiguration ausrollen
+- Powerlevel10k-Konfiguration ausrollen
+- Zsh als Standard-Shell setzen
+
+The parameters list public role defaults. Internal facts, registered values and private host credentials are not form inputs.
+
+## Parameters
+
+The listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.
+
+## Sources and maintenance
+
+- `roles/zsh/tasks/main.yml`
+- `roles/zsh/defaults/main.yml`
+
+Maintain this description and its source hashes together when the code changes. The database stores a cache.
+
+## Per-task TLS certificate validation (1.1.0)
+
+In `group_vars/all/settings.yml`, `tls_validate_certs.zsh_installer_download` controls the Oh My Zsh download and `tls_validate_certs.zsh_theme_clone` the Powerlevel10k clone. Both inherit `tls_validate_certs_default` (default true). Explicit false disables only its own check.
+
+The site default is `tls_validate_certs_default`, normally true. Telegram tasks independently default to true unless their own override is set.
+
+<details>
+<summary>Deutsch</summary>
+
 # Rolle zsh
 
 Rolle: `roles/zsh`.
@@ -19,6 +54,30 @@ Die Parameterliste beschreibt vorhandene oeffentliche Defaults. Task-interne Fak
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
 als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
 Vertrauliche Werte werden nicht dokumentiert.
+
+## Quellen und Pflege
+
+- `roles/zsh/tasks/main.yml`
+- `roles/zsh/defaults/main.yml`
+
+Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
+Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+
+
+## TLS-Zertifikatspruefung pro Aufgabe (1.1.0)
+
+Optionale Eintraege unter `tls_validate_certs` in `group_vars/all/settings.yml`.
+Fehlende Eintraege erben tls_validate_certs_default (ohne Standortstandard true); explizites false deaktiviert nur die genannte Pruefung.
+- `tls_validate_certs.zsh_installer_download`: Oh My Zsh laden (Standard true).
+- `tls_validate_certs.zsh_theme_clone`: Powerlevel10k klonen (Standard true).
+
+Standortstandard: tls_validate_certs_default (ohne Eintrag true). Telegram-Aufgaben
+verwenden unabhaengig davon true als Default, ausser bei explizitem Task-Override.
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -123,21 +182,4 @@ Vertrauliche Werte werden nicht dokumentiert.
 }
 ```
 
-## Quellen und Pflege
-
-- `roles/zsh/tasks/main.yml`
-- `roles/zsh/defaults/main.yml`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
-
-
-## TLS-Zertifikatspruefung pro Aufgabe (1.1.0)
-
-Optionale Eintraege unter `tls_validate_certs` in `group_vars/all/settings.yml`.
-Fehlende Eintraege erben tls_validate_certs_default (ohne Standortstandard true); explizites false deaktiviert nur die genannte Pruefung.
-- `tls_validate_certs.zsh_installer_download`: Oh My Zsh laden (Standard true).
-- `tls_validate_certs.zsh_theme_clone`: Powerlevel10k klonen (Standard true).
-
-Standortstandard: tls_validate_certs_default (ohne Eintrag true). Telegram-Aufgaben
-verwenden unabhaengig davon true als Default, ausser bei explizitem Task-Override.
+</details>

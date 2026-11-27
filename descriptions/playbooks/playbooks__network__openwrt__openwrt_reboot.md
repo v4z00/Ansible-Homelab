@@ -1,5 +1,33 @@
 # Playbook playbooks/network/openwrt/openwrt_reboot.yml
 
+Playbook: `playbooks/network/openwrt/openwrt_reboot.yml`.
+
+Play and task names as written in the playbook:
+
+- OpenWrt-APs in Wellen neu starten
+- Feature, Zielauswahl und Wellennummer prüfen
+- Welle für diesen AP bestimmen
+- Wellen der ausgewählten APs in derselben Reihenfolge abarbeiten
+
+Run the corresponding Control command. Roles, inventory and site settings also affect this playbook. Check support for --limit and check mode before use.
+
+APs with the same wave number restart together. Unnumbered APs follow individually. The members of `openwrt_admin_ap` restart last, one at a time. The command runs in tmux and defaults to `openwrt_router`.
+
+## Parameters
+
+The listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.
+
+## Sources and maintenance
+
+- `playbooks/network/openwrt/openwrt_reboot.yml`
+
+Maintain this description and its source hashes together when the code changes. The database stores a cache.
+
+<details>
+<summary>Deutsch</summary>
+
+# Playbook playbooks/network/openwrt/openwrt_reboot.yml
+
 Vorhandener Einstieg: `playbooks/network/openwrt/openwrt_reboot.yml`.
 
 Im Quelltext benannte Plays/Aufgaben:
@@ -19,6 +47,18 @@ Gleiche Wellennummern starten parallel. Nach den nummerierten Wellen folgen die 
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
 als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
 Vertrauliche Werte werden nicht dokumentiert.
+
+## Quellen und Pflege
+
+- `playbooks/network/openwrt/openwrt_reboot.yml`
+
+Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
+Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -50,9 +90,4 @@ Vertrauliche Werte werden nicht dokumentiert.
 }
 ```
 
-## Quellen und Pflege
-
-- `playbooks/network/openwrt/openwrt_reboot.yml`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+</details>

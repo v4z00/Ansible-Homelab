@@ -1,5 +1,34 @@
 # Playbook playbooks/maintenance/manage_controller_schedules.yml
 
+Playbook: `playbooks/maintenance/manage_controller_schedules.yml`.
+
+Play and task names as written in the playbook:
+
+- Konfigurierte Controller-Cronjobs pflegen
+- Feature pruefen
+- Jobdefinitionen pruefen
+- tmux für konfigurierte OpenWrt-Neustarts bereitstellen
+- Nur benannte Ansible-Cronjobs pflegen
+
+Run the corresponding Control command. Roles, inventory and site settings also affect this playbook. Check support for --limit and check mode before use.
+
+`controller_schedules` defines the monthly OpenWrt job. Schedule management installs tmux for it.
+
+## Parameters
+
+The listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.
+
+## Sources and maintenance
+
+- `playbooks/maintenance/manage_controller_schedules.yml`
+
+Maintain this description and its source hashes together when the code changes. The database stores a cache.
+
+<details>
+<summary>Deutsch</summary>
+
+# Playbook playbooks/maintenance/manage_controller_schedules.yml
+
 Vorhandener Einstieg: `playbooks/maintenance/manage_controller_schedules.yml`.
 
 Im Quelltext benannte Plays/Aufgaben:
@@ -20,6 +49,18 @@ Der monatliche OpenWrt-Job kommt aus controller_schedules. Die Zeitplanverwaltun
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
 als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
 Vertrauliche Werte werden nicht dokumentiert.
+
+## Quellen und Pflege
+
+- `playbooks/maintenance/manage_controller_schedules.yml`
+
+Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
+Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -51,9 +92,4 @@ Vertrauliche Werte werden nicht dokumentiert.
 }
 ```
 
-## Quellen und Pflege
-
-- `playbooks/maintenance/manage_controller_schedules.yml`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+</details>

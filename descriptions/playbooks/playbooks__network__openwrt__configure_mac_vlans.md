@@ -1,5 +1,29 @@
 # Playbook playbooks/network/openwrt/configure_mac_vlans.yml
 
+Playbook: `playbooks/network/openwrt/configure_mac_vlans.yml`.
+
+Play and task names as written in the playbook:
+
+- OpenWrt MAC-VLAN-Konfiguration abgleichen und aktivieren
+- Bewusste Aktivierung und Zielbegrenzung pruefen
+
+Run the corresponding Control command. Roles, inventory and site settings also affect this playbook. Check support for --limit and check mode before use.
+
+## Parameters
+
+The listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.
+
+## Sources and maintenance
+
+- `playbooks/network/openwrt/configure_mac_vlans.yml`
+
+Maintain this description and its source hashes together when the code changes. The database stores a cache.
+
+<details>
+<summary>Deutsch</summary>
+
+# Playbook playbooks/network/openwrt/configure_mac_vlans.yml
+
 Vorhandener Einstieg: `playbooks/network/openwrt/configure_mac_vlans.yml`.
 
 Im Quelltext benannte Plays/Aufgaben:
@@ -15,6 +39,18 @@ Ausfuehrung bevorzugt ueber den passenden Control-Befehl. Die Datei allein besch
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
 als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
 Vertrauliche Werte werden nicht dokumentiert.
+
+## Quellen und Pflege
+
+- `playbooks/network/openwrt/configure_mac_vlans.yml`
+
+Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
+Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -46,9 +82,4 @@ Vertrauliche Werte werden nicht dokumentiert.
 }
 ```
 
-## Quellen und Pflege
-
-- `playbooks/network/openwrt/configure_mac_vlans.yml`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+</details>

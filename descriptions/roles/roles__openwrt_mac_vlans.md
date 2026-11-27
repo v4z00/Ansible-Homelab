@@ -1,3 +1,30 @@
+# Role openwrt_mac_vlans
+
+Role: `roles/openwrt_mac_vlans`.
+
+Task names as written in the role:
+
+- Zentrale Einstellungen pruefen
+- MAC-Adressen validieren
+- Verwaltete WLAN-Konfiguration abgleichen
+- Geaenderte WLAN-Konfiguration aktivieren oder fehlgeschlagenen Reload nachholen
+- Ergebnis anzeigen
+
+The parameters list public role defaults. Internal facts, registered values and private host credentials are not form inputs.
+
+## Parameters
+
+The listed sources define these parameters. Missing documentation is indicated. Defaults are informational. Credentials are omitted.
+
+## Sources and maintenance
+
+- `roles/openwrt_mac_vlans/tasks/main.yml`
+
+Maintain this description and its source hashes together when the code changes. The database stores a cache.
+
+<details>
+<summary>Deutsch</summary>
+
 # Rolle openwrt_mac_vlans
 
 Rolle: `roles/openwrt_mac_vlans`.
@@ -18,6 +45,18 @@ Die Parameterliste beschreibt vorhandene oeffentliche Defaults. Task-interne Fak
 Die Angaben stammen aus den aufgefuehrten Quellen. Fehlende Erklaerungen sind
 als solche markiert. Defaults sind Hinweise und werden nicht automatisch gesetzt.
 Vertrauliche Werte werden nicht dokumentiert.
+
+## Quellen und Pflege
+
+- `roles/openwrt_mac_vlans/tasks/main.yml`
+
+Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
+Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+
+</details>
+
+<details>
+<summary>Catalog metadata (JSON)</summary>
 
 ```json
 {
@@ -49,9 +88,4 @@ Vertrauliche Werte werden nicht dokumentiert.
 }
 ```
 
-## Quellen und Pflege
-
-- `roles/openwrt_mac_vlans/tasks/main.yml`
-
-Diese Datei ist die Pflegequelle fuer Mensch und Add-on. Bei Codeaenderungen
-Beschreibung und Quellhashs gemeinsam pruefen. Die Datenbank ist nur Cache.
+</details>

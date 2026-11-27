@@ -1,5 +1,98 @@
 # Changelog
 
+## s0.4.14 – English documentation and language selection
+
+The English README now walks through a maintenance run. Catalog pages open in English and include the German text. New installations suggest a language from the locale and accept an explicit choice. Existing controllers without a language preference still use German.
+
+## Previous releases
+
+### 0.4.13
+
+Align checks with Allgm 0.8.11, job module 0.5.4 and checker 1.5.4. Generated units use valid path syntax. Preview service profiles with `--check`; installing the controller does not enable services or rewrite cron.
+
+### s0.4.12
+
+Align with Allgm s0.8.10 and job module 0.5.3. Job reporting supports multiple cron windows and configurable observation periods. Standalone service deployments use the full root defaults.
+
+### s0.4.11
+
+Align with Allgm s0.8.9. Numeric time fields in local Ansible variables are valid for service profiles.
+
+### s0.4.10
+
+Align with Allgm s0.8.8 and job module 0.5.1. Explicit service profiles can use their own account, libraries and private JSON rendered from host variables.
+
+### s0.4.9
+
+Align with Allgm s0.8.7 and checker 1.5.4. Operators can explicitly migrate a local extension register to `.local/extensions`; updates retain its current location.
+
+### s0.4.8
+
+Align with Allgm s0.8.6 and job module 0.5.0 for profile-based private directories and systemd units. Review private sources and preview the deployment before selecting services.
+
+### s0.4.7
+
+Use the base systemd profile status checks for explicitly selected services. Existing hosts require no changes without a profile selection.
+
+### s0.4.6
+
+Align with Allgm s0.8.4 for read-only discovery of custom services. No host deployment or cron changes are required.
+
+### s0.4.5
+
+Align with Allgm s0.8.3. Pending delivery channels survive interruptions and partially answered host queries are reported as incomplete.
+
+### 0.4.4
+
+Dedicated task files for each OpenWrt operation. TrueNAS routing accepts a single IPv4 or IPv6 address or an empty value to remove the entry. Backup and schedules examples match release defaults.
+
+### s0.4.4
+
+Preview of the OpenWrt task split, validated TrueNAS addresses and aligned backup and schedule defaults.
+
+### 0.4.3
+
+Supports Allgm 0.8.1, Git add-ons and German or English controller output. Review the [base migration procedure](https://github.com/v4z00/Ansible-Allgm/blob/main/descriptions/commands/update-check.md) for older controllers.
+
+### s0.4.3
+
+Align installer and local package checks with Allgm s0.8.1. Custom commands, Git add-ons and archiving are documented in the [extension guide](https://github.com/v4z00/Ansible-Allgm/blob/staging/EXTENDING.md).
+
+### s0.4.2
+
+Use the shared Docker, Apache and Checkmk backup settings from Allgm s0.8.0. Existing absolute paths take precedence.
+
+### s0.4.1
+
+Align with Allgm s0.7.0 for local package registers. The checker reports when an older register needs the documented migration.
+
+### s0.4.0
+
+The profile inherits the controller language. Configuration and TUI command descriptions support German and English.
+
+### s0.3.2
+
+Align with Allgm s0.5.0. Register SSS once in local `versions.txt` if required. Add-on update and rollback run alongside the profile.
+
+### s0.3.1
+
+The installer forwards add-on URLs and optional token-file paths to the base. Profile verification supports the add-on-aware checker.
+
+### s0.3.0
+
+Backup steps and early failures can feed the central job summary. Without central reporting the previous notification path remains active. Set up Allgm 0.4.0 and explicitly choose a summary schedule. An update alone leaves cron untouched.
+
+### 0.2.3
+
+Inspect installed modules with `bin/control module-versions`; the profile uses checksums for Allgm 0.3.1.
+
+### 0.2.2
+
+My first GitHub release. Adds backup, OpenWrt and storage playbooks to Allgm 0.3.0. Monthly AP restarts run in waves with the admin AP last. TrueNAS routing and ZFS settings can use privilege escalation.
+
+<details>
+<summary>Deutsch · frühere Versionshinweise</summary>
+
 ## 0.4.13 – Korrigierte Dienstpfade
 
 Diese Freigabe bündelt die Prüfdaten-Anpassungen seit 0.4.4 für Allgm 0.8.11 mit Jobmodul 0.5.4 und Controller-Prüfer 1.5.4. Zentrale Berichte, explizite private Dienstprofile und wiederkehrende Cronfenster verwenden damit die freigegebene gemeinsame Basis.
@@ -129,3 +222,5 @@ Hier beginnt mein Changelog für das Homelab. Die Erweiterung baut auf Ansible-A
 - OpenWrt-APs können beim Monatsneustart in Gruppen laufen. Der Admin-AP kommt zuletzt, der Lauf bleibt in tmux erreichbar.
 - Das TrueNAS-Routing und das Setzen von ZFS-Eigenschaften verwenden bei Bedarf erhöhte Rechte.
 - Die Prüfsummen sind mit der gemeinsamen Basis 0.3.0 abgeglichen.
+
+</details>

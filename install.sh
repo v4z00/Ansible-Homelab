@@ -13,11 +13,14 @@ main() {
   while (($#)); do
     case $1 in
 
+      --lang)
+        [[ $# -ge 2 && ( $2 == de || $2 == en ) ]] || die "Use --lang de or --lang en"
+        options+=("$1" "$2"); shift 2 ;;
       --addon|--addon-token-file)
         (( $# >= 2 )) && [[ -n $2 && $2 != --* ]] || die "Missing value for $1"
         options+=("$1" "$2")
         shift 2 ;;
-      --help) printf '%s\n' 'install.sh [--addon NAME=HTTPS_URL] [--addon-token-file NAME=PATH]'; return ;;
+      --help) printf '%s\n' 'install.sh [--lang de|en] [--addon NAME=HTTPS_URL] [--addon-token-file NAME=PATH]'; return ;;
       *) die 'Unbekannter Parameter. install.sh --help zeigt die Optionen.' ;;
     esac
   done
@@ -76,7 +79,7 @@ VERIFY
       python3 -I -B update_check/staging_manifest.py verify Allgm </dev/null
     # Runtime setup uses root's home for its normal pip and Galaxy caches.
     env -i PATH="$PATH" HOME=/root TMPDIR="$work" PYTHONDONTWRITEBYTECODE=1 GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1 \
-      "${network[@]}" python3 -B tools/pipe_install.py Homelab "${options[@]}" </dev/null
+      "LANG=${LC_ALL:-${LC_MESSAGES:-${LANG:-C}}}" "${network[@]}" python3 -B tools/pipe_install.py Homelab "${options[@]}" </dev/null
   )
 }
 
