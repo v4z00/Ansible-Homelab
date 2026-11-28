@@ -367,7 +367,7 @@
       "mode": "0644"
     },
     "descriptions/releases/homelab.md": {
-      "sha256": "fb0ad7e92a1524f6ab9ed28b68f2cddaad7fe2f6fd75abfda53d3dafbe7bda70",
+      "sha256": "f0d1ee7f6640773a5487877c2ca694b303abfd25bcecd0d6bdffa085cdcf708b",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_mac_vlans.md": {
@@ -599,11 +599,11 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "8552e3efdc13244780285995e5c9cdbc91816945febbcac0dfab5ef8acf517b1",
+      "sha256": "2340ea22b9820ade102f500e7b40d2a77cf1f810871a34de1c9b9fc71404fa3e",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
-      "sha256": "642269d3fb0d1219dd5030d97abeb030f2aca543dcbbeb906b4c7952a23284c7",
+      "sha256": "196e6e4e8a6554ff9e75ca5803bfbdfac574f5c231b89709f35b89859aab96ee",
       "mode": "0644"
     },
     "update_check/manifests/tls_tasks.json": {

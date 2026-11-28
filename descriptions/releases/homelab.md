@@ -1,18 +1,16 @@
 # Changelog
 
-## s0.5.0 – Compose the Windows and host-security foundation
+## s0.5.0 – Windows automation and scoped host monitoring
 
-Align the profile with Allgm s0.9.0, job module 0.6.0 and checker 1.5.5. Windows
-HTTPS access, separate bootstrap/Checkmk paths and PowerShell/SQLite primitives are
-available as a staging source preview. Host security outboxes can send directly;
-ordinary job summaries remain central. Existing Linux profiles keep their assignments.
+Compose Homelab with Allgm 0.9.5. Windows hosts use HTTPS/Kerberos access,
+separate bootstrap and Checkmk agent paths, PowerShell scheduled profiles,
+and local SQLite history. Windows security alerts default to Telegram.
+Linux profile assignments and controller notification settings carry forward.
 
-This checkpoint does not activate Windows tasks, migrate private scripts/SYSVOL or
-change GPOs. Authenticated Windows, ACL, MSI and signing pilots remain pending.
-Use bin/setup-runtime for pywinrm and prepare the pinned SQLite artifact separately.
-Older updater allowlists need the matching staging checkout installer, its preview
-and explicit plan hash for the first code update; select this Homelab profile with
-the new Allgm checkout. No production deployment or main promotion is included.
+Windows deployment remains opt-in per host. Use `bin/setup-runtime` for WinRM
+and prepare the pinned SQLite artifact before deploying Windows jobs. Telegraf
+remains available through the Linux workflow. Policy links, site variables and
+private script deployments remain local to the environment.
 
 ## 0.4.15 – Compose builds and quieter service summaries
 
