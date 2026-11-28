@@ -8,7 +8,7 @@
     "probes.py": "3ef5592956d6f9e7072310b39b3a9cdf5e38057b194faa4790a30ea38c01fa70",
     "VERSION.txt": "04c93b7e7635a43d0cb6d097f9af0a72a9973041d11847e521cc682f1668c605",
     "tests/test_check.py": "0acd1d021c3fde1f64e782f565b9897a74bc6d34702bdbb650d52d28b05dea03",
-    "release.json": "df1e55fc606b58cad7e5c85651eb3b6d9999cab0e60cefb82767122e58bf1455",
+    "release.json": "0c43e6eeada48e7372081558f053905a089f5cbb1da724ffacdc76867304bba6",
     "settings_contract.json": "058fb0a85dcf68f91cef670565af4fa836064d1eaee0208e08801b9c01ce5ce0",
     "settings_catalog.json": "2548ad3dacde8a522d19389e4f058d1dfb197cc5d13079a6a1eb3a3ddbd3d70e",
     "manifests/controller_basis.json": "196e6e4e8a6554ff9e75ca5803bfbdfac574f5c231b89709f35b89859aab96ee",
@@ -42,7 +42,8 @@
     "tests/test_checkmk_backup_modes.py": "4d962a4f328fd304544ec5cf8ae67a4c78982091647c4d1a158adb2f3c4bacd2",
     "tests/test_controller_paths.py": "8af9fe08f6fb7bad654b06c7395cbe22f335dc8b2d82e5a003bd19fa8226a015",
     "tests/test_docker_deploy.py": "342a0d17096e0f524bfdf9289c7d632e7aad7c61d1dccfe365866cd5adb8fb29",
-    "tests/test_extending_examples.py": "0d578e96af415cddf2479bbcde5923d9b35c5e53d72b178e83886bdb1d68fec5"
+    "tests/test_extending_examples.py": "0d578e96af415cddf2479bbcde5923d9b35c5e53d72b178e83886bdb1d68fec5",
+    "manifests/windows_foundation.json": "b0ba3c581a545c4950b201a4b43385c896f994873857a90aa4cb5e3f8240b4be"
   },
   "trust": "Lokale Sollwerte, keine Signatur. Nicht aus veraenderten Live-Dateien automatisch neu erzeugen."
 }

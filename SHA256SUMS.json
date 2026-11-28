@@ -3,7 +3,7 @@
   "profile": "Homelab",
   "files": {
     "VERSION.txt": {
-      "sha256": "a0ad50640139a524f86591157145bf1d4674ea9c065bfea21558f0f7b04430c8",
+      "sha256": "aba951626c8690ce493cbc8f018205bb468003f61fbf00fd3d3c71cebabc0177",
       "mode": "0644"
     },
     "bin/control.d/.versions/homelab.json": {
@@ -367,7 +367,7 @@
       "mode": "0644"
     },
     "descriptions/releases/homelab.md": {
-      "sha256": "f0d1ee7f6640773a5487877c2ca694b303abfd25bcecd0d6bdffa085cdcf708b",
+      "sha256": "4eda5bfaf072242949e67bbcea6ea07938f6664930918e86c6de952e2e9e17d9",
       "mode": "0644"
     },
     "descriptions/roles/roles__openwrt_mac_vlans.md": {
@@ -599,7 +599,7 @@
       "mode": "0644"
     },
     "update_check/integrity.json": {
-      "sha256": "2340ea22b9820ade102f500e7b40d2a77cf1f810871a34de1c9b9fc71404fa3e",
+      "sha256": "155bdb5e1ae8fbaccbbd6e76f83400f5e8261154693d7e34ee023ca37f2f025a",
       "mode": "0644"
     },
     "update_check/manifests/controller_basis.json": {
@@ -615,7 +615,7 @@
       "mode": "0644"
     },
     "update_check/release.json": {
-      "sha256": "df1e55fc606b58cad7e5c85651eb3b6d9999cab0e60cefb82767122e58bf1455",
+      "sha256": "0c43e6eeada48e7372081558f053905a089f5cbb1da724ffacdc76867304bba6",
       "mode": "0644"
     },
     "update_check/settings_catalog.json": {

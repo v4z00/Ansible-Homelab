@@ -1,5 +1,10 @@
 # Changelog
 
+## s0.5.1 – Verify the composed Windows manifest offline
+
+The Homelab checker now seals the Windows foundation manifest from Allgm in
+its composed release. This completes local validation without network access.
+
 ## s0.5.0 – Windows automation and scoped host monitoring
 
 Compose Homelab with Allgm 0.9.5. Windows hosts use HTTPS/Kerberos access,
